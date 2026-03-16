@@ -1,5 +1,4 @@
 // horizontalCarouselStyles.ts
-import type { SxProps, Theme } from '@mui/material';
 import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
@@ -8,7 +7,7 @@ export const styles = {
     width: '100%',
     position: 'relative',
     overflow: 'hidden',
-  } as SxProps<Theme>,
+  },
 
   header: {
     display: 'flex',
@@ -16,16 +15,16 @@ export const styles = {
     justifyContent: 'space-between',
     mb: 3,
     px: { xs: 2, md: 4 },
-  } as SxProps<Theme>,
+  },
 
   sectionLabel: {
     color: COLOR_TOKENS.textSecondary,
     letterSpacing: '0.06em',
-  } as SxProps<Theme>,
+  },
 
   scrollWrapper: {
     position: 'relative',
-  } as SxProps<Theme>,
+  },
 
   scrollTrack: {
     display: 'flex',
@@ -42,9 +41,8 @@ export const styles = {
     '&::-webkit-scrollbar': { display: 'none' },
     WebkitOverflowScrolling: 'touch',
     scrollBehavior: 'smooth',
-    // Prevent text selection while dragging
     userSelect: 'none',
-  } as SxProps<Theme>,
+  },
 
   navButton: {
     position: 'absolute',
@@ -66,15 +64,15 @@ export const styles = {
     '&:hover': { bgcolor: 'background.default' },
     '&:disabled': { opacity: 0, pointerEvents: 'none' },
     transition: 'opacity 0.2s ease',
-  } as SxProps<Theme>,
+  },
 
   navButtonPrev: {
     left: { xs: 4, md: 8 },
-  } as SxProps<Theme>,
+  },
 
   navButtonNext: {
     right: { xs: 4, md: 8 },
-  } as SxProps<Theme>,
+  },
 
   dotsContainer: {
     display: 'flex',
@@ -82,9 +80,9 @@ export const styles = {
     alignItems: 'center',
     gap: 1,
     mt: 2,
-  } as SxProps<Theme>,
+  },
 
-  dot: (isActive: boolean): SxProps<Theme> => ({
+  dot: (isActive: boolean) => ({
     width: isActive ? 20 : 8,
     height: 8,
     borderRadius: '4px',
