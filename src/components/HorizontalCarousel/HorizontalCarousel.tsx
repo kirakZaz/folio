@@ -1,4 +1,3 @@
-// HorizontalCarousel.tsx
 import React from 'react';
 import { Box, Typography, IconButton } from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -10,7 +9,12 @@ import { styles } from './horizontalCarouselStyles';
 const SCROLL_STEP_PX = 320;
 const DRAG_THRESHOLD_PX = 5;
 
-const HorizontalCarousel = ({ children, sectionLabel, headerAction }: HorizontalCarouselProps) => {
+const HorizontalCarousel = ({
+  children,
+  sectionLabel,
+  headerAction,
+  hideLabel = false,
+}: HorizontalCarouselProps) => {
   const scrollTrackRef = React.useRef<HTMLDivElement>(null);
 
   const [canScrollLeft, setCanScrollLeft] = React.useState(false);
@@ -42,7 +46,6 @@ const HorizontalCarousel = ({ children, sectionLabel, headerAction }: Horizontal
     if (!track) return;
 
     syncScrollState();
-
     track.addEventListener('scroll', syncScrollState, { passive: true });
     return () => track.removeEventListener('scroll', syncScrollState);
   }, [syncScrollState]);
@@ -112,7 +115,6 @@ const HorizontalCarousel = ({ children, sectionLabel, headerAction }: Horizontal
     const handleMouseUp = () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
-      // Short delay so click events after drag don't fire
       setTimeout(() => {
         isDraggingRef.current = false;
       }, 0);
@@ -122,7 +124,6 @@ const HorizontalCarousel = ({ children, sectionLabel, headerAction }: Horizontal
     document.addEventListener('mouseup', handleMouseUp);
   }, []);
 
-  // Prevent click propagation on children when user was dragging
   const handleClickCapture = React.useCallback((event: React.MouseEvent<HTMLDivElement>) => {
     if (isDraggingRef.current) {
       event.stopPropagation();
@@ -137,15 +138,17 @@ const HorizontalCarousel = ({ children, sectionLabel, headerAction }: Horizontal
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
-      {/* ── Header ────────────────────────────────────────────────── */}
-      <Box sx={styles.header}>
-        <Typography variant="caption" component="p" sx={styles.sectionLabel}>
-          {sectionLabel}
-        </Typography>
-        {headerAction}
-      </Box>
+      {/* ── Header — hidden when hideLabel is true ─────────────── */}
+      {!hideLabel && (
+        <Box sx={styles.header}>
+          <Typography variant="caption" component="p" sx={styles.sectionLabel}>
+            {sectionLabel}
+          </Typography>
+          {headerAction}
+        </Box>
+      )}
 
-      {/* ── Scroll area with nav buttons ──────────────────────────── */}
+      {/* ── Scroll area with nav buttons ──────────────────────── */}
       <Box sx={styles.scrollWrapper}>
         <IconButton
           aria-label="Scroll left"
@@ -177,7 +180,7 @@ const HorizontalCarousel = ({ children, sectionLabel, headerAction }: Horizontal
         </IconButton>
       </Box>
 
-      {/* ── Dots ──────────────────────────────────────────────────── */}
+      {/* ── Dots ──────────────────────────────────────────────── */}
       {childCount > 1 && (
         <Box sx={styles.dotsContainer} role="tablist" aria-label="Carousel navigation">
           {Array.from({ length: childCount }, (_, dotIndex) => (

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Button, Stack } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -13,14 +12,17 @@ const AppNavBar = ({ links = NAV_ASSESSMENT_LINKS }: AppNavBarProps) => {
   return (
     <Box component="header" sx={styles.navBarContainer} data-testid="app-nav-bar">
       <Box sx={styles.navBarInner}>
+        {/* Logo — monospace style */}
         <Button onClick={() => navigate(ROUTES.HOME)} disableRipple sx={styles.logoButton}>
-          Kira
+          kira zakirov
         </Button>
 
+        {/* Nav links with monospace index prefix */}
         <Stack component="nav" direction="row" spacing={3} aria-label="Assessment navigation">
-          {links.map((navLink) => {
+          {links.map((navLink, navIndex) => {
             const isActive = location.pathname === navLink.route;
             const isLocked = navLink.status === 'coming_soon';
+            const indexLabel = String(navIndex + 1).padStart(2, '0');
 
             return (
               <Button
@@ -30,6 +32,18 @@ const AppNavBar = ({ links = NAV_ASSESSMENT_LINKS }: AppNavBarProps) => {
                 disabled={isLocked}
                 sx={styles.navLink(isActive)}
               >
+                <Box
+                  component="span"
+                  sx={{
+                    color: isActive ? 'inherit' : 'rgba(255,47,146,0.5)',
+                    mr: '5px',
+                    fontSize: '8px',
+                    fontFamily: 'inherit',
+                    letterSpacing: '0.1em',
+                  }}
+                >
+                  {indexLabel}
+                </Box>
                 {navLink.label}
               </Button>
             );
