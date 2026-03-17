@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
@@ -13,7 +12,12 @@ import type { AnimatedMoodBoardProps, MoodBoardItem } from './types';
 import { styles } from './animatedMoodBoardStyles';
 
 const ASPECT_RATIOS: Array<MoodBoardItem['aspectRatio']> = [
-  'landscape', 'portrait', 'square', 'landscape', 'square', 'portrait',
+  'landscape',
+  'portrait',
+  'square',
+  'landscape',
+  'square',
+  'portrait',
 ];
 
 const DEFAULT_PLACEHOLDER_COUNT = 5;
@@ -34,7 +38,13 @@ const MoodBoardCard = ({ item, index }: { item: MoodBoardItem; index: number }) 
               src={item.imageUrl}
               alt={item.label ?? `Mood board image ${index + 1}`}
               loading="lazy"
-              sx={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+              sx={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
             />
           ) : (
             <Box sx={styles.placeholderInner}>
@@ -56,11 +66,12 @@ const AnimatedMoodBoard = ({
   items,
   placeholderCount = DEFAULT_PLACEHOLDER_COUNT,
 }: AnimatedMoodBoardProps) => {
-  const displayItems: MoodBoardItem[] = items
-    ?? Array.from({ length: placeholderCount }, (_, index) => ({
-        id:          `placeholder-${index}`,
-        aspectRatio: ASPECT_RATIOS[index % ASPECT_RATIOS.length],
-      }));
+  const displayItems: MoodBoardItem[] =
+    items ??
+    Array.from({ length: placeholderCount }, (_, index) => ({
+      id: `placeholder-${index}`,
+      aspectRatio: ASPECT_RATIOS[index % ASPECT_RATIOS.length],
+    }));
 
   return (
     <motion.div
