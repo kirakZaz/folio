@@ -1,7 +1,9 @@
-import type React from 'react';
+import type { ReactNode } from 'react';
+import type { ContainerProps } from '@mui/material';
 
 export interface LayoutProps {
-  children:    React.ReactNode;
-  maxWidth?:   'sm' | 'md' | 'lg' | 'xl' | false;
+  children: ReactNode;
+  maxWidth?: ContainerProps['maxWidth'];
   showNavBar?: boolean;
+  fullWidthSlot?: ReactNode;
 }

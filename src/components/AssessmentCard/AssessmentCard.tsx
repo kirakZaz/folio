@@ -17,7 +17,7 @@ const AssessmentCard = ({ assessment }: AssessmentCardProps) => {
 
   const cardContent = (
     <CardContent sx={styles.cardContent}>
-      <Stack spacing={2} sx={{ flexGrow: 1 }}>
+      <Stack spacing={2.5} sx={{ flexGrow: 1 }}>
         <Stack direction="row" justifyContent="space-between" alignItems="flex-start">
           <Typography variant="caption" sx={styles.metaText}>
             {assessment.weight} · {assessment.dueModule}
@@ -35,12 +35,24 @@ const AssessmentCard = ({ assessment }: AssessmentCardProps) => {
               backgroundColor: chipConfig.bgColor,
               border: `1px solid ${chipConfig.color}33`,
               height: 22,
+              fontSize: '0.68rem',
+              letterSpacing: '0.04em',
             }}
           />
         </Stack>
 
-        <Stack spacing={0.5}>
-          <Typography variant="h5" component="h3" sx={{ fontWeight: 600 }}>
+        <Stack spacing={0.75}>
+          <Typography
+            variant="h5"
+            component="h3"
+            sx={{
+              fontWeight: 700,
+              fontSize: '1.4rem',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.15,
+              color: 'text.primary',
+            }}
+          >
             {assessment.title}
           </Typography>
           <Typography variant="body2" sx={styles.subtitle}>
@@ -54,8 +66,18 @@ const AssessmentCard = ({ assessment }: AssessmentCardProps) => {
       </Stack>
 
       {isAvailable && (
-        <Stack direction="row" alignItems="center" spacing={0.5} sx={styles.viewAction}>
-          <Typography variant="body2" sx={{ fontWeight: 500 }}>
+        <Stack
+          direction="row"
+          alignItems="center"
+          spacing={0.5}
+          sx={{
+            ...styles.viewAction,
+            color: 'text.primary',
+            fontWeight: 600,
+            fontSize: '0.85rem',
+          }}
+        >
+          <Typography variant="body2" sx={{ fontWeight: 600 }}>
             View
           </Typography>
           <ArrowForwardIcon sx={{ fontSize: '1rem' }} />
@@ -65,9 +87,20 @@ const AssessmentCard = ({ assessment }: AssessmentCardProps) => {
   );
 
   return (
-    <Card data-testid={`assessment-card-${assessment.id}`} sx={styles.cardContainer(isAvailable)}>
+    <Card
+      data-testid={`assessment-card-${assessment.id}`}
+      sx={styles.cardContainer(isAvailable, assessment.status)}
+    >
       {isAvailable ? (
-        <CardActionArea onClick={handleCardClick} sx={{ height: '100%', alignItems: 'flex-start' }}>
+        <CardActionArea
+          onClick={handleCardClick}
+          sx={{
+            height: '100%',
+            alignItems: 'flex-start',
+            // Remove MUI default hover overlay so our glass hover takes effect cleanly
+            '&:hover .MuiCardActionArea-focusHighlight': { opacity: 0 },
+          }}
+        >
           {cardContent}
         </CardActionArea>
       ) : (

@@ -762,34 +762,34 @@ const BlueprintHero = () => {
       </Box>
 
       {/* Bottom-right CTA */}
-      <Box
-        sx={{
-          position: 'absolute',
-          bottom: 24,
-          right: 26,
-          opacity: uiVisible ? 1 : 0,
-          transition: 'opacity 0.6s ease',
-        }}
-      >
-        <Box
-          component="a"
-          href="#web-projects"
-          sx={{
-            fontFamily: '"JetBrains Mono", monospace',
-            fontSize: '9px',
-            color: MAGENTA,
-            letterSpacing: '0.14em',
-            textDecoration: 'none',
-            borderBottom: `0.5px solid rgba(255,47,146,0.3)`,
-            pb: '2px',
-            transition: 'color 0.2s, border-color 0.2s',
-            cursor: 'pointer',
-            '&:hover': { color: ORANGE, borderColor: ORANGE },
-          }}
-        >
-          view full portfolio ↗
-        </Box>
-      </Box>
+      {/*<Box*/}
+      {/*  sx={{*/}
+      {/*    position: 'absolute',*/}
+      {/*    bottom: 24,*/}
+      {/*    right: 26,*/}
+      {/*    opacity: uiVisible ? 1 : 0,*/}
+      {/*    transition: 'opacity 0.6s ease',*/}
+      {/*  }}*/}
+      {/*>*/}
+      {/*  <Box*/}
+      {/*    component="a"*/}
+      {/*    href="#web-projects"*/}
+      {/*    sx={{*/}
+      {/*      fontFamily: '"JetBrains Mono", monospace',*/}
+      {/*      fontSize: '9px',*/}
+      {/*      color: MAGENTA,*/}
+      {/*      letterSpacing: '0.14em',*/}
+      {/*      textDecoration: 'none',*/}
+      {/*      borderBottom: `0.5px solid rgba(255,47,146,0.3)`,*/}
+      {/*      pb: '2px',*/}
+      {/*      transition: 'color 0.2s, border-color 0.2s',*/}
+      {/*      cursor: 'pointer',*/}
+      {/*      '&:hover': { color: ORANGE, borderColor: ORANGE },*/}
+      {/*    }}*/}
+      {/*  >*/}
+      {/*    view full portfolio ↗*/}
+      {/*  </Box>*/}
+      {/*</Box>*/}
 
       {/* Hint */}
       <Box

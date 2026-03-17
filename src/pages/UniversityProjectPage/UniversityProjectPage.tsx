@@ -42,7 +42,7 @@ const UniversityProjectPage = () => {
   const hasPptxPresentation = !!project.presentationFile && !isPdfFile(project.presentationFile);
 
   return (
-    <Layout maxWidth="lg" showNavBar>
+    <Layout maxWidth="xl" showNavBar>
       <motion.div
         initial="hidden"
         animate="visible"

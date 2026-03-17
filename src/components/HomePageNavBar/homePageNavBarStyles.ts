@@ -2,9 +2,10 @@ import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
   navBarContainer: {
-    position: 'sticky',
+    position: 'fixed',
+    left: 0,
     top: 0,
-    zIndex: 100,
+    zIndex: 99,
     width: '100%',
     backgroundColor: COLOR_TOKENS.backgroundDefault,
     backdropFilter: 'blur(16px)',
@@ -14,36 +15,14 @@ export const styles = {
   },
 
   navBarInner: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    px: { xs: 2, md: 4 },
-    pt: 2,
-    pb: 0,
-  },
-
-  logoButton: {
-    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-    fontSize: '11px',
-    fontWeight: 400,
-    letterSpacing: '0.08em',
-    color: COLOR_TOKENS.textPrimary,
-    p: 0,
-    pb: '16px',
-    background: 'none',
-    border: 'none',
-    cursor: 'pointer',
-    userSelect: 'none',
-    transition: 'color 250ms ease',
-    '&:hover': {
-      color: COLOR_TOKENS.accentPrimary,
-    },
-  },
-
-  navLinks: {
+    maxWidth: { md: '1200px', lg: '1680px' },
+    margin: '0 auto',
     display: 'flex',
     alignItems: 'center',
     gap: { xs: 4, md: 6 },
+    px: { xs: 2, md: 4 },
+    // py: 1.25,
+    pt: 2,
     overflowX: 'auto',
     scrollbarWidth: 'none',
     '&::-webkit-scrollbar': { display: 'none' },
@@ -75,28 +54,14 @@ export const styles = {
       transformOrigin: 'left',
     },
 
-    '&:hover .app-nav-index': {
+    '&:hover .home-nav-index': {
+      color: COLOR_TOKENS.accentPrimary,
       opacity: 1,
     },
-    '&:hover .app-nav-label': {
+    '&:hover .home-nav-label': {
       color: COLOR_TOKENS.textPrimary,
     },
   }),
-
-  navItemDisabled: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '6px',
-    background: 'none',
-    border: 'none',
-    padding: 0,
-    flexShrink: 0,
-    position: 'relative',
-    pb: '16px',
-    cursor: 'default',
-    opacity: 0.35,
-    pointerEvents: 'none',
-  },
 
   navIndex: (isActive: boolean) => ({
     fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,

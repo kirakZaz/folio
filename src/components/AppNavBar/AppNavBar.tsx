@@ -1,4 +1,4 @@
-import { Box, Button, Stack } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import { NAV_ASSESSMENT_LINKS, ROUTES } from '@/shared';
@@ -12,43 +12,48 @@ const AppNavBar = ({ links = NAV_ASSESSMENT_LINKS }: AppNavBarProps) => {
   return (
     <Box component="header" sx={styles.navBarContainer} data-testid="app-nav-bar">
       <Box sx={styles.navBarInner}>
-        {/* Logo — monospace style */}
-        <Button onClick={() => navigate(ROUTES.HOME)} disableRipple sx={styles.logoButton}>
+        {/* Logo */}
+        <Box component="button" onClick={() => navigate(ROUTES.HOME)} sx={styles.logoButton}>
           kira zakirov
-        </Button>
+        </Box>
 
-        {/* Nav links with monospace index prefix */}
-        <Stack component="nav" direction="row" spacing={3} aria-label="Assessment navigation">
+        {/* Nav links */}
+        <Box component="nav" aria-label="Assessment navigation" sx={styles.navLinks}>
           {links.map((navLink, navIndex) => {
             const isActive = location.pathname === navLink.route;
             const isLocked = navLink.status === 'coming_soon';
             const indexLabel = String(navIndex + 1).padStart(2, '0');
 
-            return (
-              <Button
-                key={navLink.id}
-                onClick={() => !isLocked && navigate(navLink.route)}
-                disableRipple
-                disabled={isLocked}
-                sx={styles.navLink(isActive)}
-              >
-                <Box
-                  component="span"
-                  sx={{
-                    color: isActive ? 'inherit' : 'rgba(255,47,146,0.5)',
-                    mr: '5px',
-                    fontSize: '8px',
-                    fontFamily: 'inherit',
-                    letterSpacing: '0.1em',
-                  }}
-                >
-                  {indexLabel}
+            if (isLocked) {
+              return (
+                <Box key={navLink.id} sx={styles.navItemDisabled} aria-disabled="true">
+                  <Typography className="app-nav-index" sx={styles.navIndex(false)}>
+                    #{indexLabel}
+                  </Typography>
+                  <Typography className="app-nav-label" sx={styles.navLabel(false)}>
+                    {navLink.label}
+                  </Typography>
                 </Box>
-                {navLink.label}
-              </Button>
+              );
+            }
+
+            return (
+              <Box
+                key={navLink.id}
+                component="button"
+                onClick={() => navigate(navLink.route)}
+                sx={styles.navItem(isActive)}
+              >
+                <Typography className="app-nav-index" sx={styles.navIndex(isActive)}>
+                  #{indexLabel}
+                </Typography>
+                <Typography className="app-nav-label" sx={styles.navLabel(isActive)}>
+                  {navLink.label}
+                </Typography>
+              </Box>
             );
           })}
-        </Stack>
+        </Box>
       </Box>
     </Box>
   );
