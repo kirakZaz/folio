@@ -1,9 +1,12 @@
-import React from 'react';
 import { Box, Typography, Stack, Chip } from '@mui/material';
 import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
 import { motion } from 'framer-motion';
 
-import { FADE_UP_VARIANTS, DEFAULT_TRANSITION, VIEWPORT_CONFIG } from '@/shared/constants/animation.constants';
+import {
+  FADE_UP_VARIANTS,
+  DEFAULT_TRANSITION,
+  VIEWPORT_CONFIG,
+} from '@/shared/constants/animation.constants';
 import { formatSectionNumber } from '@/shared/utils/format.utils';
 import { COLOR_TOKENS } from '@/theme/themeTokens';
 import type { SectionPlaceholderProps } from './types';
@@ -33,7 +36,9 @@ const SectionPlaceholder = ({
             <Typography variant="caption" sx={styles.sectionNumber}>
               {formatSectionNumber(sectionNumber)}
             </Typography>
-            <Typography variant="h3" component="h2">{title}</Typography>
+            <Typography variant="h3" component="h2">
+              {title}
+            </Typography>
             <Chip
               label="Placeholder"
               size="small"
