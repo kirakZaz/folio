@@ -5,7 +5,7 @@ import { COLOR_TOKENS } from '@/theme/themeTokens';
 import type { BagItem } from '@/shared/constants/bags.constants';
 import { styles } from './carouselCardsStyles';
 
-const BAG_CARD_WIDTH  = 600;
+// const BAG_CARD_WIDTH  = 600;
 const BAG_CARD_HEIGHT = 600;
 
 interface BagCardProps {
@@ -19,7 +19,7 @@ const BagCard = ({ item, index }: BagCardProps) => {
   return (
     <Box
       role="listitem"
-      sx={styles.imageCardContainer(BAG_CARD_WIDTH, BAG_CARD_HEIGHT)}
+      sx={styles.imageCardContainer('auto', BAG_CARD_HEIGHT)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setIsHovered((prev) => !prev)}
