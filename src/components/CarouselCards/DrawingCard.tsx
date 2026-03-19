@@ -5,7 +5,6 @@ import { COLOR_TOKENS } from '@/theme/themeTokens';
 import type { DrawingItem } from '@/shared/constants/drawings.constants';
 import { styles } from './carouselCardsStyles';
 
-// const DRAWING_CARD_WIDTH  = 350;
 const DRAWING_CARD_HEIGHT = 650;
 
 interface DrawingCardProps {

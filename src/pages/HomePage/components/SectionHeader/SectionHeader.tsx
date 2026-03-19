@@ -13,14 +13,14 @@ const SectionHeader = ({ index, label, count }: SectionHeaderProps) => (
     sx={{
       display: 'flex',
       alignItems: 'baseline',
-      gap: 2,
-      py: 2
+      gap: { xs: 1, md: 2 },
+      py: 2,
     }}
   >
     <Typography
       sx={{
         fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-        fontSize: '16px',
+        fontSize: { xs: '12px', md: '16px' },
         color: COLOR_TOKENS.accentPrimary,
         letterSpacing: '0.14em',
         flexShrink: 0,
@@ -32,7 +32,7 @@ const SectionHeader = ({ index, label, count }: SectionHeaderProps) => (
     <Typography
       sx={{
         fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-        fontSize: '16px',
+        fontSize: { xs: '12px', md: '16px' },
         color: COLOR_TOKENS.textDisabled,
         letterSpacing: '0.12em',
         textTransform: 'uppercase',
@@ -48,7 +48,7 @@ const SectionHeader = ({ index, label, count }: SectionHeaderProps) => (
       <Typography
         sx={{
           fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-          fontSize: '12px',
+          fontSize: { xs: '10px', md: '12px' },
           color: COLOR_TOKENS.textDisabled,
           letterSpacing: '0.1em',
           flexShrink: 0,
@@ -59,5 +59,4 @@ const SectionHeader = ({ index, label, count }: SectionHeaderProps) => (
     )}
   </Box>
 );
-
 export default SectionHeader;

@@ -35,4 +35,4 @@ export const VIEWPORT_CONFIG = {
   margin: '-60px',
 } as const;
 
-export const SECTION_SCROLL_OFFSET_PX = 120;
+export const SECTION_SCROLL_OFFSET_PX = 115;
