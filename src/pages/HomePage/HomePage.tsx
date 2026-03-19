@@ -21,10 +21,14 @@ import Journey from '@/pages/HomePage/components/Journey/Journey.tsx';
 import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
 import SectionDivider from '@/pages/HomePage/components/SectionDivider/SectionDivider.tsx';
 import { SECTION_SCROLL_OFFSET_PX } from '@/shared/constants/animation.constants';
+import { useAppSelector } from '@/app/hooks.ts';
+import { selectAllAssessments } from '@/features/assessments/assessmentsSlice.ts';
+import { useScrollToSectionOnMount } from '@/shared/hooks/useScrollToSectionOnMount.ts';
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 const HomePage = () => {
-
+  const assessments = useAppSelector(selectAllAssessments);
+  useScrollToSectionOnMount();
 
   return (
     <Layout fullWidthSlot={<HomePageNavBar />}>
@@ -51,7 +55,24 @@ const HomePage = () => {
       <SectionDivider />
 
       {/* ── 02 Journey ────────────────────────────────────────────────── */}
-      <Journey />
+      <Box id="section-journey" sx={{ scrollMarginTop: `${SECTION_SCROLL_OFFSET_PX}px` }}>
+        <motion.div
+          variants={FADE_UP_VARIANTS}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT_CONFIG}
+          transition={DEFAULT_TRANSITION}
+        >
+          <Box>
+            <SectionHeader
+              index="02"
+              label="Portfolio Development Journey"
+              count={assessments.length}
+            />
+            <Journey assessments={assessments} />
+          </Box>
+        </motion.div>
+      </Box>
 
       <SectionDivider />
 
@@ -121,7 +142,7 @@ const HomePage = () => {
               viewport={VIEWPORT_CONFIG}
               transition={DEFAULT_TRANSITION}
             >
-              <Box >
+              <Box>
                 <SectionHeader index="05" label="Drawings" count={DRAWINGS_DATA.length} />
 
                 <HorizontalCarousel sectionLabel="Drawings" hideLabel>

@@ -1,35 +1,28 @@
 import { Box, Typography, Stack, Button, Chip, ImageList, ImageListItem } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import DownloadIcon from '@mui/icons-material/Download';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import Layout from '@/components/Layout';
 import { UNIVERSITY_PROJECTS_DATA } from '@/shared/constants/university-projects.constants';
 import { FADE_UP_VARIANTS, DEFAULT_TRANSITION } from '@/shared/constants/animation.constants';
 import { COLOR_TOKENS } from '@/theme/themeTokens';
-import { ROUTES } from '@/shared/constants/routes.constants';
+
+import BackButton from '@/components/BackButton/BackButton.tsx';
 
 const isPdfFile = (filePath: string): boolean => filePath.toLowerCase().endsWith('.pdf');
 
 const UniversityProjectPage = () => {
-  const navigate = useNavigate();
   const { projectId } = useParams<{ projectId: string }>();
   const project = UNIVERSITY_PROJECTS_DATA.find((item) => item.id === projectId);
-
-  const handleBackToHome = () => navigate(ROUTES.HOME);
 
   if (!project) {
     return (
       <Layout showNavBar>
-        <Button
-          startIcon={<ArrowBackIcon />}
-          onClick={handleBackToHome}
-          sx={{ color: COLOR_TOKENS.textSecondary, mb: 4, pl: 0 }}
-        >
-          Back
-        </Button>
+        <BackButton />
+
         <Typography variant="h3">Project not found.</Typography>
       </Layout>
     );
@@ -50,18 +43,7 @@ const UniversityProjectPage = () => {
         transition={DEFAULT_TRANSITION}
       >
         {/* ── Back button ─────────────────────────────────────── */}
-        <Button
-          startIcon={<ArrowBackIcon />}
-          onClick={handleBackToHome}
-          sx={{
-            color: COLOR_TOKENS.textSecondary,
-            mb: 4,
-            pl: 0,
-            '&:hover': { backgroundColor: 'transparent', color: COLOR_TOKENS.textPrimary },
-          }}
-        >
-          Back
-        </Button>
+        <BackButton />
 
         {/* ── Header ──────────────────────────────────────────── */}
         <Stack spacing={2} sx={{ mb: 6 }}>
@@ -196,7 +178,7 @@ const UniversityProjectPage = () => {
               title={`${project.subject} presentation`}
               sx={{
                 width: '100%',
-                height: '70vh',
+                height: '95vh',
                 border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
                 borderRadius: 2,
                 display: 'block',

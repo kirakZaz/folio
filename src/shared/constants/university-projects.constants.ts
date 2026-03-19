@@ -76,6 +76,7 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
       'Built a secure console-based banking application in C# (.NET 8) from scratch. Implemented user signup and login with input validation and brute-force protection (3 attempt limit), deposit and withdrawal with balance management, and profile update functionality. Designed UML use case and class diagrams before coding. Tested all edge cases including invalid inputs and insufficient funds.',
     images: [],
     finalScore: 82,
+    presentationFile: '/images/projects/finalProjects/Presentation1.pdf',
   },
 
   // ── Study Year 1 · Trimester 1, 2025 ──────────────────────────────────────

@@ -22,6 +22,7 @@ import { WORK_PROJECTS_DATA } from '@/shared/constants/work-projects.constants';
 import { FADE_UP_VARIANTS, DEFAULT_TRANSITION } from '@/shared/constants/animation.constants';
 import { COLOR_TOKENS } from '@/theme/themeTokens';
 import { ROUTES } from '@/shared/constants/routes.constants';
+import BackButton from '@/components/BackButton/BackButton.tsx';
 
 const WorkProjectPage = () => {
   const navigate = useNavigate();
@@ -59,21 +60,22 @@ const WorkProjectPage = () => {
         transition={DEFAULT_TRANSITION}
       >
         {/* ── Back button ─────────────────────────────────────────── */}
-        <Button
-          startIcon={<ArrowBackIcon />}
-          onClick={handleBackToHome}
-          sx={{
-            color: COLOR_TOKENS.textSecondary,
-            mb: 4,
-            pl: 0,
-            '&:hover': {
-              backgroundColor: 'transparent',
-              color: COLOR_TOKENS.textPrimary,
-            },
-          }}
-        >
-          Back
-        </Button>
+        {/*<Button*/}
+        {/*  startIcon={<ArrowBackIcon />}*/}
+        {/*  onClick={handleBackToHome}*/}
+        {/*  sx={{*/}
+        {/*    color: COLOR_TOKENS.textSecondary,*/}
+        {/*    mb: 4,*/}
+        {/*    pl: 0,*/}
+        {/*    '&:hover': {*/}
+        {/*      backgroundColor: 'transparent',*/}
+        {/*      color: COLOR_TOKENS.textPrimary,*/}
+        {/*    },*/}
+        {/*  }}*/}
+        {/*>*/}
+        {/*  Back*/}
+        {/*</Button>*/}
+        <BackButton />
 
         {/* ── Header ──────────────────────────────────────────────── */}
         <Stack spacing={2} sx={{ mb: 5 }}>

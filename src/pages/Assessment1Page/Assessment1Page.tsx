@@ -1,8 +1,6 @@
 import { Box, Typography, Stack, Button, Grid, Card, CardContent, Link } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import Layout from '@/components/Layout';
@@ -10,16 +8,14 @@ import { useAppSelector } from '@/app/hooks';
 import { selectAssessmentById } from '@/features/assessments/assessmentsSlice';
 import { FADE_UP_VARIANTS, DEFAULT_TRANSITION } from '@/shared/constants/animation.constants';
 import { COLOR_TOKENS } from '@/theme/themeTokens';
-import { ROUTES } from '@/shared/constants/routes.constants';
 
 import screenshotImg from '@/shared/assets/A1_screenshot.png';
 import assessmentPdf from '@/shared/assets/CDM303A_Kira_Zakirov_assessmet1.pdf';
+import BackButton from '@/components/BackButton/BackButton.tsx';
 
 const Assessment1Page = () => {
-  const navigate = useNavigate();
   const assessment = useAppSelector(selectAssessmentById(1));
 
-  const handleBackToHome = () => navigate(ROUTES.HOME);
 
   return (
     <Layout maxWidth="lg" showNavBar>
@@ -30,18 +26,7 @@ const Assessment1Page = () => {
         transition={DEFAULT_TRANSITION}
       >
         <Box sx={{ mb: 6 }}>
-          <Button
-            startIcon={<ArrowBackIcon />}
-            onClick={handleBackToHome}
-            sx={{
-              color: COLOR_TOKENS.textSecondary,
-              mb: 4,
-              pl: 0,
-              '&:hover': { color: COLOR_TOKENS.textPrimary, backgroundColor: 'transparent' },
-            }}
-          >
-            Back
-          </Button>
+          <BackButton />
 
           <Stack spacing={1.5}>
             <Typography

@@ -22,6 +22,7 @@ const AssessmentCard = ({ assessment }: AssessmentCardProps) => {
           <Typography variant="caption" sx={styles.metaText}>
             {assessment.weight} · {assessment.dueModule}
           </Typography>
+
           <Chip
             label={chipConfig.label}
             size="small"
