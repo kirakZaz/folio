@@ -10,6 +10,10 @@ interface UseActiveSectionOptions {
 export const useActiveSection = ({ sectionIds }: UseActiveSectionOptions): string => {
   const [activeSectionId, setActiveSectionId] = React.useState<string>(sectionIds[0] ?? '');
 
+
+  console.log('sectionIds', sectionIds);
+  console.log('activeSectionId', activeSectionId);
+
   React.useEffect(() => {
     if (sectionIds.length === 0) return;
 

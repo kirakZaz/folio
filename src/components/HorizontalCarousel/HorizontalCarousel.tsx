@@ -6,7 +6,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import type { HorizontalCarouselProps } from './types';
 import { styles } from './horizontalCarouselStyles';
 
-const SCROLL_STEP_PX = 320;
+const SCROLL_STEP_PX = 620;
 const DRAG_THRESHOLD_PX = 5;
 
 const HorizontalCarousel = ({
@@ -156,7 +156,7 @@ const HorizontalCarousel = ({
           disabled={!canScrollLeft}
           sx={{ ...styles.navButton, ...styles.navButtonPrev }}
         >
-          <ChevronLeftIcon />
+          <ChevronLeftIcon color={'success'} />
         </IconButton>
 
         <Box
@@ -176,7 +176,7 @@ const HorizontalCarousel = ({
           disabled={!canScrollRight}
           sx={{ ...styles.navButton, ...styles.navButtonNext }}
         >
-          <ChevronRightIcon />
+          <ChevronRightIcon color={'success'} />
         </IconButton>
       </Box>
 

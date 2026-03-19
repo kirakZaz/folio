@@ -12,6 +12,7 @@ import {
   DEFAULT_TRANSITION,
   VIEWPORT_CONFIG,
 } from '@/shared/constants/animation.constants';
+import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
 
 // ─── Bento layout config ──────────────────────────────────────────────────────
 // Each entry maps 1:1 to WORK_PROJECTS_DATA by index order.
@@ -170,7 +171,7 @@ const BentoCard = ({ projectIndex, colSpan, rowSpan, animIndex }: BentoCardProps
                 letterSpacing: '0.1em',
               }}
             >
-              {project.yearEnd === 'present' ? 'current' : yearRange}
+              {yearRange}
             </Typography>
           </Box>
         </Box>
@@ -297,45 +298,12 @@ const BentoCard = ({ projectIndex, colSpan, rowSpan, animIndex }: BentoCardProps
 
 // ─── Section ──────────────────────────────────────────────────────────────────
 const WebProjectsSection = () => (
-  <Box
-    component="section"
-    aria-label="Web Projects"
-    sx={{ px: { xs: 2, md: 4 }, py: { xs: 6, md: 8 } }}
-  >
-    <Stack direction="row" alignItems="baseline" spacing={2} sx={{ mb: 4 }}>
-      <Typography
-        sx={{
-          fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-          fontSize: '10px',
-          color: COLOR_TOKENS.accentPrimary,
-          letterSpacing: '0.14em',
-        }}
-      >
-        02
-      </Typography>
-      <Typography
-        sx={{
-          fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-          fontSize: '10px',
-          color: COLOR_TOKENS.textDisabled,
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-        }}
-      >
-        Web Projects
-      </Typography>
-      <Box sx={{ flex: 1, height: '0.5px', backgroundColor: COLOR_TOKENS.borderSubtle }} />
-      <Typography
-        sx={{
-          fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-          fontSize: '9px',
-          color: COLOR_TOKENS.textDisabled,
-          letterSpacing: '0.1em',
-        }}
-      >
-        {WORK_PROJECTS_DATA.length} projects
-      </Typography>
-    </Stack>
+  <Box component="section" aria-label="Web Projects" sx={{ minHeight: '80vh' }}>
+    <SectionHeader
+      index="01"
+      label="Work experience"
+      count={`${WORK_PROJECTS_DATA.length} projects`}
+    />
 
     <motion.div
       variants={STAGGER_CONTAINER_VARIANTS}

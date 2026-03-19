@@ -3,7 +3,6 @@ import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
   section: {
-    py: { xs: 4, md: 6 },
     width: '100%',
     position: 'relative',
     overflow: 'hidden',
@@ -34,8 +33,6 @@ export const styles = {
     gap: 2,
     overflowX: 'auto',
     overflowY: 'visible',
-    px: { xs: 2, md: 4 },
-    pb: 1.5,
     scrollbarWidth: 'none',
     msOverflowStyle: 'none',
     '&::-webkit-scrollbar': { display: 'none' },

@@ -5,8 +5,8 @@ import { COLOR_TOKENS } from '@/theme/themeTokens';
 import type { DrawingItem } from '@/shared/constants/drawings.constants';
 import { styles } from './carouselCardsStyles';
 
-const DRAWING_CARD_WIDTH  = 220;
-const DRAWING_CARD_HEIGHT = 300;
+// const DRAWING_CARD_WIDTH  = 350;
+const DRAWING_CARD_HEIGHT = 650;
 
 interface DrawingCardProps {
   item:  DrawingItem;
@@ -19,7 +19,7 @@ const DrawingCard = ({ item, index }: DrawingCardProps) => {
   return (
     <Box
       role="listitem"
-      sx={styles.imageCardContainer(DRAWING_CARD_WIDTH, DRAWING_CARD_HEIGHT)}
+      sx={styles.imageCardContainer('auto', DRAWING_CARD_HEIGHT)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setIsHovered((prev) => !prev)}

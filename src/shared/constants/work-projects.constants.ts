@@ -11,8 +11,8 @@ export interface WorkProject {
   title: string;
   company: string;
   role: string;
-  yearStart: number;
-  yearEnd: number | 'present';
+  yearStart: number | string;
+  yearEnd: number | string | 'present';
   description: string;
   coverImage?: string;
   techStack?: string[];
@@ -30,7 +30,7 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
     title: 'AXO Tech Platform',
     company: 'AXO Tech Inc',
     role: 'Lead Frontend Developer',
-    yearStart: 2024,
+    yearStart: '07/2024',
     yearEnd: 'present',
     description:
       'B2B SaaS platform that helps cloud channel partners turn siloed client data into revenue growth. Connects vendor portals, CRMs, and spreadsheets into a unified engine with automated playbooks and deal intelligence.',
@@ -71,8 +71,8 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
     title: 'SharePass',
     company: 'SharePass Pty Ltd',
     role: 'Lead Frontend Developer',
-    yearStart: 2024,
-    yearEnd: 'present',
+    yearStart: '02/2025',
+    yearEnd: '03/2026',
     description:
       'Enterprise-grade secure secret-sharing platform. Rebuilt the entire frontend from scratch — solo, part-time — delivering a production-ready app with client-side encryption, MFA, and a fully custom design system in both light and dark modes.',
     coverImage: '/images/companies/sharepass.png',
@@ -91,7 +91,7 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
     githubUrl: undefined,
     teamSize: 3,
     achievements: [
-      'Rebuilt the entire frontend from scratch — solo, part-time (1 day/week) over 4 months',
+      'Rebuilt the entire frontend from scratch — solo, part-time',
       'Implemented client-side encryption using SJCL and @noble/hashes for secure secret handling',
       'Built MFA flow including TOTP and QR-based security key UI',
       'Resolved token refresh race conditions using async-mutex for concurrent request safety',
@@ -110,8 +110,8 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
     title: 'Wowie',
     company: 'Wowie (Startup)',
     role: 'Frontend Developer',
-    yearStart: 2023,
-    yearEnd: 2024,
+    yearStart: '01/2023',
+    yearEnd: '07/2024',
     description:
       'AI-based platform revolutionising how customers, retailers, and food companies interact in offline stores. Enables personalised shopping assistance, real-time product scanning, dietary restriction management, and retailer inventory insights — the first platform of its kind serving all three parties simultaneously.',
     coverImage: '/images/companies/wowie.png',
@@ -136,8 +136,8 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
     title: 'Just Eat Takeaway',
     company: 'Just Eat Takeaway.com (via Welldone-Solutions)',
     role: 'Frontend Developer',
-    yearStart: 2021,
-    yearEnd: 2023,
+    yearStart: '05/2021',
+    yearEnd: '01/2023',
     description:
       'B2B2C platform for Just Eat Takeaway.com — a leading global food delivery marketplace operating in 16 countries. Built credit card management interfaces for business clients. Worked via Welldone Software, a boutique consultancy specialising in modern frontend, React, and full-stack development.',
     coverImage: '/images/companies/justeat.png',
@@ -162,8 +162,8 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
     title: 'Roundtrip',
     company: 'Roundtrip Technologies',
     role: 'Full Stack Developer',
-    yearStart: 2019,
-    yearEnd: 2021,
+    yearStart: '02/2019',
+    yearEnd: '04/2021',
     description:
       'SaaS e-commerce travel platform — customisable, integrative, and responsive. Designed for Online Travel Agencies (OTAs) and end-customers, enabling clients to build full travel booking experiences (flights, hotels, activities). Joined as 2nd developer, grew into informal tech lead and product-engineering bridge.',
     coverImage: '/images/companies/roundtrip.png',
@@ -189,8 +189,8 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
     title: 'XMPie',
     company: 'XMPie / Xerox (via Welldone-Solutions)',
     role: 'Frontend Developer',
-    yearStart: 2021,
-    yearEnd: 2023,
+    yearStart: '12/2021',
+    yearEnd: '02/2023',
     description:
       'Enterprise personalisation platform for XMPie (Xerox subsidiary) — transforming communications globally for 20+ years. Applications span advanced data-driven print, eCommerce with built-in customisation, and fully automated omnichannel campaign management.',
     coverImage: '/images/companies/xmpie.png',
@@ -214,8 +214,8 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
     title: 'Beehive BI',
     company: 'Beehive BI (Playtech project)',
     role: 'Frontend Developer',
-    yearStart: 2018,
-    yearEnd: 2019,
+    yearStart: '08/2018',
+    yearEnd: '12/2019',
     description:
       'Business intelligence platform built for Playtech, a global leader in gambling technology. First professional React project — learned production React, Redux, and OOP patterns in a real enterprise environment.',
     coverImage: '/images/companies/beehive.png',
@@ -238,8 +238,8 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
     title: 'e-shop Platform',
     company: 'e-shop Ltd',
     role: 'Frontend Web Developer',
-    yearStart: 2015,
-    yearEnd: 2018,
+    yearStart: '04/2015',
+    yearEnd: '08/2018',
     description:
       'Leading e-commerce platform in Israel, specialising in building and managing online stores for over 1000 businesses. Contributed to the integrated online shop platform, overseeing UI implementation and collaborating with project managers to validate designs.',
     coverImage: '/images/companies/e_shop_ltd_logo.jpeg',

@@ -5,8 +5,8 @@ import { COLOR_TOKENS } from '@/theme/themeTokens';
 import type { BagItem } from '@/shared/constants/bags.constants';
 import { styles } from './carouselCardsStyles';
 
-const BAG_CARD_WIDTH  = 240;
-const BAG_CARD_HEIGHT = 280;
+const BAG_CARD_WIDTH  = 600;
+const BAG_CARD_HEIGHT = 600;
 
 interface BagCardProps {
   item:  BagItem;
