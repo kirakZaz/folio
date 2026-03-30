@@ -74,4 +74,95 @@ export const styles = {
     justifyContent: 'center',
     p: 2.5,
   } as SxProps<Theme>,
+
+  imageCardOverlayText: {
+    color: COLOR_TOKENS.textPrimary,
+  } as SxProps<Theme>,
+
+  // WorkProjectCard styles
+  workCardBackground: {
+    position: 'absolute',
+    inset: 0,
+    backgroundColor: COLOR_TOKENS.backgroundSubtle,
+  } as SxProps<Theme>,
+
+  workCardLogoArea: (isHovered: boolean): SxProps<Theme> => ({
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: isHovered ? '38%' : '65%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    p: isHovered ? 1.5 : 3,
+    transition: 'height 320ms cubic-bezier(0.4, 0, 0.2, 1), padding 320ms cubic-bezier(0.4, 0, 0.2, 1)',
+    zIndex: 1,
+  }),
+
+  workCardLogoImg: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain',
+    transition: 'opacity 320ms ease',
+  } as SxProps<Theme>,
+
+  workCardLogoFallbackText: {
+    color: COLOR_TOKENS.borderDefault,
+    fontWeight: 300,
+    fontSize: '5rem',
+    userSelect: 'none',
+    lineHeight: 1,
+  } as SxProps<Theme>,
+
+  workCardContentPanel: (isHovered: boolean): SxProps<Theme> => ({
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: isHovered ? '65%' : '38%',
+    backgroundColor: COLOR_TOKENS.backgroundPaper,
+    borderTop: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+    transition: 'height 320ms cubic-bezier(0.4, 0, 0.2, 1)',
+    overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    p: 1.5,
+    zIndex: 2,
+  }),
+
+  workCardTitle: {
+    fontWeight: 600,
+    lineHeight: 1.3,
+    mb: 0.25,
+  } as SxProps<Theme>,
+
+  workCardSubtitle: {
+    color: COLOR_TOKENS.textSecondary,
+  } as SxProps<Theme>,
+
+  workCardExtraContent: (isHovered: boolean): SxProps<Theme> => ({
+    opacity: isHovered ? 1 : 0,
+    transform: isHovered ? 'translateY(0)' : 'translateY(8px)',
+    transition: 'opacity 240ms ease 80ms, transform 240ms ease 80ms',
+  }),
+
+  workCardDescription: {
+    color: COLOR_TOKENS.textSecondary,
+    display: '-webkit-box',
+    WebkitLineClamp: 2,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+    lineHeight: 1.5,
+    mb: 1,
+  } as SxProps<Theme>,
+
+  workCardChip: {
+    height: 16,
+    fontSize: '0.58rem',
+    color: COLOR_TOKENS.textSecondary,
+    backgroundColor: COLOR_TOKENS.backgroundElevated,
+    border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+  } as SxProps<Theme>,
 };

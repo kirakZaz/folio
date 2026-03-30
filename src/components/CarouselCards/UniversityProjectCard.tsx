@@ -2,11 +2,8 @@ import { Box, Typography, Stack, Chip } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 import { COLOR_TOKENS } from '@/theme/themeTokens';
-import type {
-  UniversityProject,
-  ProjectStatus,
-  SubjectType,
-} from '@/shared/constants/university-projects.constants';
+import type { ProjectStatus, SubjectType } from '@/shared/constants/university-projects.constants';
+import type { UniversityProjectCardProps } from './UniversityProjectCard.types';
 import { styles } from './carouselCardsStyles';
 
 const PROJECT_CARD_WIDTH = 260;
@@ -31,11 +28,6 @@ const formatScore = (score: number | string | undefined): string => {
   if (score === undefined || score === '-') return '';
   return `Score: ${score}`;
 };
-
-interface UniversityProjectCardProps {
-  project: UniversityProject;
-  index: number;
-}
 
 const UniversityProjectCard = ({ project }: UniversityProjectCardProps) => {
   const navigate = useNavigate();

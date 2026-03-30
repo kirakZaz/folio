@@ -1,4 +1,5 @@
 import type { SxProps, Theme } from '@mui/material';
+import { COLOR_TOKENS } from '@/theme/themeTokens';
 import { MAGENTA } from './blueprintHero.constants';
 
 // Using a typed helper so every style object is inferred correctly
@@ -25,13 +26,13 @@ export const styles = {
       left: 26,
       opacity: isVisible ? 1 : 0,
       transition: 'opacity 0.4s ease, color 0.2s, border-color 0.2s',
-      border: '0.5px solid rgba(0,0,0,0.14)',
+      border: `0.5px solid ${COLOR_TOKENS.borderDefault}`,
       borderRadius: '4px',
       px: 1.25,
       py: 0.625,
       fontFamily: '"JetBrains Mono", monospace',
       fontSize: '9px',
-      color: '#9BA19C',
+      color: COLOR_TOKENS.textDisabled,
       letterSpacing: '0.12em',
       minWidth: 0,
       lineHeight: 1,
@@ -39,7 +40,7 @@ export const styles = {
       pointerEvents: isVisible ? 'all' : 'none',
       '&:hover': {
         color: MAGENTA,
-        borderColor: 'rgba(255,47,146,0.35)',
+        borderColor: COLOR_TOKENS.borderStrong,
         backgroundColor: 'transparent',
       },
     }),
@@ -58,7 +59,7 @@ export const styles = {
   specLine: sx({
     fontFamily: '"JetBrains Mono", monospace',
     fontSize: '9px',
-    color: '#9BA19C',
+    color: COLOR_TOKENS.textDisabled,
     letterSpacing: '0.1em',
     lineHeight: 2,
   }),
@@ -85,7 +86,7 @@ export const styles = {
   bottomLeftLabel: sx({
     fontFamily: '"JetBrains Mono", monospace',
     fontSize: '9px',
-    color: '#9BA19C',
+    color: COLOR_TOKENS.textDisabled,
     letterSpacing: '0.16em',
     textTransform: 'uppercase',
     mb: '3px',
@@ -94,7 +95,7 @@ export const styles = {
   bottomLeftTitle: sx({
     fontFamily: '"JetBrains Mono", monospace',
     fontSize: '10px',
-    color: '#4E5451',
+    color: COLOR_TOKENS.textSecondary,
     letterSpacing: '0.08em',
   }),
 
@@ -106,7 +107,7 @@ export const styles = {
       transform: 'translate(-50%, 50%)',
       fontFamily: '"JetBrains Mono", monospace',
       fontSize: '9px',
-      color: '#9BA19C',
+      color: COLOR_TOKENS.textDisabled,
       letterSpacing: '0.14em',
       opacity: isVisible ? 1 : 0,
       transition: 'opacity 0.8s',

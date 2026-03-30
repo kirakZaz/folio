@@ -1,16 +1,10 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-import { COLOR_TOKENS } from '@/theme/themeTokens';
-import type { DrawingItem } from '@/shared/constants/drawings.constants';
+import type { DrawingCardProps } from './DrawingCard.types';
 import { styles } from './carouselCardsStyles';
 
 const DRAWING_CARD_HEIGHT = 650;
-
-interface DrawingCardProps {
-  item:  DrawingItem;
-  index: number;
-}
 
 const DrawingCard = ({ item, index }: DrawingCardProps) => {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -32,7 +26,7 @@ const DrawingCard = ({ item, index }: DrawingCardProps) => {
       />
       {item.label && (
         <Box className={isHovered ? 'visible' : ''} sx={styles.imageCardOverlay}>
-          <Typography variant="caption" sx={{ color: COLOR_TOKENS.textPrimary }}>
+          <Typography variant="caption" sx={styles.imageCardOverlayText}>
             {item.label}
           </Typography>
         </Box>

@@ -1,3 +1,5 @@
+import type React from 'react';
+
 export interface MouseState {
   x: number;
   y: number;
@@ -15,4 +17,11 @@ export interface RevealZone {
   y: number;
   r: number;
   alpha: number;
+}
+
+export interface UseBlueprintMouseOptions {
+  stageRef: React.RefObject<HTMLDivElement>;
+  mouseRef: React.MutableRefObject<MouseState>;
+  revealedZonesRef: React.MutableRefObject<RevealZone[]>;
+  onFirstMove: () => void;
 }

@@ -1,16 +1,10 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-import { COLOR_TOKENS } from '@/theme/themeTokens';
-import type { BagItem } from '@/shared/constants/bags.constants';
+import type { BagCardProps } from './BagCard.types';
 import { styles } from './carouselCardsStyles';
 
 const BAG_CARD_HEIGHT = 600;
-
-interface BagCardProps {
-  item:  BagItem;
-  index: number;
-}
 
 const BagCard = ({ item, index }: BagCardProps) => {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -32,7 +26,7 @@ const BagCard = ({ item, index }: BagCardProps) => {
       />
       {item.label && (
         <Box className={isHovered ? 'visible' : ''} sx={styles.imageCardOverlay}>
-          <Typography variant="caption" sx={{ color: COLOR_TOKENS.textPrimary }}>
+          <Typography variant="caption" sx={styles.imageCardOverlayText}>
             {item.label}
           </Typography>
         </Box>

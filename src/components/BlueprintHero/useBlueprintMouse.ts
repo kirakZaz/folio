@@ -1,5 +1,5 @@
-import { useCallback, useRef } from 'react';
-import type { MouseState, RevealZone } from './blueprintHero.types';
+import React from 'react';
+import type { UseBlueprintMouseOptions } from './blueprintHero.types';
 
 const TRAIL_MAX_LENGTH = 22;
 const REVEAL_ZONE_MAX = 40;
@@ -7,22 +7,15 @@ const REVEAL_ZONE_SPAWN_CHANCE = 0.28;
 const REVEAL_ZONE_RADIUS = 60;
 const MEASURE_RESET_DELAY_MS = 3500;
 
-interface UseBlueprintMouseOptions {
-  stageRef: React.RefObject<HTMLDivElement>;
-  mouseRef: React.MutableRefObject<MouseState>;
-  revealedZonesRef: React.MutableRefObject<RevealZone[]>;
-  onFirstMove: () => void;
-}
-
 export const useBlueprintMouse = ({
   stageRef,
   mouseRef,
   revealedZonesRef,
   onFirstMove,
 }: UseBlueprintMouseOptions) => {
-  const hintHiddenRef = useRef(false);
+  const hintHiddenRef = React.useRef(false);
 
-  const handleMouseMove = useCallback(
+  const handleMouseMove = React.useCallback(
     (event: React.MouseEvent<HTMLDivElement>) => {
       const stage = stageRef.current;
       if (!stage) return;
@@ -56,7 +49,7 @@ export const useBlueprintMouse = ({
     [stageRef, mouseRef, revealedZonesRef, onFirstMove],
   );
 
-  const handleMouseLeave = useCallback(() => {
+  const handleMouseLeave = React.useCallback(() => {
     const mouse = mouseRef.current;
     mouse.active = false;
     mouse.x = -1;
@@ -66,7 +59,7 @@ export const useBlueprintMouse = ({
     mouse.velocityY = 0;
   }, [mouseRef]);
 
-  const handleClick = useCallback(
+  const handleClick = React.useCallback(
     (event: React.MouseEvent<HTMLDivElement>) => {
       const target = event.target as HTMLElement;
       if (target.closest('[data-replay]')) return;

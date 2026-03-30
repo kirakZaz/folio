@@ -13,6 +13,7 @@ import {
   VIEWPORT_CONFIG,
 } from '@/shared/constants/animation.constants';
 import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
+import type { BentoCardProps } from './WebProjectsSection.types';
 
 // ─── Bento layout config ──────────────────────────────────────────────────────
 // Each entry maps 1:1 to WORK_PROJECTS_DATA by index order.
@@ -40,14 +41,6 @@ const CARD_ACCENTS = [
   { bg: '#ECEAE9', accent: '#9B8EA8' }, // Beehive     — mauve
   { bg: '#EAF0EC', accent: '#16A34A' }, // e-shop      — emerald
 ];
-
-// ─── Types ────────────────────────────────────────────────────────────────────
-interface BentoCardProps {
-  projectIndex: number;
-  colSpan: number;
-  rowSpan: number;
-  animIndex: number;
-}
 
 // MotionBox — bridges framer-motion and MUI sx so grid children get responsive colSpan/rowSpan
 const MotionBox = motion(Box);

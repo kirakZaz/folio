@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import React from 'react';
 
 import {
   GRID_CLR,
@@ -18,7 +18,7 @@ export const clamp = (value: number, min: number, max: number): number =>
 
 // ─── Hook ─────────────────────────────────────────────────────────────────────
 export const useBlueprintDraw = () => {
-  const drawGrid = useCallback(
+  const drawGrid = React.useCallback(
     (
       ctx: CanvasRenderingContext2D,
       width: number,
@@ -31,41 +31,41 @@ export const useBlueprintDraw = () => {
       const gridSize = 32;
       ctx.save();
 
-      for (let x = 0; x <= width; x += gridSize) {
-        const boost = mouse.active ? Math.max(0, 1 - Math.abs(x - mouse.x) / 110) * 0.5 : 0;
+      for (let columnX = 0; columnX <= width; columnX += gridSize) {
+        const boost = mouse.active ? Math.max(0, 1 - Math.abs(columnX - mouse.x) / 110) * 0.5 : 0;
         ctx.globalAlpha = alpha * (0.5 + boost);
         ctx.strokeStyle = boost > 0.15 ? `rgba(255,47,146,${0.12 + boost * 0.25})` : GRID_CLR;
         ctx.lineWidth = 0.5;
         ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
+        ctx.moveTo(columnX, 0);
+        ctx.lineTo(columnX, height);
         ctx.stroke();
       }
 
-      for (let y = 0; y <= height; y += gridSize) {
-        const boost = mouse.active ? Math.max(0, 1 - Math.abs(y - mouse.y) / 110) * 0.5 : 0;
+      for (let rowY = 0; rowY <= height; rowY += gridSize) {
+        const boost = mouse.active ? Math.max(0, 1 - Math.abs(rowY - mouse.y) / 110) * 0.5 : 0;
         ctx.globalAlpha = alpha * (0.5 + boost);
         ctx.strokeStyle = boost > 0.15 ? `rgba(255,122,24,${0.1 + boost * 0.2})` : GRID_CLR;
         ctx.lineWidth = 0.5;
         ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(width, y);
+        ctx.moveTo(0, rowY);
+        ctx.lineTo(width, rowY);
         ctx.stroke();
       }
 
-      for (let x = 0; x <= width; x += gridSize) {
-        for (let y = 0; y <= height; y += gridSize) {
-          const dist = mouse.active ? Math.hypot(x - mouse.x, y - mouse.y) : 999;
+      for (let columnX = 0; columnX <= width; columnX += gridSize) {
+        for (let rowY = 0; rowY <= height; rowY += gridSize) {
+          const dist = mouse.active ? Math.hypot(columnX - mouse.x, rowY - mouse.y) : 999;
           const boost = mouse.active ? Math.max(0, 1 - dist / 90) * 0.85 : 0;
           ctx.globalAlpha = alpha * (0.2 + boost * 0.7);
           ctx.fillStyle =
             boost > 0.3
-              ? (Math.floor(x / gridSize) + Math.floor(y / gridSize)) % 2 === 0
+              ? (Math.floor(columnX / gridSize) + Math.floor(rowY / gridSize)) % 2 === 0
                 ? `rgba(255,47,146,${boost * 0.7})`
                 : `rgba(255,122,24,${boost * 0.6})`
               : 'rgba(0,0,0,0.2)';
           ctx.beginPath();
-          ctx.arc(x, y, 0.8 + boost * 1.2, 0, Math.PI * 2);
+          ctx.arc(columnX, rowY, 0.8 + boost * 1.2, 0, Math.PI * 2);
           ctx.fill();
         }
       }
@@ -75,7 +75,7 @@ export const useBlueprintDraw = () => {
     [],
   );
 
-  const drawConstructionLines = useCallback(
+  const drawConstructionLines = React.useCallback(
     (ctx: CanvasRenderingContext2D, width: number, height: number, progress: number) => {
       if (progress <= 0) return;
 
@@ -180,7 +180,7 @@ export const useBlueprintDraw = () => {
     [],
   );
 
-  const drawCircles = useCallback(
+  const drawCircles = React.useCallback(
     (ctx: CanvasRenderingContext2D, width: number, height: number, alpha: number) => {
       if (alpha <= 0) return;
 
@@ -210,7 +210,7 @@ export const useBlueprintDraw = () => {
     [],
   );
 
-  const drawText = useCallback(
+  const drawText = React.useCallback(
     (ctx: CanvasRenderingContext2D, width: number, height: number, progress: number) => {
       if (progress <= 0) return;
 
@@ -287,7 +287,7 @@ export const useBlueprintDraw = () => {
     [],
   );
 
-  const drawAccents = useCallback(
+  const drawAccents = React.useCallback(
     (
       ctx: CanvasRenderingContext2D,
       width: number,
@@ -308,15 +308,15 @@ export const useBlueprintDraw = () => {
         [width / 2, height * 0.82, ORANGE],
       ];
 
-      accentPoints.forEach(([x, y, color]) => {
-        const dist = mouse.active ? Math.hypot(x - mouse.x, y - mouse.y) : 999;
+      accentPoints.forEach(([accentX, accentY, accentColor]) => {
+        const dist = mouse.active ? Math.hypot(accentX - mouse.x, accentY - mouse.y) : 999;
         const pulse = mouse.active ? Math.max(0, 1 - dist / 80) * 2 : 0;
         const size = 3 + pulse * 2.5;
 
         ctx.globalAlpha = alpha * (0.45 + pulse * 0.5);
-        ctx.fillStyle = color;
+        ctx.fillStyle = accentColor;
         ctx.save();
-        ctx.translate(x, y);
+        ctx.translate(accentX, accentY);
         ctx.rotate(Math.PI / 4);
         ctx.fillRect(-size / 2, -size / 2, size, size);
         ctx.restore();
@@ -327,7 +327,7 @@ export const useBlueprintDraw = () => {
     [],
   );
 
-  const drawTicks = useCallback(
+  const drawTicks = React.useCallback(
     (ctx: CanvasRenderingContext2D, width: number, height: number, alpha: number) => {
       if (alpha <= 0) return;
 
@@ -337,16 +337,16 @@ export const useBlueprintDraw = () => {
       ctx.lineWidth = 0.5;
 
       const gridSize = 32;
-      for (let x = gridSize; x < width; x += gridSize) {
+      for (let columnX = gridSize; columnX < width; columnX += gridSize) {
         ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, 4);
+        ctx.moveTo(columnX, 0);
+        ctx.lineTo(columnX, 4);
         ctx.stroke();
       }
-      for (let y = gridSize; y < height; y += gridSize) {
+      for (let rowY = gridSize; rowY < height; rowY += gridSize) {
         ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(4, y);
+        ctx.moveTo(0, rowY);
+        ctx.lineTo(4, rowY);
         ctx.stroke();
       }
 
@@ -355,10 +355,10 @@ export const useBlueprintDraw = () => {
     [],
   );
 
-  const drawCursor = useCallback((ctx: CanvasRenderingContext2D, mouse: MouseState) => {
+  const drawCursor = React.useCallback((ctx: CanvasRenderingContext2D, mouse: MouseState) => {
     if (!mouse.active) return;
 
-    const { x, y, velocityX, velocityY } = mouse;
+    const { x: cursorX, y: cursorY, velocityX, velocityY } = mouse;
     const speed = Math.hypot(velocityX, velocityY);
 
     ctx.save();
@@ -368,14 +368,14 @@ export const useBlueprintDraw = () => {
     ctx.lineWidth = 1;
     ctx.globalAlpha = 0.55;
     ctx.beginPath();
-    ctx.arc(x, y, 11 + speed * 0.4, 0, Math.PI * 2);
+    ctx.arc(cursorX, cursorY, 11 + speed * 0.4, 0, Math.PI * 2);
     ctx.stroke();
 
     // Center dot
     ctx.fillStyle = ORANGE;
     ctx.globalAlpha = 0.9;
     ctx.beginPath();
-    ctx.arc(x, y, 2.5, 0, Math.PI * 2);
+    ctx.arc(cursorX, cursorY, 2.5, 0, Math.PI * 2);
     ctx.fill();
 
     // Crosshair lines
@@ -387,14 +387,14 @@ export const useBlueprintDraw = () => {
     ctx.setLineDash([2, 4]);
 
     [
-      [x - len, y, x - gap, y],
-      [x + gap, y, x + len, y],
-      [x, y - len, x, y - gap],
-      [x, y + gap, x, y + len],
-    ].forEach(([x1, y1, x2, y2]) => {
+      [cursorX - len, cursorY, cursorX - gap, cursorY],
+      [cursorX + gap, cursorY, cursorX + len, cursorY],
+      [cursorX, cursorY - len, cursorX, cursorY - gap],
+      [cursorX, cursorY + gap, cursorX, cursorY + len],
+    ].forEach(([lineStartX, lineStartY, lineEndX, lineEndY]) => {
       ctx.beginPath();
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
+      ctx.moveTo(lineStartX, lineStartY);
+      ctx.lineTo(lineEndX, lineEndY);
       ctx.stroke();
     });
 
@@ -404,14 +404,14 @@ export const useBlueprintDraw = () => {
     ctx.setLineDash([1, 8]);
 
     [
-      [0, y, x - len, y],
-      [x + len, y, x, y],
-      [x, 0, x, y - len],
-      [x, y + len, x, y],
-    ].forEach(([x1, y1, x2, y2]) => {
+      [0, cursorY, cursorX - len, cursorY],
+      [cursorX + len, cursorY, cursorX, cursorY],
+      [cursorX, 0, cursorX, cursorY - len],
+      [cursorX, cursorY + len, cursorX, cursorY],
+    ].forEach(([lineStartX, lineStartY, lineEndX, lineEndY]) => {
       ctx.beginPath();
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
+      ctx.moveTo(lineStartX, lineStartY);
+      ctx.lineTo(lineEndX, lineEndY);
       ctx.stroke();
     });
 
@@ -421,20 +421,20 @@ export const useBlueprintDraw = () => {
     ctx.font = '8px "JetBrains Mono", monospace';
     ctx.fillStyle = MAGENTA;
     ctx.globalAlpha = 0.5;
-    ctx.fillText(`${Math.round(x)}, ${Math.round(y)}`, x + 16, y - 8);
+    ctx.fillText(`${Math.round(cursorX)}, ${Math.round(cursorY)}`, cursorX + 16, cursorY - 8);
 
     ctx.restore();
   }, []);
 
-  const drawTrail = useCallback((ctx: CanvasRenderingContext2D, mouse: MouseState) => {
+  const drawTrail = React.useCallback((ctx: CanvasRenderingContext2D, mouse: MouseState) => {
     if (mouse.trails.length < 2) return;
 
     ctx.save();
-    for (let i = 1; i < mouse.trails.length; i++) {
-      const current = mouse.trails[i];
-      const previous = mouse.trails[i - 1];
-      ctx.globalAlpha = (i / mouse.trails.length) * 0.18;
-      ctx.strokeStyle = i % 2 === 0 ? MAGENTA : ORANGE;
+    for (let trailIndex = 1; trailIndex < mouse.trails.length; trailIndex++) {
+      const current = mouse.trails[trailIndex];
+      const previous = mouse.trails[trailIndex - 1];
+      ctx.globalAlpha = (trailIndex / mouse.trails.length) * 0.18;
+      ctx.strokeStyle = trailIndex % 2 === 0 ? MAGENTA : ORANGE;
       ctx.lineWidth = 0.5;
       ctx.beginPath();
       ctx.moveTo(previous.x, previous.y);
@@ -444,7 +444,7 @@ export const useBlueprintDraw = () => {
     ctx.restore();
   }, []);
 
-  const drawPins = useCallback((ctx: CanvasRenderingContext2D, mouse: MouseState) => {
+  const drawPins = React.useCallback((ctx: CanvasRenderingContext2D, mouse: MouseState) => {
     mouse.pins.forEach((pin) => {
       pin.age = (pin.age || 0) + 0.014;
       const alpha = Math.max(0, 1 - pin.age * 0.07);
@@ -478,7 +478,7 @@ export const useBlueprintDraw = () => {
     mouse.pins = mouse.pins.filter((pin) => (pin.age || 0) < 15);
   }, []);
 
-  const drawMeasureLine = useCallback((ctx: CanvasRenderingContext2D, mouse: MouseState) => {
+  const drawMeasureLine = React.useCallback((ctx: CanvasRenderingContext2D, mouse: MouseState) => {
     if (!mouse.measureStart) return;
 
     const end = mouse.measureEnd || (mouse.active ? { x: mouse.x, y: mouse.y } : null);
@@ -525,13 +525,13 @@ export const useBlueprintDraw = () => {
     ctx.restore();
   }, []);
 
-  const drawRevealZones = useCallback((ctx: CanvasRenderingContext2D, zones: RevealZone[]) => {
-    for (let i = zones.length - 1; i >= 0; i--) {
-      const zone = zones[i];
+  const drawRevealZones = React.useCallback((ctx: CanvasRenderingContext2D, zones: RevealZone[]) => {
+    for (let zoneIndex = zones.length - 1; zoneIndex >= 0; zoneIndex--) {
+      const zone = zones[zoneIndex];
       zone.alpha = Math.max(0, zone.alpha - 0.003);
 
       if (zone.alpha <= 0) {
-        zones.splice(i, 1);
+        zones.splice(zoneIndex, 1);
         continue;
       }
 
