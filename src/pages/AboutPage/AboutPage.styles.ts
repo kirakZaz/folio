@@ -1,12 +1,10 @@
-import type { SxProps, Theme } from '@mui/material';
-
-import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
+import { monoUppercase } from '@/theme/commonStyles';
+import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
   root: {
     minHeight: '100vh',
-    // backgroundColor: COLOR_TOKENS.backgroundDefault,
-  } as SxProps<Theme>,
+  },
 
   heroSection: {
     display: 'flex',
@@ -14,11 +12,11 @@ export const styles = {
     gap: { xs: 4, md: 8 },
     alignItems: { xs: 'flex-start', md: 'center' },
     mb: { xs: 6, md: 10 },
-  } as SxProps<Theme>,
+  },
 
   textBlock: {
     flex: 1,
-  } as SxProps<Theme>,
+  },
 
   nameHeading: {
     fontSize: { xs: '2rem', md: '3rem' },
@@ -27,14 +25,14 @@ export const styles = {
     lineHeight: 1.1,
     mb: 2,
     color: COLOR_TOKENS.textPrimary,
-  } as SxProps<Theme>,
+  },
 
   bioText: {
     fontSize: '1rem',
     lineHeight: 1.8,
     color: COLOR_TOKENS.textSecondary,
     maxWidth: 520,
-  } as SxProps<Theme>,
+  },
 
   photoPlaceholder: {
     width: { xs: '100%', md: 320 },
@@ -46,34 +44,32 @@ export const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-  } as SxProps<Theme>,
+  },
 
   photoPlaceholderLabel: {
+    ...monoUppercase,
     color: COLOR_TOKENS.textDisabled,
     fontSize: '0.75rem',
     letterSpacing: '0.12em',
-    textTransform: 'uppercase',
-    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-  } as SxProps<Theme>,
+  },
 
   languagesSection: {
     mb: { xs: 6, md: 10 },
-  } as SxProps<Theme>,
+  },
 
   sectionLabel: {
+    ...monoUppercase,
     fontSize: '0.7rem',
     letterSpacing: '0.15em',
-    textTransform: 'uppercase',
     color: COLOR_TOKENS.textDisabled,
-    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
     mb: 2,
-  } as SxProps<Theme>,
+  },
 
   languagesRow: {
     display: 'flex',
     flexWrap: 'wrap',
     gap: 2,
-  } as SxProps<Theme>,
+  },
 
   languageChip: {
     px: 2.5,
@@ -84,7 +80,7 @@ export const styles = {
     color: COLOR_TOKENS.textSecondary,
     fontWeight: 500,
     backgroundColor: COLOR_TOKENS.backgroundPaper,
-  } as SxProps<Theme>,
+  },
 
   navSection: {
     display: 'flex',
@@ -93,13 +89,12 @@ export const styles = {
     gap: 3,
     pt: 4,
     borderTop: `1px solid ${COLOR_TOKENS.borderSubtle}`,
-  } as SxProps<Theme>,
+  },
 
   brandBox: {
-    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
+    ...monoUppercase,
     fontSize: '0.75rem',
     letterSpacing: '0.15em',
-    textTransform: 'uppercase',
     color: COLOR_TOKENS.textDisabled,
     border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
     px: 1.5,
@@ -107,5 +102,5 @@ export const styles = {
     borderRadius: 1,
     whiteSpace: 'nowrap',
     flexShrink: 0,
-  } as SxProps<Theme>,
+  },
 };

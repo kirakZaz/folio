@@ -1,9 +1,7 @@
-import type { SxProps, Theme } from '@mui/material';
-
 import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
-  container: (orientation: 'vertical' | 'horizontal'): SxProps<Theme> => ({
+  container: (orientation: 'vertical' | 'horizontal') => ({
     display: 'flex',
     flexDirection: orientation === 'vertical' ? 'column' : 'row',
     gap: 1.5,
@@ -14,7 +12,7 @@ export const styles = {
     animation: 'float 3.5s ease-in-out infinite',
   }),
 
-  button: (isActive: boolean): SxProps<Theme> => ({
+  button: (isActive: boolean) => ({
     borderRadius: '100px',
     px: 2.5,
     py: 0.75,

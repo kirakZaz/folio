@@ -1,5 +1,3 @@
-import type { SxProps, Theme } from '@mui/material';
-
 import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
@@ -11,5 +9,5 @@ export const styles = {
       backgroundColor: 'transparent',
       color: COLOR_TOKENS.textPrimary,
     },
-  } as SxProps<Theme>,
+  },
 };

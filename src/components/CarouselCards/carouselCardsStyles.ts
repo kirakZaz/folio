@@ -1,10 +1,9 @@
-import type { SxProps, Theme } from '@mui/material';
-
+import { cardHoverLift } from '@/theme/commonStyles';
 import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
   // Every card wrapper must have flexShrink: 0 so flex row never wraps
-  imageCardContainer: (width: number|string, height: number): SxProps<Theme> => ({
+  imageCardContainer: (width: number | string, height: number) => ({
     width,
     height,
     flexShrink: 0,
@@ -14,7 +13,7 @@ export const styles = {
     position: 'relative',
     cursor: 'pointer',
     backgroundColor: COLOR_TOKENS.backgroundElevated,
-    transition: 'border-color 280ms ease, transform 280ms ease',
+    ...cardHoverLift,
     '&:hover': {
       borderColor: COLOR_TOKENS.borderDefault,
       transform: 'translateY(-2px)',
@@ -28,7 +27,7 @@ export const styles = {
     maxHeight: '100%',
     objectFit: 'contain',
     display: 'block',
-  } as SxProps<Theme>,
+  },
 
   imageCardOverlay: {
     position: 'absolute',
@@ -40,9 +39,9 @@ export const styles = {
     alignItems: 'flex-end',
     p: 1.5,
     '&.visible': { opacity: 1 },
-  } as SxProps<Theme>,
+  },
 
-  projectCard: (width: number, height: number): SxProps<Theme> => ({
+  projectCard: (width: number, height: number) => ({
     width,
     height,
     flexShrink: 0,
@@ -52,7 +51,7 @@ export const styles = {
     overflow: 'hidden',
     position: 'relative',
     cursor: 'pointer',
-    transition: 'border-color 280ms ease, transform 280ms ease',
+    ...cardHoverLift,
     '&:hover': {
       borderColor: COLOR_TOKENS.borderDefault,
       transform: 'translateY(-2px)',
@@ -74,20 +73,19 @@ export const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     p: 2.5,
-  } as SxProps<Theme>,
+  },
 
   imageCardOverlayText: {
     color: COLOR_TOKENS.textPrimary,
-  } as SxProps<Theme>,
+  },
 
-  // WorkProjectCard styles
   workCardBackground: {
     position: 'absolute',
     inset: 0,
     backgroundColor: COLOR_TOKENS.backgroundSubtle,
-  } as SxProps<Theme>,
+  },
 
-  workCardLogoArea: (isHovered: boolean): SxProps<Theme> => ({
+  workCardLogoArea: (isHovered: boolean) => ({
     position: 'absolute',
     left: 0,
     right: 0,
@@ -106,7 +104,7 @@ export const styles = {
     height: '100%',
     objectFit: 'contain',
     transition: 'opacity 320ms ease',
-  } as SxProps<Theme>,
+  },
 
   workCardLogoFallbackText: {
     color: COLOR_TOKENS.borderDefault,
@@ -114,9 +112,9 @@ export const styles = {
     fontSize: '5rem',
     userSelect: 'none',
     lineHeight: 1,
-  } as SxProps<Theme>,
+  },
 
-  workCardContentPanel: (isHovered: boolean): SxProps<Theme> => ({
+  workCardContentPanel: (isHovered: boolean) => ({
     position: 'absolute',
     left: 0,
     right: 0,
@@ -137,13 +135,13 @@ export const styles = {
     fontWeight: 600,
     lineHeight: 1.3,
     mb: 0.25,
-  } as SxProps<Theme>,
+  },
 
   workCardSubtitle: {
     color: COLOR_TOKENS.textSecondary,
-  } as SxProps<Theme>,
+  },
 
-  workCardExtraContent: (isHovered: boolean): SxProps<Theme> => ({
+  workCardExtraContent: (isHovered: boolean) => ({
     opacity: isHovered ? 1 : 0,
     transform: isHovered ? 'translateY(0)' : 'translateY(8px)',
     transition: 'opacity 240ms ease 80ms, transform 240ms ease 80ms',
@@ -157,7 +155,7 @@ export const styles = {
     overflow: 'hidden',
     lineHeight: 1.5,
     mb: 1,
-  } as SxProps<Theme>,
+  },
 
   workCardChip: {
     height: 16,
@@ -165,5 +163,5 @@ export const styles = {
     color: COLOR_TOKENS.textSecondary,
     backgroundColor: COLOR_TOKENS.backgroundElevated,
     border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
-  } as SxProps<Theme>,
+  },
 };

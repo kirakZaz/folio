@@ -1,4 +1,5 @@
-import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
+import { hideScrollbar, monoUppercase, navBarSurface, navIndex, navItemBase, navLabel, navUnderline } from '@/theme/commonStyles';
+import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
   navBarContainer: {
@@ -6,11 +7,7 @@ export const styles = {
     top: 0,
     zIndex: 100,
     width: '100%',
-    backgroundColor: COLOR_TOKENS.backgroundDefault,
-    backdropFilter: 'blur(16px)',
-    WebkitBackdropFilter: 'blur(16px)',
-    borderBottom: `1px solid ${COLOR_TOKENS.borderDefault}`,
-    boxShadow: `0 2px 12px ${COLOR_TOKENS.borderDefault}`,
+    ...navBarSurface,
   },
 
   navBarInner: {
@@ -23,10 +20,9 @@ export const styles = {
   },
 
   logoButton: {
-    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
+    ...monoUppercase,
     fontSize: '11px',
     fontWeight: 400,
-    letterSpacing: '0.08em',
     color: COLOR_TOKENS.textPrimary,
     p: 0,
     pb: '16px',
@@ -45,79 +41,23 @@ export const styles = {
     alignItems: 'center',
     gap: { xs: 4, md: 6 },
     overflowX: 'auto',
-    scrollbarWidth: 'none',
-    '&::-webkit-scrollbar': { display: 'none' },
+    ...hideScrollbar,
   },
 
   navItem: (isActive: boolean) => ({
-    display: 'flex',
-    alignItems: 'center',
-    gap: '6px',
-    background: 'none',
-    border: 'none',
-    cursor: 'pointer',
-    padding: 0,
-    flexShrink: 0,
-    position: 'relative',
-    pb: '16px',
-
-    '&::after': {
-      content: '""',
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      height: '1.5px',
-      backgroundColor: COLOR_TOKENS.accentPrimary,
-      transform: isActive ? 'scaleX(1)' : 'scaleX(0)',
-      opacity: isActive ? 1 : 0,
-      transition: 'transform 250ms ease, opacity 250ms ease',
-      transformOrigin: 'left',
-    },
-
-    '&:hover .app-nav-index': {
-      opacity: 1,
-    },
-    '&:hover .app-nav-label': {
-      color: COLOR_TOKENS.textPrimary,
-    },
+    ...navItemBase,
+    ...navUnderline(isActive),
+    '&:hover .app-nav-index': { opacity: 1 },
+    '&:hover .app-nav-label': { color: COLOR_TOKENS.textPrimary },
   }),
 
   navItemDisabled: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '6px',
-    background: 'none',
-    border: 'none',
-    padding: 0,
-    flexShrink: 0,
-    position: 'relative',
-    pb: '16px',
+    ...navItemBase,
     cursor: 'default',
     opacity: 0.35,
     pointerEvents: 'none',
   },
 
-  navIndex: (isActive: boolean) => ({
-    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-    fontSize: '14px',
-    letterSpacing: '0.12em',
-    color: COLOR_TOKENS.accentPrimary,
-    opacity: isActive ? 1 : 0.35,
-    transition: 'opacity 250ms ease',
-    lineHeight: 1,
-    userSelect: 'none',
-  }),
-
-  navLabel: (isActive: boolean) => ({
-    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-    fontSize: '10px',
-    letterSpacing: '0.12em',
-    fontWeight: isActive ? 500 : 400,
-    color: isActive ? COLOR_TOKENS.textPrimary : COLOR_TOKENS.textSecondary,
-    transition: 'color 250ms ease, font-weight 250ms ease',
-    lineHeight: 1,
-    whiteSpace: 'nowrap',
-    userSelect: 'none',
-  }),
+  navIndex,
+  navLabel,
 };

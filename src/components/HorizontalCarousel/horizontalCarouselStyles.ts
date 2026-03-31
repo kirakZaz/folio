@@ -1,4 +1,4 @@
-// horizontalCarouselStyles.ts
+import { hideScrollbar } from '@/theme/commonStyles';
 import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
@@ -33,9 +33,7 @@ export const styles = {
     gap: 2,
     overflowX: 'auto',
     overflowY: 'visible',
-    scrollbarWidth: 'none',
-    msOverflowStyle: 'none',
-    '&::-webkit-scrollbar': { display: 'none' },
+    ...hideScrollbar,
     WebkitOverflowScrolling: 'touch',
     scrollBehavior: 'smooth',
     userSelect: 'none',
@@ -50,7 +48,7 @@ export const styles = {
     height: 40,
     minWidth: 0,
     borderRadius: '50%',
-    bgcolor: 'background.paper',
+    backgroundColor: COLOR_TOKENS.backgroundPaper,
     boxShadow: 2,
     display: 'flex',
     alignItems: 'center',
@@ -58,7 +56,7 @@ export const styles = {
     cursor: 'pointer',
     border: 'none',
     p: 0,
-    '&:hover': { bgcolor: 'background.default' },
+    '&:hover': { backgroundColor: COLOR_TOKENS.backgroundDefault },
     '&:disabled': { opacity: 0, pointerEvents: 'none' },
     transition: 'opacity 0.2s ease',
   },
@@ -83,7 +81,7 @@ export const styles = {
     width: isActive ? 20 : 8,
     height: 8,
     borderRadius: '4px',
-    bgcolor: isActive ? 'primary.main' : 'primary.contrastText',
+    backgroundColor: isActive ? COLOR_TOKENS.accentPrimary : COLOR_TOKENS.borderDefault,
     transition: 'all 0.3s ease',
     cursor: 'pointer',
     border: 'none',
