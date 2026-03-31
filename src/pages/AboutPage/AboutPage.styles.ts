@@ -1,106 +1,150 @@
 import { monoUppercase } from '@/theme/commonStyles';
-import { COLOR_TOKENS } from '@/theme/themeTokens';
+import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
-  root: {
-    minHeight: '100vh',
+  layout: {
+    display: 'grid',
+    gridTemplateColumns: { xs: '1fr', md: '280px 1fr' },
+    gap: { xs: 6, md: 0 },
+    alignItems: 'start',
   },
 
-  heroSection: {
+  // ── Sidebar ───────────────────────────────────────────────────────────────
+
+  sidebar: {
+    pr: { xs: 0, md: 4 },
+    position: { md: 'sticky' },
+    top: { md: 40 },
+    height: { md: 'calc(100vh - 80px)' },
     display: 'flex',
-    flexDirection: { xs: 'column-reverse', md: 'row' },
-    gap: { xs: 4, md: 8 },
-    alignItems: { xs: 'flex-start', md: 'center' },
-    mb: { xs: 6, md: 10 },
+    flexDirection: 'column',
+    overflow: 'hidden',
   },
 
-  textBlock: {
+  sidebarTop: {
     flex: 1,
-  },
-
-  nameHeading: {
-    fontSize: { xs: '2rem', md: '3rem' },
-    fontWeight: 700,
-    letterSpacing: '-0.03em',
-    lineHeight: 1.1,
-    mb: 2,
-    color: COLOR_TOKENS.textPrimary,
-  },
-
-  bioText: {
-    fontSize: '1rem',
-    lineHeight: 1.8,
-    color: COLOR_TOKENS.textSecondary,
-    maxWidth: 520,
+    overflowY: 'auto',
+    scrollbarWidth: 'none',
+    '&::-webkit-scrollbar': { display: 'none' },
   },
 
   photoPlaceholder: {
-    width: { xs: '100%', md: 320 },
-    height: { xs: 280, md: 420 },
-    flexShrink: 0,
-    borderRadius: 3,
+    width: '100%',
+    aspectRatio: '4 / 5',
+    borderRadius: '12px',
     backgroundColor: COLOR_TOKENS.backgroundElevated,
     border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    mb: 3,
   },
 
-  photoPlaceholderLabel: {
+  photoLabel: {
     ...monoUppercase,
     color: COLOR_TOKENS.textDisabled,
-    fontSize: '0.75rem',
-    letterSpacing: '0.12em',
+    fontSize: '0.65rem',
   },
 
-  languagesSection: {
-    mb: { xs: 6, md: 10 },
+  name: {
+    fontSize: '1.1rem',
+    fontWeight: 700,
+    color: COLOR_TOKENS.textPrimary,
+    letterSpacing: '-0.02em',
+    lineHeight: 1.2,
+    mb: 0.5,
   },
 
-  sectionLabel: {
+  roleLabel: {
+    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
+    fontSize: '0.62rem',
+    color: COLOR_TOKENS.accentPrimary,
+    letterSpacing: '0.06em',
+    mb: 0.5,
+  },
+
+  location: {
+    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
+    fontSize: '0.6rem',
+    color: COLOR_TOKENS.textDisabled,
+    letterSpacing: '0.04em',
+  },
+
+  // ── Contacts (pinned bottom of sidebar) ──────────────────────────────────
+
+  contactsBlock: {
+    pt: 3,
+    borderTop: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+    mt: 'auto',
+    flexShrink: 0,
+  },
+
+  contactsCaption: {
     ...monoUppercase,
-    fontSize: '0.7rem',
-    letterSpacing: '0.15em',
+    fontSize: '0.58rem',
+    letterSpacing: '0.12em',
+    color: COLOR_TOKENS.textDisabled,
+    mb: 1.5,
+    display: 'block',
+  },
+
+  contactLink: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 0.75,
+    mb: 0.75,
+    textDecoration: 'none',
+    '&:hover .link-label': {
+      color: COLOR_TOKENS.accentPrimary,
+    },
+  },
+
+  contactDot: {
+    width: '4px',
+    height: '4px',
+    borderRadius: '50%',
+    backgroundColor: COLOR_TOKENS.accentPrimary,
+    flexShrink: 0,
+  },
+
+  contactLabel: {
+    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
+    fontSize: '0.62rem',
+    color: COLOR_TOKENS.textSecondary,
+    letterSpacing: '0.04em',
+    transition: 'color 200ms ease',
+  },
+
+  // ── Main content ──────────────────────────────────────────────────────────
+
+  content: {
+    borderLeft: { md: `1px solid ${COLOR_TOKENS.borderSubtle}` },
+    pl: { xs: 0, md: 4 },
+  },
+
+  contentCaption: {
+    ...monoUppercase,
+    fontSize: '0.6rem',
+    letterSpacing: '0.12em',
     color: COLOR_TOKENS.textDisabled,
     mb: 2,
+    display: 'block',
   },
 
-  languagesRow: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: 2,
-  },
-
-  languageChip: {
-    px: 2.5,
-    py: 1,
-    border: `1px solid ${COLOR_TOKENS.borderDefault}`,
-    borderRadius: 2,
-    fontSize: '0.85rem',
-    color: COLOR_TOKENS.textSecondary,
-    fontWeight: 500,
+  bioPlaceholder: {
+    minHeight: 200,
+    borderRadius: '12px',
+    border: `1px dashed ${COLOR_TOKENS.borderDefault}`,
     backgroundColor: COLOR_TOKENS.backgroundPaper,
-  },
-
-  navSection: {
     display: 'flex',
-    flexDirection: { xs: 'column', sm: 'row' },
-    alignItems: { xs: 'flex-start', sm: 'center' },
-    gap: 3,
-    pt: 4,
-    borderTop: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+    alignItems: 'center',
+    justifyContent: 'center',
+    mb: 4,
   },
 
-  brandBox: {
+  bioPlaceholderText: {
     ...monoUppercase,
-    fontSize: '0.75rem',
-    letterSpacing: '0.15em',
+    fontSize: '0.62rem',
     color: COLOR_TOKENS.textDisabled,
-    border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
-    px: 1.5,
-    py: 1,
-    borderRadius: 1,
-    whiteSpace: 'nowrap',
-    flexShrink: 0,
   },
 };

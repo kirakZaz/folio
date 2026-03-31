@@ -24,6 +24,7 @@ const Navigation = ({ orientation = 'vertical' }: NavigationProps) => {
     <Box sx={styles.container(orientation)}>
       {NAV_ITEMS.map((navItem) => {
         const isActive = location.pathname === navItem.route;
+
         return (
           <ButtonBase
             key={navItem.route}

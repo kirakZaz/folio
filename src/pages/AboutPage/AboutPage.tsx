@@ -1,57 +1,71 @@
+import { motion } from 'framer-motion';
+
 import { Box, Typography } from '@mui/material';
 
-import ContentWrapper from '@/components/ContentWrapper';
-import Navigation from '@/components/Navigation/Navigation';
+import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
 
+import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
+
+import PortfolioLayout from '@/components/PortfolioLayout';
+
+import { CONTACT_LINKS } from './AboutPage.constants';
 import { styles } from './AboutPage.styles';
 
-const LANGUAGES = [
-  { code: 'EN', label: 'English' },
-  { code: 'UK', label: 'Ukrainian' },
-  { code: 'RU', label: 'Russian' },
-  { code: 'HE', label: 'Hebrew' },
-] as const;
-
-const LOREM_BIO = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.`;
-
 const AboutPage = () => (
-  <Box sx={styles.root}>
-    <ContentWrapper>
-      {/* Hero: text left, photo right */}
-      <Box sx={styles.heroSection}>
-        <Box sx={styles.photoPlaceholder}>
-          <Typography sx={styles.photoPlaceholderLabel}>Photo</Typography>
-        </Box>
+  <PortfolioLayout>
+    <motion.div
+      variants={FADE_UP_VARIANTS}
+      initial="hidden"
+      animate="visible"
+      transition={DEFAULT_TRANSITION}
+    >
+      <SectionHeader index="03" label="About" />
 
-        <Box sx={styles.textBlock}>
-          <Typography component="h1" sx={styles.nameHeading}>
-            Kira Zakirov
-          </Typography>
-
-          <Typography sx={styles.bioText}>{LOREM_BIO}</Typography>
-        </Box>
-      </Box>
-
-      {/* Languages */}
-      <Box sx={styles.languagesSection}>
-        <Typography sx={styles.sectionLabel}>Languages</Typography>
-        <Box sx={styles.languagesRow}>
-          {LANGUAGES.map((lang) => (
-            <Box key={lang.code} sx={styles.languageChip}>
-              {lang.code} · {lang.label}
+      <Box sx={styles.layout}>
+        {/* ── Sidebar ─────────────────────────────────────────────────── */}
+        <Box sx={styles.sidebar}>
+          <Box sx={styles.sidebarTop}>
+            <Box sx={styles.photoPlaceholder}>
+              <Typography sx={styles.photoLabel}>Photo</Typography>
             </Box>
-          ))}
+
+            <Typography sx={styles.name}>Kira Zakirova</Typography>
+            <Typography sx={styles.roleLabel}>Senior Frontend Developer</Typography>
+            <Typography sx={styles.location}>Melbourne, VIC · Australia</Typography>
+          </Box>
+
+          {/* Contacts pinned to bottom */}
+          <Box sx={styles.contactsBlock}>
+            <Typography sx={styles.contactsCaption}>Contact</Typography>
+            {CONTACT_LINKS.map((link) => (
+              <Box
+                key={link.label}
+                component="a"
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={styles.contactLink}
+              >
+                <Box sx={styles.contactDot} />
+                <Typography className="link-label" sx={styles.contactLabel}>
+                  {link.label}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+
+        {/* ── Main content ─────────────────────────────────────────────── */}
+        <Box sx={styles.content}>
+          <Typography sx={styles.contentCaption}>About me</Typography>
+
+          <Box sx={styles.bioPlaceholder}>
+            <Typography sx={styles.bioPlaceholderText}>Text coming soon</Typography>
+          </Box>
         </Box>
       </Box>
-
-      {/* Horizontal nav */}
-      <Box sx={styles.navSection}>
-        <Typography sx={styles.brandBox}>Zakirov</Typography>
-
-        <Navigation orientation="horizontal" />
-      </Box>
-    </ContentWrapper>
-  </Box>
+    </motion.div>
+  </PortfolioLayout>
 );
 
 export default AboutPage;

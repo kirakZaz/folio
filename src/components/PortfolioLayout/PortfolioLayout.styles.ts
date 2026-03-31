@@ -16,11 +16,10 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    justifyContent: 'center',
+    justifyContent: 'start',
     gap: 5,
     px: 3,
-    py: 4,
-    borderRight: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+    pt: 15,
   },
 
   brandBox: {
