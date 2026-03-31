@@ -12,7 +12,7 @@ export const COLOR_TOKENS = {
 
   textPrimary: '#141414',
   textSecondary: '#4E5451',
-  textDisabled: '#9BA19C',
+  textDisabled: '#808780',
   textInverse: '#FFFFFF',
   // Brand accents — bold and expressive
   accentPrimary: '#EA5221', // burnt orange

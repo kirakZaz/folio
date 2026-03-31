@@ -8,8 +8,7 @@ interface SectionHeaderProps {
   count?: number | string;
 }
 
-
-const SectionHeader = ({ index, label, count }: SectionHeaderProps) => (
+const SectionHeader = ({ label, count }: SectionHeaderProps) => (
   <Box
     sx={{
       display: 'flex',
@@ -23,18 +22,6 @@ const SectionHeader = ({ index, label, count }: SectionHeaderProps) => (
         fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
         fontSize: { xs: '12px', md: '16px' },
         color: COLOR_TOKENS.accentPrimary,
-        letterSpacing: '0.14em',
-        flexShrink: 0,
-      }}
-    >
-      {index}
-    </Typography>
-
-    <Typography
-      sx={{
-        fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-        fontSize: { xs: '12px', md: '16px' },
-        color: COLOR_TOKENS.textDisabled,
         letterSpacing: '0.12em',
         textTransform: 'uppercase',
         flexShrink: 0,

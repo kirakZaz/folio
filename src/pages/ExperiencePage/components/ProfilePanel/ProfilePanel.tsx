@@ -4,6 +4,7 @@ import {
   BIO_TEXT,
   COURSES,
   EDUCATION_ITEMS,
+  PROGRAMS,
   SKILL_CATEGORIES,
 } from '@/shared/constants/profile.constants';
 
@@ -21,6 +22,23 @@ const ProfilePanel = () => (
     <Box>
       <Typography sx={styles.caption}>Tech Stack</Typography>
       {SKILL_CATEGORIES.map((category) => (
+        <Box key={category.label} sx={styles.skillRow}>
+          <Typography sx={styles.skillLabel}>{category.label}</Typography>
+          <Box sx={styles.skillChipsWrap}>
+            {category.skills.map((skill) => (
+              <Box key={skill} sx={styles.skillChip}>
+                {skill}
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      ))}
+    </Box>
+
+    {/* Programs */}
+    <Box>
+      <Typography sx={styles.caption}>Programs</Typography>
+      {PROGRAMS.map((category) => (
         <Box key={category.label} sx={styles.skillRow}>
           <Typography sx={styles.skillLabel}>{category.label}</Typography>
           <Box sx={styles.skillChipsWrap}>

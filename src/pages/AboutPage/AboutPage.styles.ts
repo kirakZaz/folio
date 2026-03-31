@@ -29,7 +29,7 @@ export const styles = {
   },
 
   photoPlaceholder: {
-    width: '100%',
+    width: { xs: 160, md: '100%' },
     aspectRatio: '4 / 5',
     borderRadius: '12px',
     backgroundColor: COLOR_TOKENS.backgroundElevated,
@@ -75,7 +75,7 @@ export const styles = {
   contactsBlock: {
     pt: 3,
     borderTop: `1px solid ${COLOR_TOKENS.borderSubtle}`,
-    mt: 'auto',
+    mt: { xs: 4, md: 'auto' },
     flexShrink: 0,
   },
 

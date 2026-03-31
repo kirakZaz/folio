@@ -6,11 +6,13 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '2px',
-    px: 2,
-    py: 1.5,
+    // Mobile: compact pill chip. Desktop: full row.
+    px: { xs: 1.5, md: 2 },
+    py: { xs: 0.75, md: 1.5 },
     borderRadius: '8px',
     cursor: 'pointer',
-    border: `1px solid ${isActive ? COLOR_TOKENS.accentPrimary + '30' : 'transparent'}`,
+    flexShrink: 0, // prevent shrinking in horizontal scroll
+    border: `1px solid ${isActive ? COLOR_TOKENS.accentPrimary + '40' : COLOR_TOKENS.borderSubtle}`,
     backgroundColor: isActive ? COLOR_TOKENS.accentPrimary + '08' : 'transparent',
     transition: 'background-color 200ms ease, border-color 200ms ease',
     '&:hover': {
@@ -18,7 +20,9 @@ export const styles = {
     },
   }),
 
+  // Left accent bar — only meaningful in vertical (desktop) mode
   accentBar: (isActive: boolean) => ({
+    display: { xs: 'none', md: 'block' },
     position: 'absolute',
     left: 0,
     top: '20%',
@@ -31,14 +35,17 @@ export const styles = {
   }),
 
   company: (isActive: boolean) => ({
-    fontSize: '0.82rem',
+    fontSize: { xs: '0.72rem', md: '0.82rem' },
     fontWeight: isActive ? 600 : 400,
     color: isActive ? COLOR_TOKENS.textPrimary : COLOR_TOKENS.textSecondary,
     lineHeight: 1.3,
     transition: 'color 200ms ease, font-weight 200ms ease',
+    whiteSpace: 'nowrap',
   }),
 
+  // Hide role and period on mobile — no space in horizontal chip mode
   role: {
+    display: { xs: 'none', md: 'block' },
     fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
     fontSize: '0.6rem',
     color: COLOR_TOKENS.textDisabled,
@@ -46,6 +53,8 @@ export const styles = {
   },
 
   period: {
+    display: { xs: 'none', md: 'flex' },
+    alignItems: 'center',
     fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
     fontSize: '0.58rem',
     color: COLOR_TOKENS.textDisabled,

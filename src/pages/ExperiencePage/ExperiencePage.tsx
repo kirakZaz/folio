@@ -44,10 +44,12 @@ const ExperiencePage = () => {
         />
 
         <Box sx={styles.layout}>
-          {/* Left: job list */}
+          {/* Left: job list (vertical on desktop, horizontal scroll on mobile) */}
           <Box sx={styles.sidebar}>
-            <Typography sx={styles.sidebarLabel}>Companies</Typography>
-            <Typography sx={styles.totalYears}>9+ years</Typography>
+            <Box sx={styles.sidebarMeta}>
+              <Typography sx={styles.sidebarLabel}>Companies</Typography>
+              <Typography sx={styles.totalYears}>9+ years</Typography>
+            </Box>
 
             {WORK_PROJECTS_DATA.map((project, index) => (
               <JobListItem

@@ -31,9 +31,9 @@ const JobListItem = React.memo(function JobListItem({ project, isActive, onClick
       <Typography sx={styles.company(isActive)}>{project.company}</Typography>
       <Typography sx={styles.role}>{project.role}</Typography>
 
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0 }}>
+      <Box sx={styles.period}>
         {project.yearEnd === 'present' && <Box component="span" sx={styles.presentDot} />}
-        <Typography sx={styles.period}>{yearRange}</Typography>
+        <Typography component="span" sx={{ fontSize: 'inherit', color: 'inherit', fontFamily: 'inherit', letterSpacing: 'inherit' }}>{yearRange}</Typography>
       </Box>
     </Box>
   );

@@ -8,7 +8,6 @@ import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animati
 
 import PortfolioLayout from '@/components/PortfolioLayout';
 
-import { CONTACT_LINKS } from './AboutPage.constants';
 import { styles } from './AboutPage.styles';
 
 const AboutPage = () => (
@@ -22,7 +21,7 @@ const AboutPage = () => (
       <SectionHeader index="03" label="About" />
 
       <Box sx={styles.layout}>
-        {/* ── Sidebar ─────────────────────────────────────────────────── */}
+        {/* Sidebar */}
         <Box sx={styles.sidebar}>
           <Box sx={styles.sidebarTop}>
             <Box sx={styles.photoPlaceholder}>
@@ -33,29 +32,9 @@ const AboutPage = () => (
             <Typography sx={styles.roleLabel}>Senior Frontend Developer</Typography>
             <Typography sx={styles.location}>Melbourne, VIC · Australia</Typography>
           </Box>
-
-          {/* Contacts pinned to bottom */}
-          <Box sx={styles.contactsBlock}>
-            <Typography sx={styles.contactsCaption}>Contact</Typography>
-            {CONTACT_LINKS.map((link) => (
-              <Box
-                key={link.label}
-                component="a"
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={styles.contactLink}
-              >
-                <Box sx={styles.contactDot} />
-                <Typography className="link-label" sx={styles.contactLabel}>
-                  {link.label}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
         </Box>
 
-        {/* ── Main content ─────────────────────────────────────────────── */}
+        {/* Main content */}
         <Box sx={styles.content}>
           <Typography sx={styles.contentCaption}>About me</Typography>
 
