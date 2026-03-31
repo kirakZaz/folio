@@ -1,11 +1,13 @@
 import { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
-import { CircularProgress, Box } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 
 import { ROUTES } from '@/shared/constants/routes.constants';
 
 import ScrollToTop from '@/components/ScrollToTop/ScrollToTop.tsx';
+
+import { styles } from './AppRouter.styles';
 
 const TeaserPage = lazy(() => import('@/pages/TeaserPage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
@@ -17,8 +19,8 @@ const UniversityProjectPage = lazy(() => import('@/pages/UniversityProjectPage')
 const WorkProjectPage = lazy(() => import('@/pages/WorkProjectPage/WorkProjectPage'));
 
 const PageLoader = () => (
-  <Box sx={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    <CircularProgress size={28} sx={{ color: 'text.secondary' }} />
+  <Box sx={styles.pageLoaderWrapper}>
+    <CircularProgress size={28} sx={styles.pageLoaderSpinner} />
   </Box>
 );
 
@@ -33,7 +35,7 @@ const AppRouter = () => (
       <Route path={ROUTES.JOURNEY} element={<JourneyPage />} />
       <Route path={ROUTES.ART} element={<ArtPage />} />
       <Route path={ROUTES.ASSESSMENT_1} element={<Assessment1Page />} />
-      <Route path="/university/:projectId" element={<UniversityProjectPage />} />
+      <Route path={ROUTES.UNIVERSITY_PROJECT} element={<UniversityProjectPage />} />
       <Route path={ROUTES.WORK_PROJECT} element={<WorkProjectPage />} />
     </Routes>
   </Suspense>

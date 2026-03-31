@@ -1,19 +1,18 @@
-
 import { useParams } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 
 import DownloadIcon from '@mui/icons-material/Download';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import { Box, Typography, Stack, Button, Chip, ImageList, ImageListItem } from '@mui/material';
+import { Box, Button, Chip, ImageList, ImageListItem, Stack, Typography } from '@mui/material';
 
-import { COLOR_TOKENS } from '@/theme/themeTokens';
-
-import { FADE_UP_VARIANTS, DEFAULT_TRANSITION } from '@/shared/constants/animation.constants';
+import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
 import { UNIVERSITY_PROJECTS_DATA } from '@/shared/constants/university-projects.constants';
 
 import BackButton from '@/components/BackButton/BackButton.tsx';
 import Layout from '@/components/Layout';
+
+import { styles } from './UniversityProjectPage.styles';
 
 const isPdfFile = (filePath: string): boolean => filePath.toLowerCase().endsWith('.pdf');
 
@@ -25,7 +24,6 @@ const UniversityProjectPage = () => {
     return (
       <Layout showNavBar>
         <BackButton />
-
         <Typography variant="h3">Project not found.</Typography>
       </Layout>
     );
@@ -45,50 +43,19 @@ const UniversityProjectPage = () => {
         variants={FADE_UP_VARIANTS}
         transition={DEFAULT_TRANSITION}
       >
-        {/* ── Back button ─────────────────────────────────────── */}
         <BackButton />
 
-        {/* ── Header ──────────────────────────────────────────── */}
-        <Stack spacing={2} sx={{ mb: 6 }}>
+        <Stack spacing={2} sx={styles.header}>
           <Stack direction="row" spacing={1} flexWrap="wrap">
-            <Chip
-              label={`Year ${project.studyYear}`}
-              size="small"
-              sx={{
-                color: COLOR_TOKENS.accentPrimary,
-                backgroundColor: 'rgba(95,173,122,0.1)',
-                border: '1px solid rgba(95,173,122,0.2)',
-              }}
-            />
-            <Chip
-              label={`Trimester ${project.trimester}`}
-              size="small"
-              sx={{
-                color: COLOR_TOKENS.textSecondary,
-                backgroundColor: COLOR_TOKENS.backgroundSubtle,
-              }}
-            />
+            <Chip label={`Year ${project.studyYear}`} size="small" sx={styles.chipPeriod} />
+            <Chip label={`Trimester ${project.trimester}`} size="small" sx={styles.chipTrimester} />
             <Chip
               label={project.subjectType === 'core' ? 'Core' : 'Elective'}
               size="small"
-              sx={{
-                color:
-                  project.subjectType === 'elective'
-                    ? COLOR_TOKENS.accentPrimary
-                    : COLOR_TOKENS.textSecondary,
-                backgroundColor: COLOR_TOKENS.backgroundSubtle,
-                border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
-              }}
+              sx={styles.chipSubjectType(project.subjectType === 'elective')}
             />
             {scoreDisplay && (
-              <Chip
-                label={`Score: ${scoreDisplay}`}
-                size="small"
-                sx={{
-                  color: COLOR_TOKENS.statusCompleted,
-                  backgroundColor: 'rgba(217,162,115,0.12)',
-                }}
-              />
+              <Chip label={`Score: ${scoreDisplay}`} size="small" sx={styles.chipScore} />
             )}
           </Stack>
 
@@ -96,20 +63,16 @@ const UniversityProjectPage = () => {
             {project.subject}
           </Typography>
 
-          <Typography
-            variant="caption"
-            sx={{ color: COLOR_TOKENS.textDisabled, fontFamily: 'monospace' }}
-          >
+          <Typography variant="caption" sx={styles.captionMeta}>
             {project.year} · Trimester {project.trimester}
           </Typography>
 
           {project.description && (
-            <Typography variant="body1" sx={{ color: COLOR_TOKENS.textSecondary, maxWidth: 680 }}>
+            <Typography variant="body1" sx={styles.description}>
               {project.description}
             </Typography>
           )}
 
-          {/* Action buttons */}
           <Stack direction="row" spacing={1.5} flexWrap="wrap">
             {project.link && (
               <Button
@@ -120,14 +83,7 @@ const UniversityProjectPage = () => {
                 endIcon={<OpenInNewIcon sx={{ fontSize: 14 }} />}
                 size="small"
                 variant="outlined"
-                sx={{
-                  color: COLOR_TOKENS.textSecondary,
-                  borderColor: COLOR_TOKENS.borderDefault,
-                  '&:hover': {
-                    borderColor: COLOR_TOKENS.textPrimary,
-                    color: COLOR_TOKENS.textPrimary,
-                  },
-                }}
+                sx={styles.outlinedButton}
               >
                 View project
               </Button>
@@ -140,14 +96,7 @@ const UniversityProjectPage = () => {
                 startIcon={<DownloadIcon sx={{ fontSize: 14 }} />}
                 size="small"
                 variant="outlined"
-                sx={{
-                  color: COLOR_TOKENS.textSecondary,
-                  borderColor: COLOR_TOKENS.borderDefault,
-                  '&:hover': {
-                    borderColor: COLOR_TOKENS.textPrimary,
-                    color: COLOR_TOKENS.textPrimary,
-                  },
-                }}
+                sx={styles.outlinedButton}
               >
                 Download presentation
               </Button>
@@ -155,18 +104,9 @@ const UniversityProjectPage = () => {
           </Stack>
         </Stack>
 
-        {/* ── Presentation viewer (PDF inline / PPTX via Google Docs) ── */}
         {(hasPdfPresentation || hasPptxPresentation) && (
-          <Box sx={{ mb: 6 }}>
-            <Typography
-              variant="caption"
-              sx={{
-                color: COLOR_TOKENS.textSecondary,
-                letterSpacing: '0.08em',
-                mb: 2,
-                display: 'block',
-              }}
-            >
+          <Box sx={styles.presentationWrapper}>
+            <Typography variant="caption" sx={styles.presentationLabel}>
               PRESENTATION
             </Typography>
             <Box
@@ -179,18 +119,11 @@ const UniversityProjectPage = () => {
                     )}`
               }
               title={`${project.subject} presentation`}
-              sx={{
-                width: '100%',
-                height: '95vh',
-                border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
-                borderRadius: 2,
-                display: 'block',
-              }}
+              sx={styles.iframe}
             />
           </Box>
         )}
 
-        {/* ── Images / gallery ────────────────────────────────── */}
         {project.images.length > 0 ? (
           <ImageList variant="masonry" cols={3} gap={16}>
             {project.images.map((imageUrl, imageIndex) => (
@@ -200,7 +133,7 @@ const UniversityProjectPage = () => {
                   src={imageUrl}
                   alt={`${project.subject} image ${imageIndex + 1}`}
                   loading="lazy"
-                  sx={{ borderRadius: 2, width: '100%', display: 'block' }}
+                  sx={styles.galleryImg}
                 />
               </ImageListItem>
             ))}
@@ -208,18 +141,8 @@ const UniversityProjectPage = () => {
         ) : (
           !hasPdfPresentation &&
           !hasPptxPresentation && (
-            <Box
-              sx={{
-                minHeight: 240,
-                border: `1px dashed ${COLOR_TOKENS.borderDefault}`,
-                borderRadius: 2,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: COLOR_TOKENS.backgroundPaper,
-              }}
-            >
-              <Typography variant="body2" sx={{ color: COLOR_TOKENS.textDisabled }}>
+            <Box sx={styles.emptyState}>
+              <Typography variant="body2" sx={styles.emptyStateText}>
                 Project images will appear here.
               </Typography>
             </Box>

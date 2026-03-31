@@ -22,6 +22,12 @@ export const COLOR_TOKENS = {
   statusAvailable: '#22C55E',
   statusComingSoon: '#9BA19C',
   statusCompleted: '#EA5221',
+  // Semantic tints — chip backgrounds and icon wrappers
+  accentDanger: '#F44336',
+  accentDangerSubtle: 'rgba(244, 67, 54, 0.1)',
+  chipPeriodBg: 'rgba(95, 173, 122, 0.1)',
+  chipPeriodBorder: 'rgba(95, 173, 122, 0.2)',
+  chipScoreBg: 'rgba(217, 162, 115, 0.12)',
   // Borders
   borderSubtle: 'rgba(0,0,0,0.06)',
   borderDefault: 'rgba(0,0,0,0.14)',

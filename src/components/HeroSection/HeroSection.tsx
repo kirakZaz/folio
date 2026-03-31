@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 
-import { Box, Typography, Avatar, Stack, Divider } from '@mui/material';
+import { Avatar, Box, Divider, Stack, Typography } from '@mui/material';
 
 import {
+  DEFAULT_TRANSITION,
   FADE_UP_VARIANTS,
   STAGGER_CONTAINER_VARIANTS,
-  DEFAULT_TRANSITION,
 } from '@/shared/constants/animation.constants';
 
 import { styles } from './heroSectionStyles';
@@ -25,19 +25,16 @@ const HeroSection = ({ photoSrc }: HeroSectionProps) => {
             direction={{ xs: 'column', sm: 'row' }}
             spacing={4}
             alignItems={{ xs: 'flex-start', sm: 'center' }}
-            sx={{ mb: 4 }}
+            sx={styles.stackHeader}
           >
             <Avatar src={photoSrc} alt="Kira" sx={styles.avatar}>
               K
             </Avatar>
             <Box>
-              <Typography
-                variant="caption"
-                sx={{ color: 'text.secondary', display: 'block', mb: 1 }}
-              >
+              <Typography variant="caption" sx={styles.captionText}>
                 Portfolio · CDM303A
               </Typography>
-              <Typography variant="h1" component="h1" color="primary.main">
+              <Typography variant="h1" component="h1" sx={styles.heading}>
                 Hi, I&apos;m Kira.
               </Typography>
             </Box>
@@ -45,7 +42,7 @@ const HeroSection = ({ photoSrc }: HeroSectionProps) => {
         </motion.div>
 
         <motion.div variants={FADE_UP_VARIANTS} transition={{ ...DEFAULT_TRANSITION, delay: 0.15 }}>
-          <Stack spacing={2} sx={{ mb: 4 }}>
+          <Stack spacing={2} sx={styles.stackBody}>
             <Typography variant="h3" component="p" sx={styles.subheading}>
               Software Developer &amp; Game Design Student.
             </Typography>

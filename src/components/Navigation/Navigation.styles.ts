@@ -18,7 +18,7 @@ export const styles = {
     py: 0.75,
     border: `1px solid ${isActive ? COLOR_TOKENS.accentPrimary : COLOR_TOKENS.borderDefault}`,
     backgroundColor: isActive ? COLOR_TOKENS.accentPrimary : 'transparent',
-    color: isActive ? '#FFFFFF' : COLOR_TOKENS.textSecondary,
+    color: isActive ? COLOR_TOKENS.textInverse : COLOR_TOKENS.textSecondary,
     fontSize: '0.82rem',
     fontWeight: isActive ? 600 : 500,
     transition: 'all 200ms ease',

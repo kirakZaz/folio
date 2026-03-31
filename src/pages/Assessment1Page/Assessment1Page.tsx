@@ -2,23 +2,23 @@ import { motion } from 'framer-motion';
 
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import { Box, Typography, Stack, Button, Grid, Card, CardContent, Link } from '@mui/material';
+import { Box, Button, Card, CardContent, Grid, Link, Stack, Typography } from '@mui/material';
 
 import { useAppSelector } from '@/app/hooks';
-import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 import screenshotImg from '@/shared/assets/A1_screenshot.png';
 import assessmentPdf from '@/shared/assets/CDM303A_Kira_Zakirov_assessmet1.pdf';
-import { FADE_UP_VARIANTS, DEFAULT_TRANSITION } from '@/shared/constants/animation.constants';
+import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
 
 import BackButton from '@/components/BackButton/BackButton.tsx';
 import Layout from '@/components/Layout';
 
 import { selectAssessmentById } from '@/features/assessments/assessmentsSlice';
 
+import { styles } from './Assessment1Page.styles';
+
 const Assessment1Page = () => {
   const assessment = useAppSelector(selectAssessmentById(1));
-
 
   return (
     <Layout maxWidth="lg" showNavBar>
@@ -28,25 +28,18 @@ const Assessment1Page = () => {
         variants={FADE_UP_VARIANTS}
         transition={DEFAULT_TRANSITION}
       >
-        <Box sx={{ mb: 6 }}>
+        <Box sx={styles.header}>
           <BackButton />
 
           <Stack spacing={1.5}>
-            <Typography
-              variant="caption"
-              sx={{ color: COLOR_TOKENS.textSecondary, fontWeight: 500, letterSpacing: '0.1em' }}
-            >
+            <Typography variant="caption" sx={styles.metaCaption}>
               {assessment?.dueModule} · {assessment?.weight}
             </Typography>
-            <Typography variant="h2" component="h1" sx={{ mb: 1 }}>
-              Research & Personal Brand Positioning
+            <Typography variant="h2" component="h1" sx={styles.titleMargin}>
+              {assessment?.subtitle}
             </Typography>
-            <Typography
-              variant="body1"
-              sx={{ color: COLOR_TOKENS.textSecondary, maxWidth: '800px' }}
-            >
-              This phase focuses on defining visual identity through extensive research of the
-              creative industry, competitor analysis, and personal value proposition.
+            <Typography variant="body1" sx={styles.pageDescription}>
+              {assessment?.description}
             </Typography>
           </Stack>
         </Box>
@@ -57,27 +50,13 @@ const Assessment1Page = () => {
               component="img"
               src={screenshotImg}
               alt="Personal Visual Exploration"
-              sx={{
-                width: '100%',
-                height: 'auto',
-                borderRadius: 2,
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                border: `1px solid ${COLOR_TOKENS.borderDefault}`,
-                display: 'block',
-              }}
+              sx={styles.screenshotImg}
             />
           </Grid>
 
           <Grid item xs={12}>
-            <Card
-              variant="outlined"
-              sx={{
-                background: COLOR_TOKENS.backgroundPaper,
-                borderRadius: 2,
-                borderStyle: 'dashed',
-              }}
-            >
-              <CardContent sx={{ p: 4 }}>
+            <Card variant="outlined" sx={styles.pdfCard}>
+              <CardContent sx={styles.pdfCardContent}>
                 <Stack
                   direction={{ xs: 'column', sm: 'row' }}
                   justifyContent="space-between"
@@ -85,27 +64,20 @@ const Assessment1Page = () => {
                   spacing={3}
                 >
                   <Stack direction="row" spacing={2} alignItems="center">
-                    <Box
-                      sx={{
-                        p: 1.5,
-                        bgcolor: 'rgba(244, 67, 54, 0.1)',
-                        borderRadius: 1,
-                        display: 'flex',
-                      }}
-                    >
-                      <PictureAsPdfIcon sx={{ color: '#f44336', fontSize: 32 }} />
+                    <Box sx={styles.pdfIconWrapper}>
+                      <PictureAsPdfIcon sx={styles.pdfIcon} />
                     </Box>
                     <Box>
-                      <Typography variant="h6" sx={{ lineHeight: 1.2 }}>
+                      <Typography variant="h6" sx={styles.titleMargin}>
                         Full Assessment Document
                       </Typography>
-                      <Typography variant="body2" color="textSecondary">
+                      <Typography variant="body2" sx={styles.pdfFilename}>
                         CDM303A_Kira_Zakirov_assessment1.pdf
                       </Typography>
                     </Box>
                   </Stack>
 
-                  <Stack direction="row" spacing={2} sx={{ width: { xs: '100%', sm: 'auto' } }}>
+                  <Stack direction="row" spacing={2} sx={styles.actionButtons}>
                     <Button
                       variant="outlined"
                       component={Link}
@@ -113,10 +85,7 @@ const Assessment1Page = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       fullWidth
-                      sx={{
-                        borderColor: COLOR_TOKENS.borderDefault,
-                        color: COLOR_TOKENS.textPrimary,
-                      }}
+                      sx={styles.viewButton}
                     >
                       View Online
                     </Button>
@@ -127,10 +96,7 @@ const Assessment1Page = () => {
                       href={assessmentPdf}
                       download
                       fullWidth
-                      sx={{
-                        bgcolor: COLOR_TOKENS.textPrimary,
-                        color: COLOR_TOKENS.backgroundPaper,
-                      }}
+                      sx={styles.downloadButton}
                     >
                       Download
                     </Button>

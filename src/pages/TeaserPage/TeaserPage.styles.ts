@@ -24,7 +24,7 @@ export const styles = {
     px: 4,
     py: 1.5,
     backgroundColor: COLOR_TOKENS.accentPrimary,
-    color: '#FFFFFF',
+    color: COLOR_TOKENS.textInverse,
     fontSize: '1rem',
     fontWeight: 600,
     border: 'none',
