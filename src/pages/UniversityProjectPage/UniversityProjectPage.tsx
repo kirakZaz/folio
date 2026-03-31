@@ -1,16 +1,19 @@
-import { Box, Typography, Stack, Button, Chip, ImageList, ImageListItem } from '@mui/material';
 
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import DownloadIcon from '@mui/icons-material/Download';
 import { useParams } from 'react-router-dom';
+
 import { motion } from 'framer-motion';
 
-import Layout from '@/components/Layout';
-import { UNIVERSITY_PROJECTS_DATA } from '@/shared/constants/university-projects.constants';
-import { FADE_UP_VARIANTS, DEFAULT_TRANSITION } from '@/shared/constants/animation.constants';
+import DownloadIcon from '@mui/icons-material/Download';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { Box, Typography, Stack, Button, Chip, ImageList, ImageListItem } from '@mui/material';
+
 import { COLOR_TOKENS } from '@/theme/themeTokens';
 
+import { FADE_UP_VARIANTS, DEFAULT_TRANSITION } from '@/shared/constants/animation.constants';
+import { UNIVERSITY_PROJECTS_DATA } from '@/shared/constants/university-projects.constants';
+
 import BackButton from '@/components/BackButton/BackButton.tsx';
+import Layout from '@/components/Layout';
 
 const isPdfFile = (filePath: string): boolean => filePath.toLowerCase().endsWith('.pdf');
 

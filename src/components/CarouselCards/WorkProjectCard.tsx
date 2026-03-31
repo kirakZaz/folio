@@ -1,8 +1,10 @@
 import React from 'react';
-import { Box, Typography, Stack, Chip } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
+import { Box, Typography, Stack, Chip } from '@mui/material';
+
 import { buildWorkProjectRoute } from '@/shared/constants/routes.constants';
+
 import { styles } from './carouselCardsStyles';
 import type { WorkProjectCardProps } from './WorkProjectCard.types';
 

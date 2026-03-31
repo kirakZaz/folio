@@ -1,10 +1,13 @@
-import { Box, Typography, Stack, Chip } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
+import { Box, Typography, Stack, Chip } from '@mui/material';
+
 import { COLOR_TOKENS } from '@/theme/themeTokens';
+
 import type { ProjectStatus, SubjectType } from '@/shared/constants/university-projects.constants';
-import type { UniversityProjectCardProps } from './UniversityProjectCard.types';
+
 import { styles } from './carouselCardsStyles';
+import type { UniversityProjectCardProps } from './UniversityProjectCard.types';
 
 const PROJECT_CARD_WIDTH = 260;
 const PROJECT_CARD_HEIGHT = 190;

@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { ASSESSMENTS_DATA } from '@/shared/constants/assessments.constants';
 import type { Assessment } from '@/shared/types/assessment.types';
+
 import type { RootState } from '@/app/store';
 
 interface AssessmentsState {

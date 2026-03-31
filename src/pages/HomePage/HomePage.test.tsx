@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
+
 import { renderWithProviders, screen } from '@/test/testUtils';
+
 import HomePage from './HomePage';
 
 describe('HomePage', () => {

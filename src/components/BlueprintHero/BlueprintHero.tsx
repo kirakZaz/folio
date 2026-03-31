@@ -1,11 +1,12 @@
 import React from 'react';
+
 import { Box, Button } from '@mui/material';
 
 import { INTRO_DURATION } from './blueprintHero.constants';
 import type { MouseState, RevealZone } from './blueprintHero.types';
+import { styles } from './blueprintStyles';
 import { useBlueprintDraw, easeOut, clamp } from './useBlueprintDraw';
 import { useBlueprintMouse } from './useBlueprintMouse';
-import { styles } from './blueprintStyles';
 
 const CORNER_POSITIONS = ['tl', 'tr', 'bl', 'br'] as const;
 type CornerPosition = (typeof CORNER_POSITIONS)[number];

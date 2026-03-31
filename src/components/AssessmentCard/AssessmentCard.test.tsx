@@ -1,7 +1,10 @@
 import { describe, it, expect, vi } from 'vitest';
+
 import { renderWithProviders, screen, fireEvent } from '@/test/testUtils';
-import AssessmentCard from './AssessmentCard';
+
 import type { Assessment } from '@/features/assessments/types';
+
+import AssessmentCard from './AssessmentCard';
 
 // vi.mock is hoisted to the top of the file by Vitest, so mockNavigate must
 // be created with vi.hoisted to be available inside the factory function.

@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material/styles';
+
 import { COLOR_TOKENS, TYPOGRAPHY_TOKENS, SHAPE_TOKENS } from './themeTokens';
 
 export const appTheme = createTheme({
@@ -6,19 +7,19 @@ export const appTheme = createTheme({
     mode: 'dark',
     background: {
       default: COLOR_TOKENS.backgroundDefault,
-      paper:   COLOR_TOKENS.backgroundPaper,
+      paper: COLOR_TOKENS.backgroundPaper,
     },
     primary: {
-      main:         COLOR_TOKENS.accentPrimary,
+      main: COLOR_TOKENS.accentPrimary,
       contrastText: COLOR_TOKENS.textInverse,
     },
     secondary: {
       main: COLOR_TOKENS.accentSecondary,
     },
     text: {
-      primary:   COLOR_TOKENS.textPrimary,
+      primary: COLOR_TOKENS.textPrimary,
       secondary: COLOR_TOKENS.textSecondary,
-      disabled:  COLOR_TOKENS.textDisabled,
+      disabled: COLOR_TOKENS.textDisabled,
     },
     divider: COLOR_TOKENS.borderSubtle,
     success: { main: COLOR_TOKENS.statusAvailable },
@@ -26,20 +27,20 @@ export const appTheme = createTheme({
   typography: {
     fontFamily: TYPOGRAPHY_TOKENS.fontFamilyPrimary,
     h1: {
-      fontWeight:    700,
-      fontSize:      'clamp(2.5rem, 6vw, 5rem)',
+      fontWeight: 700,
+      fontSize: 'clamp(2.5rem, 6vw, 5rem)',
       letterSpacing: '-0.03em',
-      lineHeight:    1.1,
+      lineHeight: 1.1,
     },
     h2: {
-      fontWeight:    600,
-      fontSize:      'clamp(1.75rem, 4vw, 2.5rem)',
+      fontWeight: 600,
+      fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
       letterSpacing: '-0.02em',
-      lineHeight:    1.2,
+      lineHeight: 1.2,
     },
     h3: {
-      fontWeight:    600,
-      fontSize:      'clamp(1.25rem, 2.5vw, 1.75rem)',
+      fontWeight: 600,
+      fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)',
       letterSpacing: '-0.01em',
     },
     h4: { fontWeight: 500, letterSpacing: '-0.01em' },
@@ -48,7 +49,7 @@ export const appTheme = createTheme({
     body1: { lineHeight: 1.75, fontSize: '1rem' },
     body2: { lineHeight: 1.65, fontSize: '0.875rem' },
     caption: {
-      fontSize:      '0.75rem',
+      fontSize: '0.75rem',
       letterSpacing: '0.06em',
       textTransform: 'uppercase',
     },
@@ -59,8 +60,8 @@ export const appTheme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        '*':   { boxSizing: 'border-box' },
-        body:  { scrollBehavior: 'smooth', WebkitFontSmoothing: 'antialiased' },
+        '*': { boxSizing: 'border-box' },
+        body: { scrollBehavior: 'smooth', WebkitFontSmoothing: 'antialiased' },
         '::selection': { backgroundColor: COLOR_TOKENS.borderStrong },
       },
     },
@@ -72,9 +73,9 @@ export const appTheme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          backgroundImage:  'none',
-          border:           `1px solid ${COLOR_TOKENS.borderSubtle}`,
-          backgroundColor:  COLOR_TOKENS.backgroundPaper,
+          backgroundImage: 'none',
+          border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+          backgroundColor: COLOR_TOKENS.backgroundPaper,
         },
       },
     },

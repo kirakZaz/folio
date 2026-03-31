@@ -1,10 +1,11 @@
 import React from 'react';
-import { Box, Typography, IconButton } from '@mui/material';
+
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Box, Typography, IconButton } from '@mui/material';
 
-import type { HorizontalCarouselProps } from './types';
 import { styles } from './horizontalCarouselStyles';
+import type { HorizontalCarouselProps } from './types';
 
 const SCROLL_STEP_PX = 620;
 const DRAG_THRESHOLD_PX = 5;

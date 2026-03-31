@@ -1,4 +1,5 @@
 import { ROUTES } from '@/shared';
+
 import type { Assessment } from '@/shared/types/assessment.types';
 
 export const ASSESSMENTS_DATA: Assessment[] = [

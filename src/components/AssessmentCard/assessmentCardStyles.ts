@@ -1,4 +1,5 @@
 import { COLOR_TOKENS } from '@/theme/themeTokens';
+
 import type { StatusChipConfigMap } from './types';
 
 export const STATUS_CHIP_CONFIG: StatusChipConfigMap = {

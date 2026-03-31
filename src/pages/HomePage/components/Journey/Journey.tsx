@@ -1,5 +1,7 @@
-import { Box } from '@mui/material';
 import { motion } from 'framer-motion';
+
+import { Box } from '@mui/material';
+
 import {
   DEFAULT_TRANSITION,
   FADE_UP_VARIANTS,
@@ -7,8 +9,9 @@ import {
   VIEWPORT_CONFIG,
 } from '@/shared';
 
-import AssessmentCard from '@/components/AssessmentCard';
 import type { Assessment } from '@/shared/types/assessment.types';
+
+import AssessmentCard from '@/components/AssessmentCard';
 
 interface JourneyProps {
   assessments: Assessment[];

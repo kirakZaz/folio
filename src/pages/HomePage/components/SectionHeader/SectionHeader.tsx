@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material';
+
 import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens.ts';
 
 interface SectionHeaderProps {

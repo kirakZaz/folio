@@ -1,8 +1,9 @@
 import React from 'react';
+
 import { Box, Typography } from '@mui/material';
 
-import type { DrawingCardProps } from './DrawingCard.types';
 import { styles } from './carouselCardsStyles';
+import type { DrawingCardProps } from './DrawingCard.types';
 
 const DRAWING_CARD_HEIGHT = 650;
 

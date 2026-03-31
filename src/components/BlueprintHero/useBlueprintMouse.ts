@@ -1,4 +1,5 @@
 import React from 'react';
+
 import type { UseBlueprintMouseOptions } from './blueprintHero.types';
 
 const TRAIL_MAX_LENGTH = 22;

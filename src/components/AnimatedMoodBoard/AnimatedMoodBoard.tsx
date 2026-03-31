@@ -1,5 +1,8 @@
-import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
+
+import { Box, Typography } from '@mui/material';
+
+import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 import {
   STAGGER_CONTAINER_VARIANTS,
@@ -7,9 +10,9 @@ import {
   DEFAULT_TRANSITION,
   VIEWPORT_CONFIG,
 } from '@/shared/constants/animation.constants';
-import { COLOR_TOKENS } from '@/theme/themeTokens';
-import type { AnimatedMoodBoardProps, MoodBoardItem } from './types';
+
 import { styles } from './animatedMoodBoardStyles';
+import type { AnimatedMoodBoardProps, MoodBoardItem } from './types';
 
 const ASPECT_RATIOS: Array<MoodBoardItem['aspectRatio']> = [
   'landscape',

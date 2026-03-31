@@ -1,18 +1,22 @@
 import React from 'react';
-import { Box, Typography, Stack, Chip } from '@mui/material';
-import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
+import { motion } from 'framer-motion';
+
+import { Box, Typography, Stack, Chip } from '@mui/material';
+
+import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
 import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
-import { WORK_PROJECTS_DATA } from '@/shared/constants/work-projects.constants';
-import { buildWorkProjectRoute } from '@/shared/constants/routes.constants';
+
 import {
   FADE_UP_VARIANTS,
   STAGGER_CONTAINER_VARIANTS,
   DEFAULT_TRANSITION,
   VIEWPORT_CONFIG,
 } from '@/shared/constants/animation.constants';
-import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
+import { buildWorkProjectRoute } from '@/shared/constants/routes.constants';
+import { WORK_PROJECTS_DATA } from '@/shared/constants/work-projects.constants';
+
 import type { BentoCardProps } from './WebProjectsSection.types';
 
 // ─── Bento layout config ──────────────────────────────────────────────────────

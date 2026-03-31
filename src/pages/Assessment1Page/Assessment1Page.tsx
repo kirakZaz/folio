@@ -1,17 +1,20 @@
-import { Box, Typography, Stack, Button, Grid, Card, CardContent, Link } from '@mui/material';
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { motion } from 'framer-motion';
 
-import Layout from '@/components/Layout';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import { Box, Typography, Stack, Button, Grid, Card, CardContent, Link } from '@mui/material';
+
 import { useAppSelector } from '@/app/hooks';
-import { selectAssessmentById } from '@/features/assessments/assessmentsSlice';
-import { FADE_UP_VARIANTS, DEFAULT_TRANSITION } from '@/shared/constants/animation.constants';
 import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 import screenshotImg from '@/shared/assets/A1_screenshot.png';
 import assessmentPdf from '@/shared/assets/CDM303A_Kira_Zakirov_assessmet1.pdf';
+import { FADE_UP_VARIANTS, DEFAULT_TRANSITION } from '@/shared/constants/animation.constants';
+
 import BackButton from '@/components/BackButton/BackButton.tsx';
+import Layout from '@/components/Layout';
+
+import { selectAssessmentById } from '@/features/assessments/assessmentsSlice';
 
 const Assessment1Page = () => {
   const assessment = useAppSelector(selectAssessmentById(1));

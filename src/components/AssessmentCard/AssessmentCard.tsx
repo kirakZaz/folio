@@ -1,10 +1,12 @@
-import { Card, CardContent, CardActionArea, Typography, Chip, Stack } from '@mui/material';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useNavigate } from 'react-router-dom';
 
-import type { AssessmentCardProps } from './types';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import { Card, CardContent, CardActionArea, Typography, Chip, Stack } from '@mui/material';
+
+
 import { STATUS_CHIP_CONFIG, styles } from './assessmentCardStyles';
+import type { AssessmentCardProps } from './types';
 
 const AssessmentCard = ({ assessment }: AssessmentCardProps) => {
   const navigate = useNavigate();

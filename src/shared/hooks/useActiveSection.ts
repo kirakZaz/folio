@@ -21,7 +21,7 @@ export const useActiveSection = ({ sectionIds }: UseActiveSectionOptions): strin
       sectionIds.map((sectionId) => [sectionId, 0]),
     );
 
-    const observerCallback: IntersectionObserverCallback = (entries) => {
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         intersectionRatioMap.set(entry.target.id, entry.intersectionRatio);
       });

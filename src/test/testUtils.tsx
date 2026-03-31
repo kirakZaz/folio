@@ -1,13 +1,19 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import type { RenderOptions } from '@testing-library/react';
 import { Provider as ReduxProvider } from 'react-redux';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ThemeProvider, CssBaseline } from '@mui/material';
 import { MemoryRouter } from 'react-router-dom';
+
 import { configureStore } from '@reduxjs/toolkit';
-import assessmentsReducer from '@/features/assessments/assessmentsSlice';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { render } from '@testing-library/react';
+
+import { ThemeProvider, CssBaseline } from '@mui/material';
+
+
 import { appTheme } from '@/theme/theme';
+
+import assessmentsReducer from '@/features/assessments/assessmentsSlice';
+
+import type { RenderOptions } from '@testing-library/react';
 
 const buildTestStore = () =>
   configureStore({

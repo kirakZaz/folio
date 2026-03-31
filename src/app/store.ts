@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+
 import assessmentsReducer from '@/features/assessments/assessmentsSlice';
 
 export const store = configureStore({

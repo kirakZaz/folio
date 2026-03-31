@@ -1,7 +1,8 @@
-import { Button } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Button } from '@mui/material';
 
 import { useNavigateBack } from '@/shared/hooks/useNavigateBack';
+
 import { styles } from './BackButton.styles';
 import type { BackButtonProps } from './BackButton.types';
 

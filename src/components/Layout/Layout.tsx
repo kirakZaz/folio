@@ -1,8 +1,9 @@
 import { Box, Container } from '@mui/material';
 
 import AppNavBar from '@/components/AppNavBar';
-import type { LayoutProps } from './types';
+
 import { styles } from './layoutStyles';
+import type { LayoutProps } from './types';
 
 const Layout = ({ children, maxWidth = 'xl', showNavBar = false, fullWidthSlot }: LayoutProps) => {
   return (

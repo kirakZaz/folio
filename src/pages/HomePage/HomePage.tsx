@@ -1,29 +1,31 @@
-import { Box,  } from '@mui/material';
 import { motion } from 'framer-motion';
 
-import Layout from '@/components/Layout';
-import BlueprintHero from '@/components/BlueprintHero/BlueprintHero.tsx';
-import WebProjectsSection from '@/components/WebProjectsSection/WebProjectsSection.tsx';
-import HomePageNavBar from '@/components/HomePageNavBar/HomePageNavBar.tsx';
-import HorizontalCarousel from '@/components/HorizontalCarousel';
-import { BagCard, DrawingCard, UniversityProjectCard } from '@/components/CarouselCards';
+import { Box } from '@mui/material';
 
+import { useAppSelector } from '@/app/hooks.ts';
+import Journey from '@/pages/HomePage/components/Journey/Journey.tsx';
+import SectionDivider from '@/pages/HomePage/components/SectionDivider/SectionDivider.tsx';
+import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
 
+import {
+  DEFAULT_TRANSITION,
+  FADE_UP_VARIANTS,
+  SECTION_SCROLL_OFFSET_PX,
+  VIEWPORT_CONFIG,
+} from '@/shared/constants/animation.constants';
 import { BAGS_DATA } from '@/shared/constants/bags.constants';
 import { DRAWINGS_DATA } from '@/shared/constants/drawings.constants';
 import { UNIVERSITY_PROJECTS_DATA } from '@/shared/constants/university-projects.constants';
-import {
-  FADE_UP_VARIANTS,
-  DEFAULT_TRANSITION,
-  VIEWPORT_CONFIG,
-} from '@/shared/constants/animation.constants';
-import Journey from '@/pages/HomePage/components/Journey/Journey.tsx';
-import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
-import SectionDivider from '@/pages/HomePage/components/SectionDivider/SectionDivider.tsx';
-import { SECTION_SCROLL_OFFSET_PX } from '@/shared/constants/animation.constants';
-import { useAppSelector } from '@/app/hooks.ts';
-import { selectAllAssessments } from '@/features/assessments/assessmentsSlice.ts';
 import { useScrollToSectionOnMount } from '@/shared/hooks/useScrollToSectionOnMount.ts';
+
+import BlueprintHero from '@/components/BlueprintHero/BlueprintHero.tsx';
+import { BagCard, DrawingCard, UniversityProjectCard } from '@/components/CarouselCards';
+import HomePageNavBar from '@/components/HomePageNavBar/HomePageNavBar.tsx';
+import HorizontalCarousel from '@/components/HorizontalCarousel';
+import Layout from '@/components/Layout';
+import WebProjectsSection from '@/components/WebProjectsSection/WebProjectsSection.tsx';
+
+import { selectAllAssessments } from '@/features/assessments/assessmentsSlice.ts';
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 const HomePage = () => {

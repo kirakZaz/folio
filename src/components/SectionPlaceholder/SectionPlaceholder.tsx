@@ -1,6 +1,9 @@
-import { Box, Typography, Stack, Chip } from '@mui/material';
-import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
 import { motion } from 'framer-motion';
+
+import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
+import { Box, Typography, Stack, Chip } from '@mui/material';
+
+import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 import {
   FADE_UP_VARIANTS,
@@ -8,9 +11,9 @@ import {
   VIEWPORT_CONFIG,
 } from '@/shared/constants/animation.constants';
 import { formatSectionNumber } from '@/shared/utils/format.utils';
-import { COLOR_TOKENS } from '@/theme/themeTokens';
-import type { SectionPlaceholderProps } from './types';
+
 import { styles } from './sectionPlaceholderStyles';
+import type { SectionPlaceholderProps } from './types';
 
 const SectionPlaceholder = ({
   sectionNumber,

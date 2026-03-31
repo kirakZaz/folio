@@ -1,8 +1,10 @@
 import { describe, it, expect } from 'vitest';
+
 import assessmentsReducer, {
   selectAllAssessments,
   selectAssessmentById,
 } from './assessmentsSlice';
+
 import type { RootState } from '@/app/store';
 
 const buildMockRootState = (): RootState => ({

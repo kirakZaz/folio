@@ -1,9 +1,11 @@
-import { Box, Typography } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
 
+import { Box, Typography } from '@mui/material';
+
 import { NAV_ASSESSMENT_LINKS, ROUTES } from '@/shared';
-import type { AppNavBarProps } from './types';
+
 import { styles } from './appNavBarStyles';
+import type { AppNavBarProps } from './types';
 
 const AppNavBar = ({ links = NAV_ASSESSMENT_LINKS }: AppNavBarProps) => {
   const navigate = useNavigate();

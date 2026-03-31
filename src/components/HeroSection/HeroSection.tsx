@@ -1,13 +1,15 @@
-import { Box, Typography, Avatar, Stack, Divider } from '@mui/material';
 import { motion } from 'framer-motion';
+
+import { Box, Typography, Avatar, Stack, Divider } from '@mui/material';
 
 import {
   FADE_UP_VARIANTS,
   STAGGER_CONTAINER_VARIANTS,
   DEFAULT_TRANSITION,
 } from '@/shared/constants/animation.constants';
-import type { HeroSectionProps } from './types';
+
 import { styles } from './heroSectionStyles';
+import type { HeroSectionProps } from './types';
 
 const HeroSection = ({ photoSrc }: HeroSectionProps) => {
   return (

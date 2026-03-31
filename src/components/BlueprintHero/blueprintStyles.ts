@@ -1,9 +1,9 @@
 import type { SxProps, Theme } from '@mui/material';
+
 import { COLOR_TOKENS } from '@/theme/themeTokens';
+
 import { MAGENTA } from './blueprintHero.constants';
 
-// Using a typed helper so every style object is inferred correctly
-// without repeating `as SxProps<Theme>` on every entry.
 const sx = (style: SxProps<Theme>): SxProps<Theme> => style;
 
 export const styles = {
@@ -16,7 +16,7 @@ export const styles = {
     cursor: 'none',
     userSelect: 'none',
     border: '0.5px solid rgba(0,0,0,0.08)',
-    mb: { xs: 6, md: 8 },
+
   }),
 
   replayButton: (isVisible: boolean) =>

@@ -15,17 +15,17 @@ export const COLOR_TOKENS = {
   textDisabled: '#9BA19C',
   textInverse: '#FFFFFF',
   // Brand accents — bold and expressive
-  accentPrimary: '#FF2F92', // electric magenta
-  accentSecondary: '#FF7A18', // acid orange
-  accentMuted: '#FF9BC5', // soft neon tint
+  accentPrimary: '#EA5221', // burnt orange
+  accentSecondary: '#FF2F92', // electric magenta
+  accentMuted: '#F4A080', // soft tint
   // Status colors
   statusAvailable: '#22C55E',
   statusComingSoon: '#9BA19C',
-  statusCompleted: '#FF7A18',
+  statusCompleted: '#EA5221',
   // Borders
   borderSubtle: 'rgba(0,0,0,0.06)',
   borderDefault: 'rgba(0,0,0,0.14)',
-  borderStrong: 'rgba(255,47,146,0.35)',
+  borderStrong: 'rgba(234,82,33,0.35)',
 } as const;
 
 export const TYPOGRAPHY_TOKENS = {

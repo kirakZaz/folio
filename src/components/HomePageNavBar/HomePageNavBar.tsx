@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 
 import { useActiveSection } from '@/shared/hooks/useActiveSection';
+
 import { styles } from './homePageNavBarStyles';
 import type { HomeSectionLink } from './types.ts';
 

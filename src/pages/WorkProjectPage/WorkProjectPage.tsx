@@ -1,3 +1,12 @@
+import { useNavigate, useParams } from 'react-router-dom';
+
+import { motion } from 'framer-motion';
+
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import {
   Box,
   Typography,
@@ -9,20 +18,15 @@ import {
   ImageListItem,
   Divider,
 } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
-import { useNavigate, useParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
-import Layout from '@/components/Layout';
-import { WORK_PROJECTS_DATA } from '@/shared/constants/work-projects.constants';
-import { FADE_UP_VARIANTS, DEFAULT_TRANSITION } from '@/shared/constants/animation.constants';
 import { COLOR_TOKENS } from '@/theme/themeTokens';
+
+import { FADE_UP_VARIANTS, DEFAULT_TRANSITION } from '@/shared/constants/animation.constants';
 import { ROUTES } from '@/shared/constants/routes.constants';
+import { WORK_PROJECTS_DATA } from '@/shared/constants/work-projects.constants';
+
 import BackButton from '@/components/BackButton/BackButton.tsx';
+import Layout from '@/components/Layout';
 
 const WorkProjectPage = () => {
   const navigate = useNavigate();
