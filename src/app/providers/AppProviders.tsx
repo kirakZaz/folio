@@ -11,16 +11,15 @@ import { appTheme } from '@/theme/theme';
 import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 const gridBackground = `
-  linear-gradient(${COLOR_TOKENS.borderSubtle} 1px, transparent 1px),
-  linear-gradient(90deg, ${COLOR_TOKENS.borderSubtle} 1px, transparent 1px),
-  radial-gradient(circle, rgba(0,0,0,0.12) 1px, transparent 1px)
+  linear-gradient(${COLOR_TOKENS.borderSubtle} 0.5px, transparent 0.5px),
+  linear-gradient(90deg, ${COLOR_TOKENS.borderSubtle} 0.5px, transparent 0.5px),
+  radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px)
 `;
 
 const globalStyles = (
   <GlobalStyles
     styles={{
       body: {
-        // backgroundColor: COLOR_TOKENS.backgroundDefault,
         backgroundImage: gridBackground,
         backgroundSize: '32px 32px',
         backgroundAttachment: 'fixed',

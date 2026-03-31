@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { motion } from 'framer-motion';
 
 import SectionDivider from '@/pages/HomePage/components/SectionDivider/SectionDivider.tsx';
@@ -13,8 +11,6 @@ import { BagCard, DrawingCard } from '@/components/CarouselCards';
 import HorizontalCarousel from '@/components/HorizontalCarousel';
 import PortfolioLayout from '@/components/PortfolioLayout';
 
-
-
 const ArtPage = () => (
   <PortfolioLayout>
     <motion.div
@@ -24,6 +20,7 @@ const ArtPage = () => (
       transition={DEFAULT_TRANSITION}
     >
       <SectionHeader index="01" label="Handmade Bags" count={BAGS_DATA.length} />
+
       <HorizontalCarousel sectionLabel="Handmade Bags" hideLabel>
         {BAGS_DATA.map((bagItem, index) => (
           <BagCard key={bagItem.id} item={bagItem} index={index} />
@@ -33,7 +30,9 @@ const ArtPage = () => (
       {DRAWINGS_DATA.length > 0 && (
         <>
           <SectionDivider />
+
           <SectionHeader index="02" label="Drawings" count={DRAWINGS_DATA.length} />
+
           <HorizontalCarousel sectionLabel="Drawings" hideLabel>
             {DRAWINGS_DATA.map((drawingItem, index) => (
               <DrawingCard key={drawingItem.id} item={drawingItem} index={index} />
