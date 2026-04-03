@@ -52,9 +52,22 @@ const WorkProjectPage = () => {
             )}
           </Stack>
 
-          <Typography variant="h2" component="h1">
-            {project.title}
-          </Typography>
+          <Stack direction="row" spacing={1.5} alignItems="center">
+            <Typography variant="h2" component="h1">
+              {project.title}
+            </Typography>
+            {project.link && (
+              <Box
+                component="a"
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={styles.titleLink}
+              >
+                <OpenInNewIcon sx={{ fontSize: 20 }} />
+              </Box>
+            )}
+          </Stack>
 
           <Stack direction="row" spacing={0.5} alignItems="center">
             <Typography variant="body1" sx={styles.metaText}>{project.role}</Typography>

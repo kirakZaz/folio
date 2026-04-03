@@ -9,6 +9,11 @@ export const styles = {
     pl: { xs: 0, md: 4 },
     pr: 3,
   },
+  outlinedButton: {
+    p: 1,
+    height: 24,
+    mt: 4,
+  },
 
   scrollArea: {
     flex: 1,
@@ -48,7 +53,6 @@ export const styles = {
     width: '100%',
     height: '100%',
     objectFit: 'contain',
-    p: '8px',
   },
 
   logoFallbackText: {

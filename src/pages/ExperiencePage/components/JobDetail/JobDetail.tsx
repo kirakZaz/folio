@@ -3,10 +3,12 @@ import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { Box, Chip, Stack, Typography } from '@mui/material';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { Box, Button, Chip, Stack, Typography } from '@mui/material';
 
 import type { WorkProject } from '@/shared/constants/work-projects.constants';
 
@@ -69,10 +71,44 @@ const JobDetail = React.memo(function JobDetail({
                   )}
                 </Box>
 
-                <Chip label={periodLabel} size="small" sx={styles.periodChip} />
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'end', gap: 3 }}>
+                  <Chip label={periodLabel} size="small" sx={styles.periodChip} />
+
+                  <Stack direction="row" spacing={1.5} flexWrap="wrap">
+                    {project.link && (
+                      <Button
+                        component="a"
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        endIcon={<OpenInNewIcon sx={{ fontSize: 14 }} />}
+                        size="small"
+                        variant="outlined"
+                        sx={styles.outlinedButton}
+                      >
+                        Live site
+                      </Button>
+                    )}
+                    {project.githubUrl && (
+                      <Button
+                        component="a"
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        startIcon={<GitHubIcon sx={{ fontSize: 16 }} />}
+                        size="small"
+                        variant="outlined"
+                        sx={styles.outlinedButton}
+                      >
+                        GitHub
+                      </Button>
+                    )}
+                  </Stack>
+                </Box>
               </Box>
 
               <Typography sx={styles.company}>{project.company}</Typography>
+
               <Typography sx={styles.role}>{project.role}</Typography>
 
               <Box sx={styles.metaRow}>

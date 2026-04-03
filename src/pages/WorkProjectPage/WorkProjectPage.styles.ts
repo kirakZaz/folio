@@ -5,6 +5,15 @@ export const styles = {
     mb: 5,
   },
 
+  titleLink: {
+    display: 'flex',
+    alignItems: 'center',
+    color: COLOR_TOKENS.textDisabled,
+    transition: 'color 150ms ease',
+    '&:hover': { color: COLOR_TOKENS.accentPrimary },
+    mt: '6px',
+  },
+
   chipPeriod: {
     color: COLOR_TOKENS.accentPrimary,
     backgroundColor: COLOR_TOKENS.chipPeriodBg,

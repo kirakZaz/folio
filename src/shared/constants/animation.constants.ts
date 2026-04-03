@@ -5,11 +5,6 @@ export const FADE_UP_VARIANTS: Variants = {
   visible: { opacity: 1, y: 0 },
 };
 
-export const FADE_IN_VARIANTS: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-};
-
 export const SCALE_IN_VARIANTS: Variants = {
   hidden: { opacity: 0, scale: 0.92 },
   visible: { opacity: 1, scale: 1 },
