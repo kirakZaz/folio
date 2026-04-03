@@ -3,13 +3,18 @@ import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 export const styles = {
   layout: {
     display: 'grid',
-    gridTemplateColumns: { xs: '1fr', md: '1fr 2fr', lg: '1fr 2fr 2fr' },
+    gridTemplateColumns: { xs: '1fr', md: '1fr 2fr', lg: '1fr 2.5fr 1.5fr' },
     gap: { xs: 2, md: 0 },
+    mt: { md: 4, lg: 0 },
     minHeight: '60vh',
     alignItems: 'start',
     minWidth: 0,
   },
-
+  general: {
+    gridColumn: { md: '1 / -1', lg: 'auto' },
+    borderTop: { md: `1px solid ${COLOR_TOKENS.borderSubtle}`, lg: 'none' },
+    pt: { md: 4, lg: 0 },
+  },
   // On mobile: horizontal scrollable row of company chips.
   // On desktop: sticky vertical list.
   sidebar: {

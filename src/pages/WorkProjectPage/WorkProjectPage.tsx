@@ -6,7 +6,17 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import { Box, Button, Chip, Divider, Grid, ImageList, ImageListItem, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Chip,
+  Divider,
+  Grid,
+  ImageList,
+  ImageListItem,
+  Stack,
+  Typography,
+} from '@mui/material';
 
 import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
 import { WORK_PROJECTS_DATA } from '@/shared/constants/work-projects.constants';
@@ -70,9 +80,15 @@ const WorkProjectPage = () => {
           </Stack>
 
           <Stack direction="row" spacing={0.5} alignItems="center">
-            <Typography variant="body1" sx={styles.metaText}>{project.role}</Typography>
-            <Typography variant="body1" sx={styles.metaMuted}>·</Typography>
-            <Typography variant="body1" sx={styles.metaText}>{project.company}</Typography>
+            <Typography variant="body1" sx={styles.metaText}>
+              {project.role}
+            </Typography>
+            <Typography variant="body1" sx={styles.metaMuted}>
+              ·
+            </Typography>
+            <Typography variant="body1" sx={styles.metaText}>
+              {project.company}
+            </Typography>
           </Stack>
 
           <Typography variant="body1" sx={styles.description}>
@@ -150,10 +166,12 @@ const WorkProjectPage = () => {
               <Typography variant="caption" sx={styles.sectionCaption}>
                 CHALLENGES & SOLUTIONS
               </Typography>
+
               <Stack spacing={1.5}>
                 {project.challenges.map((challenge, challengeIndex) => (
                   <Stack key={challengeIndex} direction="row" spacing={1} alignItems="flex-start">
                     <LightbulbOutlinedIcon sx={styles.listIcon(false)} />
+
                     <Typography variant="body2" sx={styles.listText}>
                       {challenge}
                     </Typography>
@@ -169,6 +187,7 @@ const WorkProjectPage = () => {
             <Typography variant="caption" sx={styles.screenshotsCaption}>
               SCREENSHOTS
             </Typography>
+
             <ImageList variant="masonry" cols={2} gap={16}>
               {project.screenshots.map((screenshotUrl, screenshotIndex) => (
                 <ImageListItem key={screenshotIndex}>

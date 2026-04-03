@@ -4,9 +4,8 @@ import { motion } from 'framer-motion';
 
 import { Box, Typography } from '@mui/material';
 
-import { COLOR_TOKENS } from '@/theme/themeTokens';
-
 import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
+import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
 import { WORK_PROJECTS_DATA } from '@/shared/constants/work-projects.constants';
@@ -39,11 +38,7 @@ const ExperiencePage = () => {
         animate="visible"
         transition={DEFAULT_TRANSITION}
       >
-        <SectionHeader
-          index="01"
-          label="Experience"
-          count={`${WORK_PROJECTS_DATA.length} roles`}
-        />
+        <SectionHeader index="01" label="Experience" count={`${WORK_PROJECTS_DATA.length} roles`} />
 
         <Box sx={styles.layout}>
           {/* Left: job list (vertical on desktop, horizontal scroll on mobile) */}
@@ -75,11 +70,7 @@ const ExperiencePage = () => {
           )}
 
           {/* Right: profile summary, skills, education */}
-          <Box sx={{
-            gridColumn: { md: '1 / -1', lg: 'auto' },
-            borderTop: { md: `1px solid ${COLOR_TOKENS.borderSubtle}`, lg: 'none' },
-            pt: { md: 4, lg: 0 },
-          }}>
+          <Box sx={styles.general}>
             <ProfilePanel />
           </Box>
         </Box>
