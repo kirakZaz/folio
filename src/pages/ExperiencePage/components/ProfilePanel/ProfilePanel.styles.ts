@@ -3,10 +3,12 @@ import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 export const styles = {
   panel: {
     borderLeft: { lg: `1px solid ${COLOR_TOKENS.borderSubtle}` },
-    pl: { xs: 0, lg: 3 },
+    pl: { xs: 0, lg: 2 },
     display: 'flex',
     flexDirection: 'column',
     gap: 4,
+    minWidth: 0,
+    overflow: 'hidden',
   },
 
   caption: {

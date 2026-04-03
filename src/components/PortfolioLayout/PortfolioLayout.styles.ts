@@ -118,7 +118,8 @@ export const styles = {
 
   // ── Main content ───────────────────────────────────────────────────────────
   content: {
-    px: { xs: 2, md: 6 },
+    px: { xs: 2, md: 3, lg: 5 },
+    minWidth: 0,
     minHeight: { md: '100vh' },
   },
 };

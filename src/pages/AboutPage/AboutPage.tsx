@@ -91,8 +91,6 @@ const AboutPage = () => (
             ))}
           </Box>
 
-          <Typography sx={styles.closing}>In short: I make sure users don&#39;t suffer.</Typography>
-
           <Typography sx={styles.closingAccent}>
             And that developers who come after me — don&#39;t either.
           </Typography>

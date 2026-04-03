@@ -3,10 +3,11 @@ import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 export const styles = {
   layout: {
     display: 'grid',
-    gridTemplateColumns: { xs: '1fr', md: '280px 1fr', lg: '280px 1fr 520px' },
+    gridTemplateColumns: { xs: '1fr', md: '1fr 2fr', lg: '1fr 2fr 2fr' },
     gap: { xs: 2, md: 0 },
     minHeight: '60vh',
     alignItems: 'start',
+    minWidth: 0,
   },
 
   // On mobile: horizontal scrollable row of company chips.
@@ -15,7 +16,7 @@ export const styles = {
     display: 'flex',
     flexDirection: { xs: 'row', md: 'column' },
     gap: { xs: 1, md: 0.5 },
-    pr: { xs: 0, md: 3 },
+    pr: { xs: 0, md: 2 },
     pb: { xs: 1, md: 0 },
     overflowX: { xs: 'auto', md: 'visible' },
     scrollbarWidth: 'none',
@@ -24,6 +25,7 @@ export const styles = {
     borderBottom: { xs: `1px solid ${COLOR_TOKENS.borderSubtle}`, md: 'none' },
     position: { md: 'sticky' },
     top: { md: 40 },
+    minWidth: 0,
   },
 
   // Label + years — hidden on mobile (no space in horizontal row)
