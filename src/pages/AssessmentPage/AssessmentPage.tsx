@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
+
+import { motion } from 'framer-motion';
 
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { Box, Button, Card, CardContent, Grid, Link, Stack, Typography } from '@mui/material';
 
-import { ASSESSMENT_PAGE_DATA, ASSESSMENTS_DATA } from '@/shared/constants/assessments.constants';
 import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
-import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
+import { ASSESSMENT_PAGE_DATA, ASSESSMENTS_DATA } from '@/shared/constants/assessments.constants';
 
 import BackButton from '@/components/BackButton/BackButton.tsx';
 import Layout from '@/components/Layout';

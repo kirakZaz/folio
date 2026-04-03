@@ -3,8 +3,9 @@ export interface AppNavBarProps {
 }
 
 export interface NavLink {
-  id:     number;
-  label:  string;
-  route:  string;
+  shortLabel: any;
+  id: number;
+  label: string;
+  route: string;
   status: string;
 }

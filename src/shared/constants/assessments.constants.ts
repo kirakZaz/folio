@@ -1,10 +1,9 @@
 import { buildAssessmentRoute } from '@/shared';
 
-import a1Pdf from '@/shared/assets/CDM303A_Kira_Zakirov_assessmet1.pdf';
 import a1Screenshot from '@/shared/assets/A1_screenshot.png';
-import a2Pdf from '@/shared/assets/CDM303A_Kira_Zakirov_Assessmet2.pdf';
 import a2Screenshot from '@/shared/assets/A2_screenshot.png';
-
+import a1Pdf from '@/shared/assets/CDM303A_Kira_Zakirov_assessmet1.pdf';
+import a2Pdf from '@/shared/assets/CDM303A_Kira_Zakirov_Assessmet2.pdf';
 import type { Assessment, AssessmentPageData } from '@/shared/types/assessment.types';
 
 export const ASSESSMENTS_DATA: Assessment[] = [
@@ -44,24 +43,24 @@ export const ASSESSMENTS_DATA: Assessment[] = [
 ];
 
 export const NAV_ASSESSMENT_LINKS = ASSESSMENTS_DATA.map((assessment) => ({
-  id:         assessment.id,
-  label:      assessment.title,
+  id: assessment.id,
+  label: assessment.title,
   shortLabel: `A${assessment.id}`,
-  route:      assessment.route,
-  status:     assessment.status,
+  route: assessment.route,
+  status: assessment.status,
 }));
 
 export const ASSESSMENT_PAGE_DATA: Record<number, AssessmentPageData> = {
   1: {
     ...ASSESSMENTS_DATA[0],
-    screenshot:  a1Screenshot,
-    pdfFile:     a1Pdf,
+    screenshot: a1Screenshot,
+    pdfFile: a1Pdf,
     pdfFilename: 'CDM303A_Kira_Zakirov_assessment1.pdf',
   },
   2: {
     ...ASSESSMENTS_DATA[1],
-    screenshot:  a2Screenshot,
-    pdfFile:     a2Pdf,
+    screenshot: a2Screenshot,
+    pdfFile: a2Pdf,
     pdfFilename: 'CDM303A_Kira_Zakirov_assessment2.pdf',
   },
 };
