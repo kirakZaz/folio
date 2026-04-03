@@ -87,6 +87,11 @@ export const styles = {
     gap: 0.75,
     mb: 0.75,
     textDecoration: 'none',
+    background: 'none',
+    border: 'none',
+    padding: 0,
+    cursor: 'pointer',
+    width: '100%',
     '&:hover .contact-label': {
       color: COLOR_TOKENS.accentPrimary,
     },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Box } from '@mui/material';
+import { Box, Snackbar, Tooltip } from '@mui/material';
 
 import { ROUTES } from '@/shared';
 
@@ -15,6 +15,13 @@ import type { PortfolioLayoutProps } from './PortfolioLayout.types';
 
 const PortfolioLayout = ({ children }: PortfolioLayoutProps) => {
   const navigate = useNavigate();
+
+  const [toastOpen, setToastOpen] = React.useState(false);
+
+  const handleCopy = React.useCallback((value: string) => {
+    navigator.clipboard.writeText(value);
+    setToastOpen(true);
+  }, []);
 
   return (
     <Box sx={styles.root}>
@@ -44,19 +51,33 @@ const PortfolioLayout = ({ children }: PortfolioLayoutProps) => {
           <Box sx={styles.contactsCaption}>Contact</Box>
 
           {CONTACT_LINKS.map((link) => (
-            <Box
-              key={link.label}
-              component="a"
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={styles.contactLink}
-            >
-              <Box sx={styles.contactDot} />
-              <Box className="contact-label" sx={styles.contactLabel}>
-                {link.label}
-              </Box>
-            </Box>
+            <Tooltip key={link.label} title={link.tooltip} placement="right" arrow>
+              {link.copyValue ? (
+                <Box
+                  component="button"
+                  onClick={() => handleCopy(link.copyValue)}
+                  sx={styles.contactLink}
+                >
+                  <Box sx={styles.contactDot} />
+                  <Box className="contact-label" sx={styles.contactLabel}>
+                    {link.label}
+                  </Box>
+                </Box>
+              ) : (
+                <Box
+                  component="a"
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={styles.contactLink}
+                >
+                  <Box sx={styles.contactDot} />
+                  <Box className="contact-label" sx={styles.contactLabel}>
+                    {link.label}
+                  </Box>
+                </Box>
+              )}
+            </Tooltip>
           ))}
         </Box>
       </Box>
@@ -64,6 +85,14 @@ const PortfolioLayout = ({ children }: PortfolioLayoutProps) => {
       <Box component="main" sx={styles.content}>
         {children}
       </Box>
+
+      <Snackbar
+        open={toastOpen}
+        onClose={() => setToastOpen(false)}
+        message="Email copied"
+        autoHideDuration={2500}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      />
     </Box>
   );
 };
