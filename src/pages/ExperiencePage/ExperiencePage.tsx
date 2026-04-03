@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { Box, Typography } from '@mui/material';
 
 import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
-import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
 import { WORK_PROJECTS_DATA } from '@/shared/constants/work-projects.constants';
