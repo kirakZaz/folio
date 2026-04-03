@@ -3,19 +3,36 @@ import React from 'react';
 import { useMediaQuery, useTheme } from '@mui/material';
 
 import logoFull from '@/shared/assets/logo-full.png';
-import logoSmall from '@/shared/assets/logo-small.png';
+import logoSmall from '@/shared/assets/logo-small-zak.png';
 
 import type { LogoProps } from './Logo.types';
 
-const fullStyle: React.CSSProperties = { display: 'block', width: '100%', maxWidth: 110, height: 'auto' };
+const fullStyle: React.CSSProperties = {
+  display: 'block',
+  width: '100%',
+  maxWidth: 110,
+  height: 'auto',
+};
 const smallStyle: React.CSSProperties = { display: 'block', height: 34, width: 'auto' };
 
 function LogoFullImg() {
-  return <img src={logoFull} alt="ZaKIRovA" style={{ width: '100%', height: 'auto', display: 'block' }} />;
+  return (
+    <img
+      src={logoFull}
+      alt="ZaKIRovA"
+      style={{ width: '100%', height: 'auto', display: 'block' }}
+    />
+  );
 }
 
 function LogoSmallImg() {
-  return <img src={logoSmall} alt="ZaKIRovA" style={{ height: '100%', width: 'auto', display: 'block' }} />;
+  return (
+    <img
+      src={logoSmall}
+      alt="ZaKIRovA"
+      style={{ height: '100%', width: 'auto', display: 'block' }}
+    />
+  );
 }
 
 const LogoFull = React.memo(LogoFullImg);
