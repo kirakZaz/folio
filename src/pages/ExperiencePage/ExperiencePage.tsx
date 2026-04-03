@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 
 import { Box, Typography } from '@mui/material';
 
+import { COLOR_TOKENS } from '@/theme/themeTokens';
+
 import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
 
 import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
@@ -73,7 +75,13 @@ const ExperiencePage = () => {
           )}
 
           {/* Right: profile summary, skills, education */}
-          <ProfilePanel />
+          <Box sx={{
+            gridColumn: { md: '1 / -1', lg: 'auto' },
+            borderTop: { md: `1px solid ${COLOR_TOKENS.borderSubtle}`, lg: 'none' },
+            pt: { md: 4, lg: 0 },
+          }}>
+            <ProfilePanel />
+          </Box>
         </Box>
       </motion.div>
     </PortfolioLayout>

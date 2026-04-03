@@ -23,8 +23,8 @@ export const styles = {
     msOverflowStyle: 'none',
     '&::-webkit-scrollbar': { display: 'none' },
     borderBottom: { xs: `1px solid ${COLOR_TOKENS.borderSubtle}`, md: 'none' },
-    position: { md: 'sticky' },
-    top: { md: 40 },
+    position: { md: 'relative', lg: 'sticky' },
+    top: { lg: 40 },
     minWidth: 0,
   },
 

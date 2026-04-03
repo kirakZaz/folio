@@ -47,7 +47,7 @@ export const DRAWINGS_DATA: DrawingItem[] = [
     imageUrl: '/images/drawings/drawing-09.jpg',
     label: 'Raven on black — chalk',
   },
-  { id: 'drawing-10', imageUrl: '/images/drawings/drawing-10.jpg', label: 'Face study — charcoal' },
+  { id: 'drawing-10', imageUrl: '/images/drawings/drawing-10.jpg', label: 'Face study — pencil' },
   { id: 'drawing-11', imageUrl: '/images/drawings/drawing-11.jpg', label: 'Harpy — ballpoint pen' },
   {
     id: 'drawing-12',
