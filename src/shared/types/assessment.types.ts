@@ -11,9 +11,16 @@ export interface Assessment {
   dueModule:  string;
 }
 
+export interface AssessmentPageData extends Assessment {
+  screenshot: string;
+  pdfFile:    string;
+  pdfFilename: string;
+}
+
 export interface NavAssessmentLink {
-  id:     number;
-  label:  string;
-  route:  string;
-  status: AssessmentStatus;
+  id:         number;
+  label:      string;
+  shortLabel: string;
+  route:      string;
+  status:     AssessmentStatus;
 }

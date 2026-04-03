@@ -16,7 +16,9 @@ export const styles = {
     backgroundColor: isActive ? COLOR_TOKENS.accentPrimary + '08' : 'transparent',
     transition: 'background-color 200ms ease, border-color 200ms ease',
     '&:hover': {
-      backgroundColor: isActive ? COLOR_TOKENS.accentPrimary + '08' : COLOR_TOKENS.backgroundElevated,
+      backgroundColor: isActive
+        ? COLOR_TOKENS.accentPrimary + '08'
+        : COLOR_TOKENS.backgroundElevated,
     },
   }),
 
@@ -40,7 +42,6 @@ export const styles = {
     color: isActive ? COLOR_TOKENS.textPrimary : COLOR_TOKENS.textSecondary,
     lineHeight: 1.3,
     transition: 'color 200ms ease, font-weight 200ms ease',
-    whiteSpace: 'nowrap',
   }),
 
   // Hide role and period on mobile — no space in horizontal chip mode

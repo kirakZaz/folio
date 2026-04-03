@@ -1,4 +1,4 @@
-import { COLOR_TOKENS } from '@/theme/themeTokens';
+import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
   header: {
@@ -11,11 +11,11 @@ export const styles = {
     letterSpacing: '0.1em',
   },
 
-  titleMargin: {
+  title: {
     mb: 1,
   },
 
-  pageDescription: {
+  description: {
     color: COLOR_TOKENS.textSecondary,
     maxWidth: '800px',
   },
@@ -51,6 +51,10 @@ export const styles = {
     fontSize: 32,
   },
 
+  pdfTitle: {
+    mb: 1,
+  },
+
   pdfFilename: {
     color: COLOR_TOKENS.textSecondary,
   },
@@ -67,5 +71,31 @@ export const styles = {
   downloadButton: {
     backgroundColor: COLOR_TOKENS.textPrimary,
     color: COLOR_TOKENS.backgroundPaper,
+  },
+
+  comingSoonBlock: {
+    minHeight: 320,
+    border: `1px dashed ${COLOR_TOKENS.borderDefault}`,
+    borderRadius: 2,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 1.5,
+    backgroundColor: COLOR_TOKENS.backgroundPaper,
+  },
+
+  comingSoonLabel: {
+    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
+    fontSize: '0.65rem',
+    letterSpacing: '0.18em',
+    textTransform: 'uppercase' as const,
+    color: COLOR_TOKENS.textDisabled,
+  },
+
+  comingSoonSub: {
+    fontSize: '0.9rem',
+    color: COLOR_TOKENS.textDisabled,
+    fontWeight: 300,
   },
 };

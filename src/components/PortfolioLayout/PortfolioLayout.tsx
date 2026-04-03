@@ -7,6 +7,7 @@ import { ROUTES } from '@/shared';
 
 import { CONTACT_LINKS } from '@/shared/constants/contact.constants';
 
+import Logo from '@/components/Logo/Logo.tsx';
 import Navigation from '@/components/Navigation/Navigation';
 
 import { styles } from './PortfolioLayout.styles';
@@ -19,9 +20,10 @@ const PortfolioLayout = ({ children }: PortfolioLayoutProps) => {
     <Box sx={styles.root}>
       {/* Mobile top bar */}
       <Box sx={styles.mobileTopBar}>
-        <Box component="div" onClick={() => navigate(ROUTES.ABOUT)}>
-          <Box component="img" src="/images/logo-small.svg" alt="ZaKIRovA" sx={styles.mobileLogo} />
+        <Box component="div" onClick={() => navigate(ROUTES.ABOUT)} sx={styles.mobileLogo}>
+          <Logo />
         </Box>
+
         <Box sx={styles.mobileNavScroll}>
           <Navigation orientation="horizontal" />
         </Box>
@@ -29,8 +31,8 @@ const PortfolioLayout = ({ children }: PortfolioLayoutProps) => {
 
       {/* Desktop sidebar */}
       <Box component="aside" sx={styles.sidebar}>
-        <Box component="div" onClick={() => navigate(ROUTES.ABOUT)}>
-          <Box component="img" src="/images/logo.svg" alt="ZaKIRovA" sx={styles.desktopLogo} />
+        <Box component="div" onClick={() => navigate(ROUTES.ABOUT)} sx={styles.desktopLogo}>
+          <Logo />
         </Box>
 
         <Box sx={styles.navBlock}>
@@ -40,6 +42,7 @@ const PortfolioLayout = ({ children }: PortfolioLayoutProps) => {
         {/* Contacts pinned to bottom */}
         <Box sx={styles.contactsBlock}>
           <Box sx={styles.contactsCaption}>Contact</Box>
+
           {CONTACT_LINKS.map((link) => (
             <Box
               key={link.label}

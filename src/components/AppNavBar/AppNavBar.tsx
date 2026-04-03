@@ -1,8 +1,10 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 import { NAV_ASSESSMENT_LINKS, ROUTES } from '@/shared';
+
+import Logo from '@/components/Logo/Logo.tsx';
 
 import { styles } from './appNavBarStyles';
 import type { AppNavBarProps } from './types';
@@ -10,13 +12,15 @@ import type { AppNavBarProps } from './types';
 const AppNavBar = ({ links = NAV_ASSESSMENT_LINKS }: AppNavBarProps) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Box component="header" sx={styles.navBarContainer} data-testid="app-nav-bar">
       <Box sx={styles.navBarInner}>
         {/* Logo */}
-        <Box component="button" onClick={() => navigate(ROUTES.HOME)} sx={styles.logoButton}>
-          kira zakirov
+        <Box component="div" onClick={() => navigate(ROUTES.ABOUT)} sx={styles.logoButton}>
+          <Logo />
         </Box>
 
         {/* Nav links */}
@@ -26,6 +30,8 @@ const AppNavBar = ({ links = NAV_ASSESSMENT_LINKS }: AppNavBarProps) => {
             const isLocked = navLink.status === 'coming_soon';
             const indexLabel = String(navIndex + 1).padStart(2, '0');
 
+            const displayLabel = isMobile ? navLink.shortLabel : navLink.label;
+
             if (isLocked) {
               return (
                 <Box key={navLink.id} sx={styles.navItemDisabled} aria-disabled="true">
@@ -33,7 +39,7 @@ const AppNavBar = ({ links = NAV_ASSESSMENT_LINKS }: AppNavBarProps) => {
                     #{indexLabel}
                   </Typography>
                   <Typography className="app-nav-label" sx={styles.navLabel(false)}>
-                    {navLink.label}
+                    {displayLabel}
                   </Typography>
                 </Box>
               );
@@ -50,7 +56,7 @@ const AppNavBar = ({ links = NAV_ASSESSMENT_LINKS }: AppNavBarProps) => {
                   #{indexLabel}
                 </Typography>
                 <Typography className="app-nav-label" sx={styles.navLabel(isActive)}>
-                  {navLink.label}
+                  {displayLabel}
                 </Typography>
               </Box>
             );

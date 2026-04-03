@@ -1,150 +1,113 @@
-import { monoUppercase } from '@/theme/commonStyles';
 import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
-  layout: {
-    display: 'grid',
-    gridTemplateColumns: { xs: '1fr', md: '280px 1fr' },
-    gap: { xs: 6, md: 0 },
-    alignItems: 'start',
+  // ── Top two-column section ────────────────────────────────────────────────
+  topSection: {
+    display: 'flex',
+    flexDirection: { xs: 'column', md: 'row' },
+    gap: { xs: 4, md: 6 },
+    alignItems: 'flex-start',
+    mb: { xs: 6, md: 8 },
   },
 
-  // ── Sidebar ───────────────────────────────────────────────────────────────
+  photo: {
+    width: { xs: '100%', md: '34%' },
+    aspectRatio: '1 / 1.5',
+    objectFit: 'cover',
+    flexShrink: 0,
+    display: 'block',
+  },
 
-  sidebar: {
-    pr: { xs: 0, md: 4 },
-    position: { md: 'sticky' },
-    top: { md: 40 },
-    height: { md: 'calc(100vh - 80px)' },
+  textBlock: {
+    flex: 1,
     display: 'flex',
     flexDirection: 'column',
-    overflow: 'hidden',
-  },
-
-  sidebarTop: {
-    flex: 1,
-    overflowY: 'auto',
-    scrollbarWidth: 'none',
-    '&::-webkit-scrollbar': { display: 'none' },
-  },
-
-  photoPlaceholder: {
-    width: { xs: 160, md: '100%' },
-    aspectRatio: '4 / 5',
-    borderRadius: '12px',
-    backgroundColor: COLOR_TOKENS.backgroundElevated,
-    border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    mb: 3,
-  },
-
-  photoLabel: {
-    ...monoUppercase,
-    color: COLOR_TOKENS.textDisabled,
-    fontSize: '0.65rem',
+    justifyContent: 'flex-start',
+    pt: { xs: 0, md: 1 },
   },
 
   name: {
-    fontSize: '1.1rem',
-    fontWeight: 700,
-    color: COLOR_TOKENS.textPrimary,
+    fontSize: { xs: '1.4rem', md: '1.7rem' },
+    fontWeight: 400,
     letterSpacing: '-0.02em',
-    lineHeight: 1.2,
-    mb: 0.5,
+    color: COLOR_TOKENS.textPrimary,
+    lineHeight: 1.15,
+    mb: 3,
   },
 
-  roleLabel: {
-    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-    fontSize: '0.62rem',
-    color: COLOR_TOKENS.accentPrimary,
-    letterSpacing: '0.06em',
-    mb: 0.5,
-  },
-
-  location: {
-    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-    fontSize: '0.6rem',
-    color: COLOR_TOKENS.textDisabled,
-    letterSpacing: '0.04em',
-  },
-
-  // ── Contacts (pinned bottom of sidebar) ──────────────────────────────────
-
-  contactsBlock: {
-    pt: 3,
-    borderTop: `1px solid ${COLOR_TOKENS.borderSubtle}`,
-    mt: { xs: 4, md: 'auto' },
-    flexShrink: 0,
-  },
-
-  contactsCaption: {
-    ...monoUppercase,
-    fontSize: '0.58rem',
-    letterSpacing: '0.12em',
-    color: COLOR_TOKENS.textDisabled,
-    mb: 1.5,
-    display: 'block',
-  },
-
-  contactLink: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 0.75,
-    mb: 0.75,
-    textDecoration: 'none',
-    '&:hover .link-label': {
-      color: COLOR_TOKENS.accentPrimary,
-    },
-  },
-
-  contactDot: {
-    width: '4px',
-    height: '4px',
-    borderRadius: '50%',
-    backgroundColor: COLOR_TOKENS.accentPrimary,
-    flexShrink: 0,
-  },
-
-  contactLabel: {
-    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-    fontSize: '0.62rem',
+  bio: {
+    fontSize: { xs: '0.92rem', md: '0.95rem' },
+    fontWeight: 300,
     color: COLOR_TOKENS.textSecondary,
-    letterSpacing: '0.04em',
-    transition: 'color 200ms ease',
-  },
-
-  // ── Main content ──────────────────────────────────────────────────────────
-
-  content: {
-    borderLeft: { md: `1px solid ${COLOR_TOKENS.borderSubtle}` },
-    pl: { xs: 0, md: 4 },
-  },
-
-  contentCaption: {
-    ...monoUppercase,
-    fontSize: '0.6rem',
-    letterSpacing: '0.12em',
-    color: COLOR_TOKENS.textDisabled,
+    lineHeight: 1.75,
     mb: 2,
-    display: 'block',
   },
 
-  bioPlaceholder: {
-    minHeight: 200,
-    borderRadius: '12px',
-    border: `1px dashed ${COLOR_TOKENS.borderDefault}`,
-    backgroundColor: COLOR_TOKENS.backgroundPaper,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+  bioBold: {
+    fontSize: { xs: '0.92rem', md: '0.95rem' },
+    fontWeight: 500,
+    color: COLOR_TOKENS.textPrimary,
+    lineHeight: 1.75,
+    mb: 2,
+    fontStyle: 'italic',
+  },
+
+  // ── Bottom full-width section ─────────────────────────────────────────────
+  bottomSection: {
+    borderTop: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+    pt: { xs: 4, md: 5 },
+  },
+
+  listHeading: {
+    fontSize: { xs: '0.78rem', md: '0.8rem' },
+    fontWeight: 600,
+    letterSpacing: '0.1em',
+    textTransform: 'uppercase' as const,
+    color: COLOR_TOKENS.textDisabled,
+    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
+    mb: 2,
+    mt: 2.5,
+  },
+
+  list: {
     mb: 4,
   },
 
-  bioPlaceholderText: {
-    ...monoUppercase,
-    fontSize: '0.62rem',
-    color: COLOR_TOKENS.textDisabled,
+  listItem: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    gap: 1.5,
+    mb: 0.5,
+  },
+
+  listDash: {
+    color: COLOR_TOKENS.accentPrimary,
+    fontWeight: 500,
+    flexShrink: 0,
+    lineHeight: 1.75,
+    fontSize: '0.95rem',
+  },
+
+  listText: {
+    fontSize: { xs: '0.92rem', md: '0.95rem' },
+    fontWeight: 300,
+    color: COLOR_TOKENS.textSecondary,
+    lineHeight: 1.75,
+  },
+
+  closing: {
+    fontSize: { xs: '0.92rem', md: '0.95rem' },
+    fontWeight: 300,
+    color: COLOR_TOKENS.textSecondary,
+    lineHeight: 1.75,
+    mb: 1,
+  },
+
+  closingAccent: {
+    fontSize: { xs: '0.92rem', md: '0.95rem' },
+    fontWeight: 400,
+    color: COLOR_TOKENS.textPrimary,
+    lineHeight: 1.75,
+    mb: 0,
   },
 };

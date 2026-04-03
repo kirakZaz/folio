@@ -1,4 +1,11 @@
-import { hideScrollbar, monoUppercase, navBarSurface, navIndex, navItemBase, navLabel, navUnderline } from '@/theme/commonStyles';
+import {
+  hideScrollbar,
+  navBarSurface,
+  navIndex,
+  navItemBase,
+  navLabel,
+  navUnderline,
+} from '@/theme/commonStyles';
 import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
@@ -20,20 +27,9 @@ export const styles = {
   },
 
   logoButton: {
-    ...monoUppercase,
-    fontSize: '11px',
-    fontWeight: 400,
-    color: COLOR_TOKENS.textPrimary,
-    p: 0,
-    pb: '16px',
-    background: 'none',
-    border: 'none',
     cursor: 'pointer',
-    userSelect: 'none',
-    transition: 'color 250ms ease',
-    '&:hover': {
-      color: COLOR_TOKENS.accentPrimary,
-    },
+    mb: 1.5,
+    flexShrink: 0,
   },
 
   navLinks: {

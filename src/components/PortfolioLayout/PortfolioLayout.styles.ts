@@ -25,10 +25,8 @@ export const styles = {
   },
 
   mobileLogo: {
-    height: 28,
-    width: 'auto',
-    objectFit: 'contain',
     flexShrink: 0,
+    cursor: 'pointer',
   },
 
   mobileNavScroll: {
@@ -43,7 +41,7 @@ export const styles = {
   // ── Desktop sidebar (md+) ──────────────────────────────────────────────────
   sidebar: {
     display: { xs: 'none', md: 'flex' },
-    width: 130,
+    width: 136,
     flexShrink: 0,
     position: 'sticky',
     top: 0,
@@ -51,16 +49,13 @@ export const styles = {
     flexDirection: 'column',
     alignItems: 'flex-start',
     px: 3,
-    pt: 4,
+    pt: 1,
     pb: 4,
     pr: 0,
   },
 
   desktopLogo: {
-    width: '100%',
-    maxWidth: 100,
-    height: 'auto',
-    objectFit: 'contain',
+    cursor: 'pointer',
     mb: 6,
     mt: 2,
   },
@@ -118,10 +113,7 @@ export const styles = {
 
   // ── Main content ───────────────────────────────────────────────────────────
   content: {
-    flex: 1,
-    overflowY: 'auto',
     px: { xs: 2, md: 6 },
-    py: { xs: 3, md: 6 },
     minHeight: { md: '100vh' },
   },
 };
