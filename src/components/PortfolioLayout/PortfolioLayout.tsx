@@ -20,7 +20,7 @@ const PortfolioLayout = ({ children }: PortfolioLayoutProps) => {
       {/* Mobile top bar */}
       <Box sx={styles.mobileTopBar}>
         <Box component="div" onClick={() => navigate(ROUTES.ABOUT)}>
-          <Box component="img" src="/images/logo.png" alt="ZaKIRovA" sx={styles.mobileLogo} />
+          <Box component="img" src="/images/logo-small.svg" alt="ZaKIRovA" sx={styles.mobileLogo} />
         </Box>
         <Box sx={styles.mobileNavScroll}>
           <Navigation orientation="horizontal" />
@@ -30,7 +30,7 @@ const PortfolioLayout = ({ children }: PortfolioLayoutProps) => {
       {/* Desktop sidebar */}
       <Box component="aside" sx={styles.sidebar}>
         <Box component="div" onClick={() => navigate(ROUTES.ABOUT)}>
-          <Box component="img" src="/images/logo.png" alt="ZaKIRovA" sx={styles.desktopLogo} />
+          <Box component="img" src="/images/logo.svg" alt="ZaKIRovA" sx={styles.desktopLogo} />
         </Box>
 
         <Box sx={styles.navBlock}>
