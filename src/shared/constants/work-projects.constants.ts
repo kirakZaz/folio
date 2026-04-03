@@ -49,7 +49,7 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
       'Vitest',
       'MSW',
     ],
-    link: undefined,
+    link: 'https://www.axo.io/',
     githubUrl: undefined,
     teamSize: 5,
     achievements: [
@@ -158,6 +158,31 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
     screenshots: [],
   },
   {
+    id: 'work-xmpie',
+    title: 'XMPie',
+    company: 'XMPie / Xerox (via Welldone-Solutions)',
+    role: 'Frontend Developer',
+    yearStart: '12/2021',
+    yearEnd: '02/2023',
+    description:
+      'Enterprise personalisation platform for XMPie (Xerox subsidiary) — transforming communications globally for 20+ years. Applications span advanced data-driven print, eCommerce with built-in customisation, and fully automated omnichannel campaign management.',
+    coverImage: '/images/companies/xmpie.png',
+    techStack: ['React', 'JavaScript', 'Webpack', 'SASS'],
+    link: 'https://www.xmpie.com',
+    githubUrl: undefined,
+    teamSize: 6,
+    achievements: [
+      'Developed and maintained reusable UI components across a complex enterprise platform',
+      'Worked to introduce cleaner code patterns and better structure within an existing large codebase',
+      'Collaborated with backend teams, designers, and product managers in an Agile/Scrum environment',
+    ],
+    challenges: [
+      'Navigating a large, established codebase with limited flexibility for refactoring',
+      'Delivering consistently within constraints of a highly structured enterprise organisation',
+    ],
+    screenshots: [],
+  },
+  {
     id: 'work-roundtrip',
     title: 'Roundtrip',
     company: 'Roundtrip Technologies',
@@ -185,31 +210,6 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
     screenshots: [],
   },
   {
-    id: 'work-xmpie',
-    title: 'XMPie',
-    company: 'XMPie / Xerox (via Welldone-Solutions)',
-    role: 'Frontend Developer',
-    yearStart: '12/2021',
-    yearEnd: '02/2023',
-    description:
-      'Enterprise personalisation platform for XMPie (Xerox subsidiary) — transforming communications globally for 20+ years. Applications span advanced data-driven print, eCommerce with built-in customisation, and fully automated omnichannel campaign management.',
-    coverImage: '/images/companies/xmpie.png',
-    techStack: ['React', 'JavaScript', 'Webpack', 'SASS'],
-    link: 'https://www.xmpie.com',
-    githubUrl: undefined,
-    teamSize: 6,
-    achievements: [
-      'Developed and maintained reusable UI components across a complex enterprise platform',
-      'Worked to introduce cleaner code patterns and better structure within an existing large codebase',
-      'Collaborated with backend teams, designers, and product managers in an Agile/Scrum environment',
-    ],
-    challenges: [
-      'Navigating a large, established codebase with limited flexibility for refactoring',
-      'Delivering consistently within constraints of a highly structured enterprise organisation',
-    ],
-    screenshots: [],
-  },
-  {
     id: 'work-beehive',
     title: 'Beehive BI',
     company: 'Beehive BI (Playtech project)',
@@ -220,7 +220,7 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
       'Business intelligence platform built for Playtech, a global leader in gambling technology. First professional React project — learned production React, Redux, and OOP patterns in a real enterprise environment.',
     coverImage: '/images/companies/beehive.png',
     techStack: ['React', 'Redux', 'JavaScript', 'SASS'],
-    link: undefined,
+    link: 'https://www.playtech.com/',
     githubUrl: undefined,
     teamSize: 4,
     achievements: [
@@ -244,7 +244,7 @@ export const WORK_PROJECTS_DATA: WorkProject[] = [
       'Leading e-commerce platform in Israel, specialising in building and managing online stores for over 1000 businesses. Contributed to the integrated online shop platform, overseeing UI implementation and collaborating with project managers to validate designs.',
     coverImage: '/images/companies/e_shop_ltd_logo.jpeg',
     techStack: ['jQuery', 'CSS', 'SASS', 'Web Development'],
-    link: 'http://www.e-shop.co.il/',
+    link: 'https://www.e-shop.co.il/',
     githubUrl: undefined,
     teamSize: 15,
     achievements: [
