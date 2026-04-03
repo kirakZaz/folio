@@ -5,14 +5,14 @@ export const styles = {
   topSection: {
     display: 'flex',
     flexDirection: { xs: 'column', md: 'row' },
-    gap: { xs: 4, md: 6 },
+    gap: { xs: 3, md: 4 },
     alignItems: 'flex-start',
-    mb: { xs: 6, md: 8 },
+    // mb: { xs: 6, md: 4 },
   },
 
   photo: {
     width: { xs: '100%', md: '34%' },
-    aspectRatio: '1 / 1.5',
+    aspectRatio: '1 / 1.55',
     objectFit: 'cover',
     flexShrink: 0,
     display: 'block',
@@ -65,8 +65,8 @@ export const styles = {
     textTransform: 'uppercase' as const,
     color: COLOR_TOKENS.textDisabled,
     fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-    mb: 2,
-    mt: 2.5,
+    mb: 0.5,
+    mt: 1,
   },
 
   list: {
@@ -77,7 +77,6 @@ export const styles = {
     display: 'flex',
     alignItems: 'flex-start',
     gap: 1.5,
-    mb: 0.5,
   },
 
   listDash: {

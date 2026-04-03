@@ -12,13 +12,13 @@ import PortfolioLayout from '@/components/PortfolioLayout';
 import { styles } from './AboutPage.styles';
 
 const WHAT_YOU_GET = [
-  "Code that doesn't fall apart a month later",
-  "Interfaces that don't lag and don't frustrate",
-  'Clean architecture — no chaos, no workarounds',
-  "UX that's considered, not accidental",
-  'Hands-on experience with modern tech, including AI and LLMs',
-  'Fast onboarding with minimal friction',
-  'Someone who thinks, not just executes',
+  'Code that stays solid over time',
+  'Interfaces that feel smooth and responsive',
+  'Clean structure, without unnecessary complexity',
+  'Thoughtful UX, not accidental decisions',
+  'Experience with modern tools, including AI and LLMs',
+  'Easy collaboration and quick onboarding',
+  'Someone who thinks through problems, not just executes tasks',
 ];
 
 const AboutPage = () => (
@@ -40,40 +40,47 @@ const AboutPage = () => (
             <Typography sx={styles.name}>Hi, I&#39;m Kira.</Typography>
 
             <Typography sx={styles.bio}>
-              I build frontend that you won&#39;t want to rewrite a week later.
+              I build frontend that people actually enjoy using — and developers don&#39;t hate
+              maintaining later.
             </Typography>
 
             <Typography sx={styles.bio}>
-              I started out in design — because I loved visuals. Then I met CSS… and there was no
-              going back. Turns out I care not just about how things look, but how they work. Since
-              then, I don&#39;t choose between design and development — I bridge them.
+              I started out in design, because I&#39;ve always been drawn to creativity. At some
+              point I met Web Development… and that was it. I realised I care just as much about how
+              things work as how they look. Since then, I&#39;ve been sitting right in between
+              design and development — connecting the two.
             </Typography>
 
             <Typography sx={styles.bioBold}>
-              10+ years in the industry taught me one thing: bad frontend isn&#39;t a bug — it&#39;s
-              a systemic failure of thinking.
+              I already over 10+ years in the industry, I&#39;ve learned that messy frontend usually
+              isn&#39;t about bugs — it&#39;s about decisions. So I try to get those right from the
+              start.
             </Typography>
 
             <Typography sx={styles.bio}>
-              I don&#39;t do &#34;just make it work.&#34; I do fast, clear, stable, and no surprises
-              in production.
+              I&#39;m not into &#34;just make it work.&#34; I care about things being fast, clear,
+              and stable — the kind of work that doesn&#39;t come back to haunt you later.
             </Typography>
 
             <Typography sx={styles.bio}>
-              I actively work with LLMs and AI tools — from product integrations to optimising
-              development workflows. Not for the hype, but because this is already the new reality
-              of interfaces.
+              I also work a lot with AI and LLM tools — both in products and in my own workflow. Not
+              because it&#39;s trendy, but because it genuinely changes how interfaces are built and
+              used.
             </Typography>
 
             <Typography sx={styles.bio}>
-              Right now I&#39;m in Melbourne, studying game design and digging deeper into
-              interactivity, user behaviour, and systems thinking. Born in Ukraine, lived in Israel,
-              now here — which gave me a rare perspective: &#34;intuitive&#34; means something
-              completely different depending on who you&#39;re designing for.
+              Right now I&#39;m based in Melbourne, studying game design and development in Torrens
+              University and exploring interaction, behaviour, and systems on a deeper level.
+            </Typography>
+
+            <Typography sx={styles.bio}>
+              I was born in Ukraine, lived in Israel, and now in Australia — which taught me
+              something important: &#34;intuitive&#34; isn&#39;t universal. Different people expect
+              different things, and good products respect that.
             </Typography>
           </Box>
 
-          <Typography sx={styles.listHeading}>What you get working with me</Typography>
+          <Typography sx={styles.listHeading}>What it&#39;s like to work with me</Typography>
 
           <Box sx={styles.list}>
             {WHAT_YOU_GET.map((item) => (
@@ -85,6 +92,7 @@ const AboutPage = () => (
           </Box>
 
           <Typography sx={styles.closing}>In short: I make sure users don&#39;t suffer.</Typography>
+
           <Typography sx={styles.closingAccent}>
             And that developers who come after me — don&#39;t either.
           </Typography>
