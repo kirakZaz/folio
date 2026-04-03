@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 
 import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
 
-import meImg from '@/shared/assets/me.png';
+import meImg from '@/shared/assets/Me.png';
 import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
 
 import PortfolioLayout from '@/components/PortfolioLayout';
