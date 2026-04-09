@@ -90,10 +90,6 @@ const AboutPage = () => (
               </Box>
             ))}
           </Box>
-
-          <Typography sx={styles.closingAccent}>
-            And that developers who come after me — don&#39;t either.
-          </Typography>
         </Box>
       </Box>
     </motion.div>
