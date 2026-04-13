@@ -19,7 +19,7 @@ export const styles = {
     mb: 3,
   },
 
-  journeyDescription: {
+  degreeDescription: {
     fontSize: '0.875rem',
     color: COLOR_TOKENS.textSecondary,
     lineHeight: 1.7,

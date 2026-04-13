@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Box } from '@mui/material';
 
 import { useAppSelector } from '@/app/hooks.ts';
-import Journey from '@/pages/HomePage/components/Journey/Journey.tsx';
+import Degree from '@/pages/HomePage/components/Journey/Journey.tsx';
 import SectionDivider from '@/pages/HomePage/components/SectionDivider/SectionDivider.tsx';
 import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
 
@@ -56,7 +56,7 @@ const HomePage = () => {
 
       <SectionDivider />
 
-      {/* ── 02 Journey ────────────────────────────────────────────────── */}
+      {/* ── 02 Degree ─────────────────────────────────────────────────── */}
       <Box id="section-journey" sx={{ scrollMarginTop: `${SECTION_SCROLL_OFFSET_PX}px` }}>
         <motion.div
           variants={FADE_UP_VARIANTS}
@@ -68,10 +68,10 @@ const HomePage = () => {
           <Box>
             <SectionHeader
               index="02"
-              label="Portfolio Development Journey"
+              label="Portfolio Development Degree"
               count={assessments.length}
             />
-            <Journey assessments={assessments} />
+            <Degree assessments={assessments} />
           </Box>
         </motion.div>
       </Box>

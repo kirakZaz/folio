@@ -13,11 +13,11 @@ import type { Assessment } from '@/shared/types/assessment.types';
 
 import AssessmentCard from '@/components/AssessmentCard';
 
-interface JourneyProps {
+interface DegreeProps {
   assessments: Assessment[];
 }
 
-const Journey = ({ assessments }: JourneyProps) => {
+const Degree = ({ assessments }: DegreeProps) => {
   return (
     <motion.div
       variants={STAGGER_CONTAINER_VARIANTS}
@@ -50,4 +50,4 @@ const Journey = ({ assessments }: JourneyProps) => {
   );
 };
 
-export default Journey;
+export default Degree;

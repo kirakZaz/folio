@@ -1,7 +1,7 @@
 # Kira — Portfolio
 
 > CDM303A Portfolio · Torrens University Australia
-> A living document of academic and creative journey across three assessments.
+> A living document of academic and creative degree across three assessments.
 
 ## Tech Stack
 

@@ -2,7 +2,7 @@ export const ROUTES = {
   HOME:               '/',
   ABOUT:              '/about',
   EXPERIENCE:         '/experience',
-  JOURNEY:            '/journey',
+  JOURNEY:            '/degree',
   ART:                '/art',
   ASSESSMENT:         '/assessment/:id',
   UNIVERSITY_PROJECT: '/university/:projectId',

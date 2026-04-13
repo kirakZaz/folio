@@ -7,7 +7,7 @@ import type { HomeSectionLink } from './types.ts';
 
 const HOME_SECTION_LINKS: HomeSectionLink[] = [
   { id: 'section-web-projects', index: '01', label: 'Work experience' },
-  { id: 'section-journey', index: '02', label: 'Journey' },
+  { id: 'section-journey', index: '02', label: 'Degree' },
   { id: 'section-university-projects', index: '03', label: 'University Projects' },
   { id: 'section-bags', index: '04', label: 'Handmade Bags' },
   { id: 'section-drawings', index: '05', label: 'Drawings' },

@@ -47,7 +47,7 @@ const HeroSection = ({ photoSrc }: HeroSectionProps) => {
               Software Developer &amp; Game Design Student.
             </Typography>
             <Typography variant="body1" sx={styles.description}>
-              This is a living document of my creative and academic journey — exploring who I am as
+              This is a living document of my creative and academic degree — exploring who I am as
               a developer, a designer, and a storyteller.
             </Typography>
             <Typography variant="body1" sx={styles.description}>

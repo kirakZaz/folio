@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   { label: 'Wellcome', route: ROUTES.HOME },
   { label: 'About me', route: ROUTES.ABOUT },
   { label: 'Experience', route: ROUTES.EXPERIENCE },
-  { label: 'Journey', route: ROUTES.JOURNEY },
+  { label: 'Degree', route: ROUTES.JOURNEY },
   { label: 'Art', route: ROUTES.ART },
 ] as const;
 

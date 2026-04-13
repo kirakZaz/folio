@@ -22,9 +22,9 @@ describe('HomePage', () => {
     expect(screen.getByTestId('assessment-card-3')).toBeInTheDocument();
   });
 
-  it('renders the Journey section label', () => {
+  it('renders the Degree section label', () => {
     renderWithProviders(<HomePage />);
-    expect(screen.getByText('Journey')).toBeInTheDocument();
+    expect(screen.getByText('Degree')).toBeInTheDocument();
   });
 
   it('renders the Handmade Bags carousel section', () => {

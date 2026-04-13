@@ -16,7 +16,7 @@ import { styles } from './JourneyPage.styles';
 
 const COMPLETED_COUNT = UNIVERSITY_PROJECTS_DATA.filter((p) => p.status === 'completed').length;
 
-const JourneyPage = () => (
+const DegreePage = () => (
   <PortfolioLayout>
     <motion.div
       variants={FADE_UP_VARIANTS}
@@ -26,7 +26,7 @@ const JourneyPage = () => (
     >
       <SectionHeader
         index="02"
-        label="Journey"
+        label="Degree"
         count={`${COMPLETED_COUNT} completed`}
       />
 
@@ -42,8 +42,8 @@ const JourneyPage = () => (
           ))}
         </Grid>
 
-        <Typography sx={styles.journeyDescription}>
-          CDM303 is the portfolio course where I document and present my creative journey through
+        <Typography sx={styles.degreeDescription}>
+          CDM303 is the portfolio course where I document and present my creative degree through
           the Bachelor of Design programme. Each assessment builds toward a complete professional
           identity — from personal brand research through to a polished portfolio and resume.
         </Typography>
@@ -83,4 +83,4 @@ const JourneyPage = () => (
   </PortfolioLayout>
 );
 
-export default JourneyPage;
+export default DegreePage;
