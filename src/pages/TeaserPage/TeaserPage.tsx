@@ -11,7 +11,7 @@ import { styles } from './TeaserPage.styles';
 
 const TeaserPage = () => {
   const navigate = useNavigate();
-  const handleEnter = React.useCallback(() => navigate(ROUTES.ABOUT), [navigate]);
+  const handleEnter = React.useCallback(() => navigate(ROUTES.EXPERIENCE), [navigate]);
 
   return (
     <Box sx={styles.root}>

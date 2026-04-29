@@ -70,6 +70,10 @@ export const styles = {
     pt: 3,
     borderTop: `1px solid ${COLOR_TOKENS.borderSubtle}`,
     width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    gap: 1.5,
   },
 
   contactsCaption: {
@@ -82,38 +86,26 @@ export const styles = {
   },
 
   contactLink: {
-    display: 'flex',
+    display: 'inline-flex',
     alignItems: 'center',
-    gap: 0.75,
-    mb: 0.75,
+    justifyContent: 'center',
     textDecoration: 'none',
     background: 'none',
     border: 'none',
     padding: 0,
     cursor: 'pointer',
-    width: '100%',
-    '&:hover .contact-label': {
-      color: COLOR_TOKENS.accentPrimary,
+    opacity: 0.6,
+    transition: 'opacity 200ms ease',
+    '&:hover': {
+      opacity: 1,
     },
   },
 
-  contactDot: {
-    width: '4px',
-    height: '4px',
-    borderRadius: '50%',
-    backgroundColor: COLOR_TOKENS.accentPrimary,
-    flexShrink: 0,
-  },
-
-  contactLabel: {
-    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-    fontSize: '0.6rem',
-    color: COLOR_TOKENS.textSecondary,
-    letterSpacing: '0.02em',
-    transition: 'color 200ms ease',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
+  contactIcon: {
+    width: 18,
+    height: 18,
+    display: 'block',
+    objectFit: 'contain',
   },
 
   // ── Main content ───────────────────────────────────────────────────────────

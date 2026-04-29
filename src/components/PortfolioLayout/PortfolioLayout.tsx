@@ -58,10 +58,7 @@ const PortfolioLayout = ({ children }: PortfolioLayoutProps) => {
                   onClick={() => handleCopy(link.copyValue)}
                   sx={styles.contactLink}
                 >
-                  <Box sx={styles.contactDot} />
-                  <Box className="contact-label" sx={styles.contactLabel}>
-                    {link.label}
-                  </Box>
+                  <Box component="img" src={link.icon} alt={link.label} sx={styles.contactIcon} />
                 </Box>
               ) : (
                 <Box
@@ -71,10 +68,7 @@ const PortfolioLayout = ({ children }: PortfolioLayoutProps) => {
                   rel="noopener noreferrer"
                   sx={styles.contactLink}
                 >
-                  <Box sx={styles.contactDot} />
-                  <Box className="contact-label" sx={styles.contactLabel}>
-                    {link.label}
-                  </Box>
+                  <Box component="img" src={link.icon} alt={link.label} sx={styles.contactIcon} />
                 </Box>
               )}
             </Tooltip>

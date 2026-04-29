@@ -9,9 +9,9 @@ import { styles } from './Navigation.styles.ts';
 import type { NavigationProps } from './Navigation.types.ts';
 
 const NAV_ITEMS = [
-  { label: 'Wellcome', route: ROUTES.HOME },
-  { label: 'About me', route: ROUTES.ABOUT },
+  { label: 'Welcome', route: ROUTES.HOME },
   { label: 'Experience', route: ROUTES.EXPERIENCE },
+  { label: 'About me', route: ROUTES.ABOUT },
   { label: 'Degree', route: ROUTES.JOURNEY },
   { label: 'Art', route: ROUTES.ART },
 ] as const;

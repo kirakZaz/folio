@@ -18,11 +18,10 @@ const AppNavBar = ({ links = NAV_ASSESSMENT_LINKS }: AppNavBarProps) => {
   return (
     <Box component="header" sx={styles.navBarContainer} data-testid="app-nav-bar">
       <Box sx={styles.navBarInner}>
-        {/* Logo */}
+        Ï{/* Logo */}
         <Box component="div" onClick={() => navigate(ROUTES.ABOUT)} sx={styles.logoButton}>
           <Logo />
         </Box>
-
         {/* Nav links */}
         <Box component="nav" aria-label="Assessment navigation" sx={styles.navLinks}>
           {links.map((navLink, navIndex) => {

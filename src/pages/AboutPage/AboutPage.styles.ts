@@ -1,29 +1,19 @@
 import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
-  // ── Top two-column section ────────────────────────────────────────────────
+  // ── Top section with float wrap ───────────────────────────────────────────
   topSection: {
-    display: 'flex',
-    flexDirection: { xs: 'column', md: 'row' },
-    gap: { xs: 3, md: 4 },
-    alignItems: 'flex-start',
-    // mb: { xs: 6, md: 4 },
+    overflow: 'hidden',
   },
 
   photo: {
-    width: { xs: '100%', md: '34%' },
+    float: 'left' as const,
+    width: { xs: '38%', sm: '32%', md: '220px' },
     aspectRatio: '1 / 1.55',
     objectFit: 'cover',
-    flexShrink: 0,
     display: 'block',
-  },
-
-  textBlock: {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    pt: { xs: 0, md: 1 },
+    mr: { xs: 2.5, md: 3.5 },
+    mb: 1.5,
   },
 
   name: {
