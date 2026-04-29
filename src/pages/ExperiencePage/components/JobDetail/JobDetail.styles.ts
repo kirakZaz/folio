@@ -127,9 +127,23 @@ export const styles = {
   },
 
   techStack: {
-    gap: 0.75,
+    display: 'flex',
+    gap: '8px',
     flexWrap: 'wrap',
+    alignItems: 'center',
     mb: 3,
+  },
+
+  techIcon: {
+    width: 24,
+    height: 24,
+    objectFit: 'contain',
+    display: 'block',
+    opacity: 0.75,
+    transition: 'opacity 200ms ease',
+    '&:hover': {
+      opacity: 1,
+    },
   },
 
   techChip: {

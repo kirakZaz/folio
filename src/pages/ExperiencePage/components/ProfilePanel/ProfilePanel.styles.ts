@@ -2,8 +2,6 @@ import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
   panel: {
-    borderLeft: { lg: `1px solid ${COLOR_TOKENS.borderSubtle}` },
-    pl: { xs: 0, lg: 2 },
     display: 'flex',
     flexDirection: 'column',
     gap: 4,
@@ -44,21 +42,23 @@ export const styles = {
     flexShrink: 0,
   },
 
-  skillChipsWrap: {
+  skillIconsWrap: {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: '4px',
+    gap: '6px',
+    alignItems: 'center',
   },
 
-  skillChip: {
-    px: '7px',
-    py: '2px',
-    borderRadius: '4px',
-    border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
-    backgroundColor: COLOR_TOKENS.backgroundPaper,
-    fontSize: '0.65rem',
-    color: COLOR_TOKENS.textSecondary,
-    lineHeight: 1.6,
+  skillIcon: {
+    width: 22,
+    height: 22,
+    objectFit: 'contain',
+    display: 'block',
+    opacity: 0.75,
+    transition: 'opacity 200ms ease',
+    '&:hover': {
+      opacity: 1,
+    },
   },
 
   eduDegree: {

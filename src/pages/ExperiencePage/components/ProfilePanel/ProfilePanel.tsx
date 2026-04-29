@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Tooltip, Typography } from '@mui/material';
 
 import {
   BIO_TEXT,
@@ -24,11 +24,16 @@ const ProfilePanel = () => (
       {SKILL_CATEGORIES.map((category) => (
         <Box key={category.label} sx={styles.skillRow}>
           <Typography sx={styles.skillLabel}>{category.label}</Typography>
-          <Box sx={styles.skillChipsWrap}>
+          <Box sx={styles.skillIconsWrap}>
             {category.skills.map((skill) => (
-              <Box key={skill} sx={styles.skillChip}>
-                {skill}
-              </Box>
+              <Tooltip key={skill.name} title={skill.name} arrow placement="top">
+                <Box
+                  component="img"
+                  src={skill.icon}
+                  alt={skill.name}
+                  sx={styles.skillIcon}
+                />
+              </Tooltip>
             ))}
           </Box>
         </Box>
@@ -41,11 +46,16 @@ const ProfilePanel = () => (
       {PROGRAMS.map((category) => (
         <Box key={category.label} sx={styles.skillRow}>
           <Typography sx={styles.skillLabel}>{category.label}</Typography>
-          <Box sx={styles.skillChipsWrap}>
+          <Box sx={styles.skillIconsWrap}>
             {category.skills.map((skill) => (
-              <Box key={skill} sx={styles.skillChip}>
-                {skill}
-              </Box>
+              <Tooltip key={skill.name} title={skill.name} arrow placement="top">
+                <Box
+                  component="img"
+                  src={skill.icon}
+                  alt={skill.name}
+                  sx={styles.skillIcon}
+                />
+              </Tooltip>
             ))}
           </Box>
         </Box>

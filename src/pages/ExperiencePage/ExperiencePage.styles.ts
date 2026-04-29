@@ -14,6 +14,10 @@ export const styles = {
     gridColumn: { md: '1 / -1', lg: 'auto' },
     borderTop: { md: `1px solid ${COLOR_TOKENS.borderSubtle}`, lg: 'none' },
     pt: { md: 4, lg: 0 },
+    backgroundColor: { lg: COLOR_TOKENS.backgroundElevated },
+    borderRadius: { lg: '12px' },
+    p: { lg: 2.5 },
+    ml: { lg: 1 },
   },
   // On mobile: horizontal scrollable row of company chips.
   // On desktop: sticky vertical list.

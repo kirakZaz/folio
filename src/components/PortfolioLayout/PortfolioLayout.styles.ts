@@ -1,5 +1,5 @@
 import { monoUppercase } from '@/theme/commonStyles';
-import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
+import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
   root: {
@@ -67,22 +67,25 @@ export const styles = {
   // ── Contacts (bottom of desktop sidebar) ──────────────────────────────────
   contactsBlock: {
     mt: 'auto',
-    pt: 3,
-    borderTop: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+    backgroundColor: 'rgba(234, 82, 33, 0.1)',
+    borderRadius: '8px',
+    p: 1.5,
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     gap: 1.5,
   },
 
   contactsCaption: {
     ...monoUppercase,
-    fontSize: '0.55rem',
+    fontSize: '0.7rem',
     letterSpacing: '0.12em',
-    color: COLOR_TOKENS.textDisabled,
-    mb: 1.25,
+    color: COLOR_TOKENS.textSecondary,
+    mb: 0.5,
     display: 'block',
+    textAlign: 'center',
+    width: '100%',
   },
 
   contactLink: {
@@ -102,8 +105,8 @@ export const styles = {
   },
 
   contactIcon: {
-    width: 18,
-    height: 18,
+    width: 30,
+    height: 30,
     display: 'block',
     objectFit: 'contain',
   },

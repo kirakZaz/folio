@@ -8,8 +8,9 @@ import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import { Box, Button, Chip, Stack, Typography } from '@mui/material';
+import { Box, Button, Chip, Stack, Tooltip, Typography } from '@mui/material';
 
+import { SKILL_ICON_MAP } from '@/shared/constants/skill-icons.constants';
 import type { WorkProject } from '@/shared/constants/work-projects.constants';
 
 import { styles } from './JobDetail.styles';
@@ -124,11 +125,24 @@ const JobDetail = React.memo(function JobDetail({
             {project.techStack && project.techStack.length > 0 && (
               <Box sx={styles.sectionBlock}>
                 <Typography sx={styles.sectionCaption}>Tech Stack</Typography>
-                <Stack direction="row" sx={styles.techStack}>
-                  {project.techStack.map((tech) => (
-                    <Chip key={tech} label={tech} size="small" sx={styles.techChip} />
-                  ))}
-                </Stack>
+                <Box sx={styles.techStack}>
+                  {project.techStack.map((tech) => {
+                    const iconSrc = SKILL_ICON_MAP[tech];
+
+                    return iconSrc ? (
+                      <Tooltip key={tech} title={tech} arrow placement="top">
+                        <Box
+                          component="img"
+                          src={iconSrc}
+                          alt={tech}
+                          sx={styles.techIcon}
+                        />
+                      </Tooltip>
+                    ) : (
+                      <Chip key={tech} label={tech} size="small" sx={styles.techChip} />
+                    );
+                  })}
+                </Box>
               </Box>
             )}
 

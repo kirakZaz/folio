@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000">
+  <!-- TensorFlow folded geometric logo -->
+  <path d="M12 2L4 6.5v4L8 8.5v11l4 2.5v-11l4 2v-4l-4-2V4l4 2v-4L12 2z"/>
+  <path d="M12 2l8 4.5v4L16 8.5v4l-4-2v5l4 2.5v-5l4 2v-4l-4-2v-4l4 2v-4L12 2z" opacity="0.4"/>
+</svg>

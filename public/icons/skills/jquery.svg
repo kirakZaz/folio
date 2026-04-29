@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000">
+  <!-- jQuery stylized swoosh/swirl -->
+  <path d="M7 4c-3.5 3.5-3.5 9.5 0 13 3 3 7.5 3.5 11 1.5"/>
+  <path d="M9 6c-2.5 2.5-2.5 7 0 9.5 2.2 2.2 5.5 2.5 8 1" fill="none" stroke="#000" stroke-width="1.5"/>
+  <path d="M11.5 8c-1.5 1.5-1.5 4.5 0 6 1.2 1.2 3 1.5 4.5.8" fill="none" stroke="#000" stroke-width="1.5"/>
+  <path d="M18.5 18.5l3 2" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

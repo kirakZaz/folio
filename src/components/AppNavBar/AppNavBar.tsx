@@ -18,7 +18,7 @@ const AppNavBar = ({ links = NAV_ASSESSMENT_LINKS }: AppNavBarProps) => {
   return (
     <Box component="header" sx={styles.navBarContainer} data-testid="app-nav-bar">
       <Box sx={styles.navBarInner}>
-        Ï{/* Logo */}
+        {/* Logo */}
         <Box component="div" onClick={() => navigate(ROUTES.ABOUT)} sx={styles.logoButton}>
           <Logo />
         </Box>
