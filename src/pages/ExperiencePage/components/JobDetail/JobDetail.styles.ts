@@ -5,13 +5,14 @@ export const styles = {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    borderLeft: { md: `1px solid ${COLOR_TOKENS.borderSubtle}` },
+    borderLeft: { xs: 'none', md: `1px solid ${COLOR_TOKENS.borderSubtle}` },
     backgroundColor: { lg: 'rgba(255,255,255,0.5)' },
     borderRadius: { lg: '12px' },
     pl: { xs: 0, md: 3 },
     pr: { xs: 0, md: 2 },
     py: { lg: 2.5 },
     minWidth: 0,
+    overflow: 'hidden',
   },
   outlinedButton: {
     p: 1,
@@ -38,6 +39,7 @@ export const styles = {
     justifyContent: 'space-between',
     gap: 2,
     mb: 1,
+    flexWrap: { xs: 'wrap', md: 'nowrap' },
   },
 
   logoWrapper: {
@@ -77,7 +79,7 @@ export const styles = {
   },
 
   company: {
-    fontSize: '1.1rem',
+    fontSize: { xs: '0.95rem', md: '1.1rem' },
     fontWeight: 700,
     color: COLOR_TOKENS.textPrimary,
     lineHeight: 1.2,
@@ -113,7 +115,7 @@ export const styles = {
   },
 
   description: {
-    fontSize: '0.875rem',
+    fontSize: { xs: '0.8rem', md: '0.875rem' },
     color: COLOR_TOKENS.textSecondary,
     lineHeight: 1.7,
     mb: 3,
@@ -225,8 +227,8 @@ export const styles = {
     display: 'flex',
     alignItems: 'center',
     gap: 0.75,
-    px: 2,
-    py: 1,
+    px: { xs: 1.5, md: 2 },
+    py: { xs: 0.75, md: 1 },
     borderRadius: '8px',
     border: `1px solid ${disabled ? 'transparent' : COLOR_TOKENS.borderSubtle}`,
     backgroundColor: 'transparent',

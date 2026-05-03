@@ -77,7 +77,7 @@ const PortfolioLayout = ({ children }: PortfolioLayoutProps) => {
             exit="exit"
             variants={MENU_VARIANTS}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            style={{ position: 'sticky', top: 49, zIndex: 99 }}
+            style={{ position: 'fixed', top: 49, left: 0, right: 0, zIndex: 99 }}
           >
             <Box sx={styles.mobileDropdown}>
               {NAV_ITEMS.map((item) => {
