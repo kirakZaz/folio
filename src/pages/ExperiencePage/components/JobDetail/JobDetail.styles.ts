@@ -12,8 +12,6 @@ export const styles = {
     pr: { xs: 0, md: 2 },
     py: { lg: 2.5 },
     minWidth: 0,
-    minHeight: 0,
-    overflow: 'hidden',
     maxWidth: '100%',
   },
   outlinedButton: {
@@ -26,6 +24,7 @@ export const styles = {
     flex: 1,
     minHeight: 0,
     overflowY: 'auto',
+    overflowX: 'hidden',
     scrollbarWidth: 'none',
     msOverflowStyle: 'none',
     '&::-webkit-scrollbar': { display: 'none' },
@@ -34,6 +33,7 @@ export const styles = {
 
   header: {
     mb: 3,
+    minWidth: 0,
   },
 
   topRow: {
@@ -42,12 +42,13 @@ export const styles = {
     justifyContent: 'space-between',
     gap: 2,
     mb: 1,
-    flexWrap: { xs: 'wrap', md: 'nowrap' },
+    flexWrap: 'wrap',
+    minWidth: 0,
   },
 
   logoWrapper: {
-    width: 48,
-    height: 48,
+    width: { xs: 36, md: 48 },
+    height: { xs: 36, md: 48 },
     borderRadius: '10px',
     border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
     backgroundColor: COLOR_TOKENS.backgroundElevated,
@@ -71,6 +72,14 @@ export const styles = {
     color: COLOR_TOKENS.accentPrimary,
   },
 
+  rightHeader: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: { xs: 'flex-start', md: 'flex-end' },
+    gap: 1,
+    minWidth: 0,
+  },
+
   periodChip: {
     height: 22,
     fontSize: '0.62rem',
@@ -81,12 +90,19 @@ export const styles = {
     letterSpacing: '0.04em',
   },
 
+  buttonsRow: {
+    display: 'flex',
+    gap: 1,
+    flexWrap: 'wrap',
+  },
+
   company: {
     fontSize: { xs: '0.95rem', md: '1.1rem' },
     fontWeight: 700,
     color: COLOR_TOKENS.textPrimary,
     lineHeight: 1.2,
     mb: 0.5,
+    wordBreak: 'break-word',
   },
 
   role: {
@@ -199,6 +215,7 @@ export const styles = {
     alignItems: 'flex-start',
     gap: 1,
     mb: 1,
+    minWidth: 0,
   },
 
   listBullet: (isAchievement: boolean) => ({
@@ -213,10 +230,12 @@ export const styles = {
     color: COLOR_TOKENS.textSecondary,
     lineHeight: 1.6,
     wordBreak: 'break-word',
+    minWidth: 0,
   },
 
   sectionBlock: {
     mb: 3,
+    minWidth: 0,
   },
 
   nav: {

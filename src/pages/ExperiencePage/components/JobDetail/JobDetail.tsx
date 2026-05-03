@@ -8,7 +8,7 @@ import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import { Box, Button, Chip, Stack, Tooltip, Typography } from '@mui/material';
+import { Box, Button, Chip, Tooltip, Typography } from '@mui/material';
 
 import { DUAL_ICONS, SKILL_BRAND_COLORS, SKILL_ICON_MAP } from '@/shared/constants/skill-icons.constants';
 import type { WorkProject } from '@/shared/constants/work-projects.constants';
@@ -72,10 +72,10 @@ const JobDetail = React.memo(function JobDetail({
                   )}
                 </Box>
 
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'end', gap: 3 }}>
+                <Box sx={styles.rightHeader}>
                   <Chip label={periodLabel} size="small" sx={styles.periodChip} />
 
-                  <Stack direction="row" spacing={1.5} flexWrap="wrap">
+                  <Box sx={styles.buttonsRow}>
                     {project.link && (
                       <Button
                         component="a"
@@ -104,7 +104,7 @@ const JobDetail = React.memo(function JobDetail({
                         GitHub
                       </Button>
                     )}
-                  </Stack>
+                  </Box>
                 </Box>
               </Box>
 
