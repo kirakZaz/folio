@@ -200,7 +200,7 @@ export const styles = {
   },
 
   card: {
-    backgroundColor: 'transparent',
+    backgroundColor: COLOR_TOKENS.backgroundPaper,
     border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
     borderRadius: '10px',
     borderLeftWidth: '2px',
