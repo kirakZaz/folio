@@ -36,7 +36,40 @@ export const styles = {
     transition: 'opacity 200ms ease',
   }),
 
+  // Mobile: logo + year row
+  mobileContent: {
+    display: { xs: 'flex', md: 'none' },
+    alignItems: 'center',
+    gap: 1,
+  },
+
+  mobileLogo: {
+    width: 24,
+    height: 24,
+    objectFit: 'contain',
+    borderRadius: '4px',
+  },
+
+  mobileLogoFallback: {
+    width: 24,
+    height: 24,
+    fontSize: '0.7rem',
+    fontWeight: 700,
+    color: COLOR_TOKENS.accentPrimary,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  mobileYear: (isActive: boolean) => ({
+    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
+    fontSize: '0.6rem',
+    color: isActive ? COLOR_TOKENS.textPrimary : COLOR_TOKENS.textDisabled,
+    letterSpacing: '0.04em',
+  }),
+
   company: (isActive: boolean) => ({
+    display: { xs: 'none', md: 'block' },
     fontSize: { xs: '0.72rem', md: '0.82rem' },
     fontWeight: isActive ? 600 : 400,
     color: isActive ? COLOR_TOKENS.textPrimary : COLOR_TOKENS.textSecondary,

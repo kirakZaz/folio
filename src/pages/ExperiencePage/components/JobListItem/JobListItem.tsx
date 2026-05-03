@@ -13,6 +13,8 @@ interface JobListItemProps {
 }
 
 const JobListItem = React.memo(function JobListItem({ project, isActive, onClick }: JobListItemProps) {
+  const yearStart = String(project.yearStart).split('/').pop();
+
   const yearRange =
     project.yearEnd === 'present'
       ? `${project.yearStart}`
@@ -28,6 +30,17 @@ const JobListItem = React.memo(function JobListItem({ project, isActive, onClick
     >
       <Box sx={styles.accentBar(isActive)} />
 
+      {/* Mobile: logo + year */}
+      <Box sx={styles.mobileContent}>
+        {project.coverImage ? (
+          <Box component="img" src={project.coverImage} alt={project.company} sx={styles.mobileLogo} />
+        ) : (
+          <Typography sx={styles.mobileLogoFallback}>{project.company.charAt(0)}</Typography>
+        )}
+        <Typography sx={styles.mobileYear(isActive)}>{yearStart}</Typography>
+      </Box>
+
+      {/* Desktop: full info */}
       <Typography sx={styles.company(isActive)}>{project.company}</Typography>
       <Typography sx={styles.role}>{project.role}</Typography>
 
