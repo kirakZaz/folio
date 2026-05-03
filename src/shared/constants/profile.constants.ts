@@ -18,7 +18,7 @@ const toSkill = (name: string): SkillItem => ({
 });
 
 export const BIO_TEXT =
-  'Senior Frontend Developer with 9+ years of experience building scalable, production-grade web applications. Proven track record of leading frontend architecture from greenfield — solo and in teams — across B2B SaaS, e-commerce, and enterprise platforms. Passionate about clean code, pixel-perfect design, and great UX. Currently expanding into game development at Torrens University.';
+  'Senior Frontend Developer with 10+ years of experience building scalable, production-grade web applications. Proven track record of leading frontend architecture from greenfield — solo and in teams — across B2B SaaS, e-commerce, and enterprise platforms. Passionate about clean code, pixel-perfect design, and great UX. Currently expanding into game development at Torrens University.';
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   { label: 'Core', skills: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3'].map(toSkill) },

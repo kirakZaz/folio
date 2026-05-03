@@ -204,7 +204,7 @@ const BlueprintHero = () => {
           project — portfolio / rev.03
         </Box>
         <Box component="p" sx={styles.bottomLeftTitle}>
-          kira zakirov · senior frontend engineer · melbourne
+          kira zakirova · senior frontend engineer · melbourne
         </Box>
       </Box>
 

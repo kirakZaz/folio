@@ -44,7 +44,7 @@ const ExperiencePage = () => {
           <Box sx={styles.sidebar}>
             <Box sx={styles.sidebarMeta}>
               <Typography sx={styles.sidebarLabel}>Companies</Typography>
-              <Typography sx={styles.totalYears}>9+ years</Typography>
+              <Typography sx={styles.totalYears}>10+ years</Typography>
             </Box>
 
             {WORK_PROJECTS_DATA.map((project, index) => (

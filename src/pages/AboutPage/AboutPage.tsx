@@ -50,7 +50,7 @@ const AboutPage = () => (
         </Typography>
 
         <Typography sx={styles.bioBold}>
-          I already over 10+ years in the industry, I&#39;ve learned that messy frontend usually
+          After 10+ years in the industry, I&#39;ve learned that messy frontend usually
           isn&#39;t about bugs — it&#39;s about decisions. So I try to get those right from the
           start.
         </Typography>
