@@ -55,6 +55,11 @@ export const SKILL_BRAND_COLORS: Record<string, string> = {
   'Web Development': '#4CAF50',
 };
 
+export const DUAL_ICONS: Record<string, { mono: string; hover: string }> = {
+  'Vite': { mono: `${ICON_PATH}/vite-mono.svg`, hover: `${ICON_PATH}/vite-svgrepo-com.svg` },
+  'React Query': { mono: `${ICON_PATH}/react-query-mono.svg`, hover: `${ICON_PATH}/react-query-red.svg` },
+};
+
 export const SKILL_ICON_MAP: Record<string, string> = {
   'React': `${ICON_PATH}/react-svgrepo-com.svg`,
   'TypeScript': `${ICON_PATH}/typescript-16-svgrepo-com.svg`,

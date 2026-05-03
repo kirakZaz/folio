@@ -10,7 +10,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { Box, Button, Chip, Stack, Tooltip, Typography } from '@mui/material';
 
-import { SKILL_BRAND_COLORS, SKILL_ICON_MAP } from '@/shared/constants/skill-icons.constants';
+import { DUAL_ICONS, SKILL_BRAND_COLORS, SKILL_ICON_MAP } from '@/shared/constants/skill-icons.constants';
 import type { WorkProject } from '@/shared/constants/work-projects.constants';
 
 import { styles } from './JobDetail.styles';
@@ -128,6 +128,18 @@ const JobDetail = React.memo(function JobDetail({
                 <Box sx={styles.techStack}>
                   {project.techStack.map((tech) => {
                     const iconSrc = SKILL_ICON_MAP[tech];
+                    const dual = DUAL_ICONS[tech];
+
+                    if (dual) {
+                      return (
+                        <Tooltip key={tech} title={tech} arrow placement="top">
+                          <Box sx={styles.dualIconWrap}>
+                            <Box component="img" src={dual.mono} alt={tech} sx={{ ...styles.dualIconLayer, opacity: 0.75 }} />
+                            <Box component="img" src={dual.hover} alt="" sx={{ ...styles.dualIconLayer, opacity: 0 }} />
+                          </Box>
+                        </Tooltip>
+                      );
+                    }
 
                     return iconSrc ? (
                       <Tooltip key={tech} title={tech} arrow placement="top">

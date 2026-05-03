@@ -7,9 +7,34 @@ import {
   PROGRAMS,
   SKILL_CATEGORIES,
 } from '@/shared/constants/profile.constants';
-import { SKILL_BRAND_COLORS } from '@/shared/constants/skill-icons.constants';
+import { DUAL_ICONS, SKILL_BRAND_COLORS } from '@/shared/constants/skill-icons.constants';
 
 import { styles } from './ProfilePanel.styles';
+
+const renderSkillIcon = (name: string, iconUrl: string) => {
+  const dual = DUAL_ICONS[name];
+
+  if (dual) {
+    return (
+      <Tooltip key={name} title={name} arrow placement="top">
+        <Box sx={styles.dualIconWrap}>
+          <Box component="img" src={dual.mono} alt={name} sx={{ ...styles.dualIconLayer, opacity: 0.75 }} />
+          <Box component="img" src={dual.hover} alt="" sx={{ ...styles.dualIconLayer, opacity: 0 }} />
+        </Box>
+      </Tooltip>
+    );
+  }
+
+  return (
+    <Tooltip key={name} title={name} arrow placement="top">
+      <Box
+        role="img"
+        aria-label={name}
+        sx={styles.skillIcon(iconUrl, SKILL_BRAND_COLORS[name])}
+      />
+    </Tooltip>
+  );
+};
 
 const ProfilePanel = () => (
   <Box sx={styles.panel}>
@@ -26,15 +51,7 @@ const ProfilePanel = () => (
         <Box key={category.label} sx={styles.skillRow}>
           <Typography sx={styles.skillLabel}>{category.label}</Typography>
           <Box sx={styles.skillIconsWrap}>
-            {category.skills.map((skill) => (
-              <Tooltip key={skill.name} title={skill.name} arrow placement="top">
-                <Box
-                  role="img"
-                  aria-label={skill.name}
-                  sx={styles.skillIcon(skill.icon, SKILL_BRAND_COLORS[skill.name])}
-                />
-              </Tooltip>
-            ))}
+            {category.skills.map((skill) => renderSkillIcon(skill.name, skill.icon))}
           </Box>
         </Box>
       ))}
@@ -47,15 +64,7 @@ const ProfilePanel = () => (
         <Box key={category.label} sx={styles.skillRow}>
           <Typography sx={styles.skillLabel}>{category.label}</Typography>
           <Box sx={styles.skillIconsWrap}>
-            {category.skills.map((skill) => (
-              <Tooltip key={skill.name} title={skill.name} arrow placement="top">
-                <Box
-                  role="img"
-                  aria-label={skill.name}
-                  sx={styles.skillIcon(skill.icon, SKILL_BRAND_COLORS[skill.name])}
-                />
-              </Tooltip>
-            ))}
+            {category.skills.map((skill) => renderSkillIcon(skill.name, skill.icon))}
           </Box>
         </Box>
       ))}

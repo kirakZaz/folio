@@ -49,6 +49,26 @@ export const styles = {
     alignItems: 'center',
   },
 
+  dualIconWrap: {
+    position: 'relative',
+    width: 22,
+    height: 22,
+    cursor: 'pointer',
+    transition: 'transform 250ms ease',
+    '&:hover': { transform: 'scale(1.35)' },
+    '&:hover > :first-of-type': { opacity: 0 },
+    '&:hover > :last-of-type': { opacity: 1 },
+  },
+
+  dualIconLayer: {
+    position: 'absolute',
+    inset: 0,
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain',
+    transition: 'opacity 250ms ease',
+  },
+
   skillIcon: (iconUrl: string, brandColor?: string) => ({
     width: 22,
     height: 22,

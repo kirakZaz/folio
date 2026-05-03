@@ -134,6 +134,26 @@ export const styles = {
     mb: 3,
   },
 
+  dualIconWrap: {
+    position: 'relative',
+    width: 24,
+    height: 24,
+    cursor: 'pointer',
+    transition: 'transform 250ms ease',
+    '&:hover': { transform: 'scale(1.35)' },
+    '&:hover > :first-of-type': { opacity: 0 },
+    '&:hover > :last-of-type': { opacity: 1 },
+  },
+
+  dualIconLayer: {
+    position: 'absolute',
+    inset: 0,
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain',
+    transition: 'opacity 250ms ease',
+  },
+
   techIcon: (iconUrl: string, brandColor?: string) => ({
     width: 24,
     height: 24,
