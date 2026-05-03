@@ -195,7 +195,7 @@ export const styles = {
 
   cardsGrid: {
     display: 'grid',
-    gridTemplateColumns: { xs: '1fr 1fr', sm: 'repeat(4, 1fr)' },
+    gridTemplateColumns: { xs: '1fr 1fr', sm: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' },
     gap: '8px',
   },
 

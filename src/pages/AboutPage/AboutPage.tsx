@@ -23,6 +23,7 @@ const WHAT_YOU_GET = [
   'Experience with modern tools, including AI and LLMs',
   'Easy collaboration and quick onboarding',
   'Someone who thinks through problems, not just executes tasks',
+  'Pixel-perfect attention to design details',
 ];
 
 // ── Animated counter ─────────────────────────────────────────────────────
