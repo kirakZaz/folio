@@ -4,6 +4,8 @@ import a1Screenshot from '@/shared/assets/A1_screenshot.png';
 import a2Screenshot from '@/shared/assets/A2_screenshot.png';
 import a1Pdf from '@/shared/assets/CDM303A_Kira_Zakirov_assessmet1.pdf';
 import a2Pdf from '@/shared/assets/CDM303A_Kira_Zakirov_Assessmet2.pdf';
+import a3Screenshot from '@/shared/assets/A3_screenshot.png';
+import a3Pdf from '@/shared/assets/CDM303A_Kira_Zakirov_Assessment3.pdf';
 import type { Assessment, AssessmentPageData } from '@/shared/types/assessment.types';
 
 export const ASSESSMENTS_DATA: Assessment[] = [
@@ -35,7 +37,7 @@ export const ASSESSMENTS_DATA: Assessment[] = [
     subtitle: 'Portfolio & Resume',
     description:
       'Final submission with a complete portfolio, professional resume, and refined personal brand identity.',
-    status: 'coming_soon',
+    status: 'available',
     route: buildAssessmentRoute(3),
     weight: '50%',
     dueModule: 'Module 9',
@@ -62,5 +64,11 @@ export const ASSESSMENT_PAGE_DATA: Record<number, AssessmentPageData> = {
     screenshot: a2Screenshot,
     pdfFile: a2Pdf,
     pdfFilename: 'CDM303A_Kira_Zakirov_assessment2.pdf',
+  },
+  3: {
+    ...ASSESSMENTS_DATA[2],
+    screenshot: a3Screenshot,
+    pdfFile: a3Pdf,
+    pdfFilename: 'CDM303A_Kira_Zakirov_assessment3.pdf',
   },
 };
