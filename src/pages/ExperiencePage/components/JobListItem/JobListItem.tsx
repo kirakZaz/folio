@@ -13,7 +13,8 @@ interface JobListItemProps {
 }
 
 const JobListItem = React.memo(function JobListItem({ project, isActive, onClick }: JobListItemProps) {
-  const yearStart = String(project.yearStart).split('/').pop();
+  const yearStartShort = String(project.yearStart).split('/').pop();
+  const yearEndShort = project.yearEnd === 'present' ? 'Now' : String(project.yearEnd).split('/').pop();
 
   const yearRange =
     project.yearEnd === 'present'
@@ -37,7 +38,7 @@ const JobListItem = React.memo(function JobListItem({ project, isActive, onClick
         ) : (
           <Typography sx={styles.mobileLogoFallback}>{project.company.charAt(0)}</Typography>
         )}
-        <Typography sx={styles.mobileYear(isActive)}>{yearStart}</Typography>
+        <Typography sx={styles.mobileYear(isActive)}>{yearStartShort}–{yearEndShort}</Typography>
       </Box>
 
       {/* Desktop: full info */}
