@@ -55,9 +55,12 @@ export const styles = {
     objectFit: 'contain',
     display: 'block',
     opacity: 0.75,
-    transition: 'opacity 200ms ease',
+    transition: 'opacity 250ms ease, transform 250ms ease, filter 250ms ease',
+    cursor: 'pointer',
     '&:hover': {
       opacity: 1,
+      transform: 'scale(1.35)',
+      filter: `drop-shadow(0 0 6px ${COLOR_TOKENS.accentPrimary}90)`,
     },
   },
 
