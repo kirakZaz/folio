@@ -16,6 +16,8 @@ import JobListItem from './components/JobListItem/JobListItem';
 import ProfilePanel from './components/ProfilePanel/ProfilePanel';
 import { styles } from './ExperiencePage.styles';
 
+const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
+
 const ExperiencePage = () => {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
@@ -40,38 +42,62 @@ const ExperiencePage = () => {
         <SectionHeader index="01" label="Experience" count={`${WORK_PROJECTS_DATA.length} roles`} />
 
         <Box sx={styles.layout}>
-          {/* Left: job list (vertical on desktop, horizontal scroll on mobile) */}
-          <Box sx={styles.sidebar}>
-            <Box sx={styles.sidebarMeta}>
-              <Typography sx={styles.sidebarLabel}>Companies</Typography>
-              <Typography sx={styles.totalYears}>10+ years</Typography>
-            </Box>
+          {/* Left: job list */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease }}
+          >
+            <Box sx={styles.sidebar}>
+              <Box sx={styles.sidebarMeta}>
+                <Typography sx={styles.sidebarLabel}>Companies</Typography>
+                <Typography sx={styles.totalYears}>10+ years</Typography>
+              </Box>
 
-            {WORK_PROJECTS_DATA.map((project, index) => (
-              <JobListItem
-                key={project.id}
-                project={project}
-                isActive={index === selectedIndex}
-                onClick={() => setSelectedIndex(index)}
-              />
-            ))}
-          </Box>
+              {WORK_PROJECTS_DATA.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 + index * 0.06, ease }}
+                >
+                  <JobListItem
+                    project={project}
+                    isActive={index === selectedIndex}
+                    onClick={() => setSelectedIndex(index)}
+                  />
+                </motion.div>
+              ))}
+            </Box>
+          </motion.div>
 
           {/* Middle: job detail */}
           {selectedProject && (
-            <JobDetail
-              project={selectedProject}
-              index={selectedIndex}
-              total={WORK_PROJECTS_DATA.length}
-              onPrev={handlePrev}
-              onNext={handleNext}
-            />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease }}
+            >
+              <JobDetail
+                project={selectedProject}
+                index={selectedIndex}
+                total={WORK_PROJECTS_DATA.length}
+                onPrev={handlePrev}
+                onNext={handleNext}
+              />
+            </motion.div>
           )}
 
-          {/* Right: profile summary, skills, education */}
-          <Box sx={styles.general}>
-            <ProfilePanel />
-          </Box>
+          {/* Right: profile summary */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.5, ease }}
+          >
+            <Box sx={styles.general}>
+              <ProfilePanel />
+            </Box>
+          </motion.div>
         </Box>
       </motion.div>
     </PortfolioLayout>
