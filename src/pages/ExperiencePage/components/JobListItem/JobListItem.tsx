@@ -38,7 +38,10 @@ const JobListItem = React.memo(function JobListItem({ project, isActive, onClick
         ) : (
           <Typography sx={styles.mobileLogoFallback}>{project.company.charAt(0)}</Typography>
         )}
-        <Typography sx={styles.mobileYear(isActive)}>{yearStartShort}–{yearEndShort}</Typography>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: 1 }}>
+          <Typography sx={styles.mobileYear(isActive)}>{yearStartShort}</Typography>
+          <Typography sx={styles.mobileYear(isActive)}>{yearEndShort}</Typography>
+        </Box>
       </Box>
 
       {/* Desktop: full info */}
