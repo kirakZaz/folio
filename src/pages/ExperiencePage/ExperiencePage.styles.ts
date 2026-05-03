@@ -4,11 +4,14 @@ export const styles = {
   layout: {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', md: '1fr 2.5fr' },
-    gap: { xs: 2, md: 0 },
+    gridTemplateRows: { xs: 'auto 1fr', md: 'auto' },
+    gap: { xs: 1, md: 0 },
     mt: { md: 4, lg: 0 },
-    minHeight: '60vh',
+    height: { xs: 'calc(100vh - 120px)', md: 'auto' },
+    minHeight: { md: '60vh' },
     alignItems: 'start',
     minWidth: 0,
+    overflow: { xs: 'hidden', md: 'visible' },
   },
   // On mobile: horizontal scrollable row of company chips.
   // On desktop: sticky vertical list.

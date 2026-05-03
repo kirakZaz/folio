@@ -164,6 +164,8 @@ export const styles = {
     flex: 1,
     px: { xs: 2, md: 3, lg: 5 },
     minWidth: 0,
+    maxWidth: '100%',
+    overflowX: 'hidden',
     minHeight: { md: '100vh' },
   },
 };

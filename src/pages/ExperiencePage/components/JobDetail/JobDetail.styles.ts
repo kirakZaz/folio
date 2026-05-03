@@ -12,7 +12,9 @@ export const styles = {
     pr: { xs: 0, md: 2 },
     py: { lg: 2.5 },
     minWidth: 0,
+    minHeight: 0,
     overflow: 'hidden',
+    maxWidth: '100%',
   },
   outlinedButton: {
     p: 1,
@@ -22,6 +24,7 @@ export const styles = {
 
   scrollArea: {
     flex: 1,
+    minHeight: 0,
     overflowY: 'auto',
     scrollbarWidth: 'none',
     msOverflowStyle: 'none',
@@ -119,6 +122,7 @@ export const styles = {
     color: COLOR_TOKENS.textSecondary,
     lineHeight: 1.7,
     mb: 3,
+    wordBreak: 'break-word',
   },
 
   sectionCaption: {
@@ -208,6 +212,7 @@ export const styles = {
     fontSize: '0.8rem',
     color: COLOR_TOKENS.textSecondary,
     lineHeight: 1.6,
+    wordBreak: 'break-word',
   },
 
   sectionBlock: {
