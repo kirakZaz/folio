@@ -10,7 +10,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { Box, Button, Chip, Stack, Tooltip, Typography } from '@mui/material';
 
-import { SKILL_ICON_MAP } from '@/shared/constants/skill-icons.constants';
+import { SKILL_BRAND_COLORS, SKILL_ICON_MAP } from '@/shared/constants/skill-icons.constants';
 import type { WorkProject } from '@/shared/constants/work-projects.constants';
 
 import { styles } from './JobDetail.styles';
@@ -135,7 +135,7 @@ const JobDetail = React.memo(function JobDetail({
                           component="img"
                           src={iconSrc}
                           alt={tech}
-                          sx={styles.techIcon}
+                          sx={styles.techIcon(SKILL_BRAND_COLORS[tech])}
                         />
                       </Tooltip>
                     ) : (

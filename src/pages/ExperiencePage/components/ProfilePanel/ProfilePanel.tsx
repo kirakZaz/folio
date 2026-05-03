@@ -7,6 +7,7 @@ import {
   PROGRAMS,
   SKILL_CATEGORIES,
 } from '@/shared/constants/profile.constants';
+import { SKILL_BRAND_COLORS } from '@/shared/constants/skill-icons.constants';
 
 import { styles } from './ProfilePanel.styles';
 
@@ -31,7 +32,7 @@ const ProfilePanel = () => (
                   component="img"
                   src={skill.icon}
                   alt={skill.name}
-                  sx={styles.skillIcon}
+                  sx={styles.skillIcon(SKILL_BRAND_COLORS[skill.name])}
                 />
               </Tooltip>
             ))}
@@ -53,7 +54,7 @@ const ProfilePanel = () => (
                   component="img"
                   src={skill.icon}
                   alt={skill.name}
-                  sx={styles.skillIcon}
+                  sx={styles.skillIcon(SKILL_BRAND_COLORS[skill.name])}
                 />
               </Tooltip>
             ))}

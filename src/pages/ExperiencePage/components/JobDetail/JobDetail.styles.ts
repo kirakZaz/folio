@@ -134,7 +134,7 @@ export const styles = {
     mb: 3,
   },
 
-  techIcon: {
+  techIcon: (brandColor?: string) => ({
     width: 24,
     height: 24,
     objectFit: 'contain',
@@ -145,9 +145,9 @@ export const styles = {
     '&:hover': {
       opacity: 1,
       transform: 'scale(1.35)',
-      filter: `drop-shadow(0 0 6px ${COLOR_TOKENS.accentPrimary}90)`,
+      filter: `drop-shadow(0 0 6px ${brandColor ?? COLOR_TOKENS.accentPrimary}90)`,
     },
-  },
+  }),
 
   techChip: {
     height: 20,

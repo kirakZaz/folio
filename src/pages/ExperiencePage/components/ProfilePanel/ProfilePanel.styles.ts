@@ -49,7 +49,7 @@ export const styles = {
     alignItems: 'center',
   },
 
-  skillIcon: {
+  skillIcon: (brandColor?: string) => ({
     width: 22,
     height: 22,
     objectFit: 'contain',
@@ -60,9 +60,9 @@ export const styles = {
     '&:hover': {
       opacity: 1,
       transform: 'scale(1.35)',
-      filter: `drop-shadow(0 0 6px ${COLOR_TOKENS.accentPrimary}90)`,
+      filter: `drop-shadow(0 0 6px ${brandColor ?? COLOR_TOKENS.accentPrimary}90)`,
     },
-  },
+  }),
 
   eduDegree: {
     fontSize: '0.78rem',
