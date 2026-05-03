@@ -103,11 +103,11 @@ export const styles = {
   },
 
   tagline: {
-    fontSize: { xs: '0.85rem', md: '0.92rem' },
+    fontSize: { xs: '0.95rem', md: '1.05rem' },
     fontWeight: 300,
     color: COLOR_TOKENS.textSecondary,
     lineHeight: 1.7,
-    maxWidth: 440,
+    maxWidth: 500,
   },
 
   statsRow: {
@@ -156,7 +156,7 @@ export const styles = {
   },
 
   bioText: {
-    fontSize: '0.82rem',
+    fontSize: '0.92rem',
     fontWeight: 300,
     color: COLOR_TOKENS.textSecondary,
     lineHeight: 1.75,
@@ -184,7 +184,7 @@ export const styles = {
   },
 
   quoteText: {
-    fontSize: { xs: '0.85rem', md: '0.92rem' },
+    fontSize: { xs: '0.95rem', md: '1.05rem' },
     fontWeight: 400,
     fontStyle: 'italic',
     color: COLOR_TOKENS.textPrimary,
@@ -223,7 +223,7 @@ export const styles = {
     height: '100%',
     display: 'flex',
     gap: 1.25,
-    alignItems: 'flex-start',
+    alignItems: 'center',
     cursor: 'default',
     transition: 'border-color 300ms ease, transform 350ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms ease',
     '&:hover': {
