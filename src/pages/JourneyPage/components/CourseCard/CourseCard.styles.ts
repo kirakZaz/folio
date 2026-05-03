@@ -3,14 +3,14 @@ import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 import type { ProjectStatus } from '@/shared/constants/university-projects.constants';
 
 const STATUS_COLOR: Record<ProjectStatus, string> = {
-  completed: COLOR_TOKENS.statusCompleted,
-  in_progress: COLOR_TOKENS.accentPrimary,
+  completed: COLOR_TOKENS.statusAvailable,
+  in_progress: COLOR_TOKENS.statusAvailable,
   planned: COLOR_TOKENS.textDisabled,
 };
 
 const STATUS_BG: Record<ProjectStatus, string> = {
-  completed: 'rgba(234,82,33,0.1)',
-  in_progress: 'rgba(234,82,33,0.06)',
+  completed: 'rgba(34,197,94,0.1)',
+  in_progress: 'rgba(34,197,94,0.06)',
   planned: 'rgba(0,0,0,0.06)',
 };
 
@@ -80,7 +80,7 @@ export const styles = {
   typeChip: (isElective: boolean) => ({
     height: 14,
     fontSize: '0.52rem',
-    color: isElective ? COLOR_TOKENS.accentPrimary : COLOR_TOKENS.textDisabled,
+    color: isElective ? COLOR_TOKENS.statusAvailable : COLOR_TOKENS.textDisabled,
     backgroundColor: 'transparent',
     border: `0.5px solid ${COLOR_TOKENS.borderSubtle}`,
   }),
