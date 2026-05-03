@@ -50,4 +50,9 @@ export const styles = {
     letterSpacing: '0.08em',
     mb: 2,
   },
+
+  detailWrap: {
+    minWidth: 0,
+    overflow: 'hidden',
+  },
 };

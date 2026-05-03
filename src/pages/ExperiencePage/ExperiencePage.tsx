@@ -15,8 +15,6 @@ import JobDetail from './components/JobDetail/JobDetail';
 import JobListItem from './components/JobListItem/JobListItem';
 import { styles } from './ExperiencePage.styles';
 
-const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
-
 const ExperiencePage = () => {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
@@ -41,42 +39,24 @@ const ExperiencePage = () => {
         <SectionHeader index="01" label="Experience" count={`${WORK_PROJECTS_DATA.length} roles`} />
 
         <Box sx={styles.layout}>
-          {/* Left: job list */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease }}
-          >
-            <Box sx={styles.sidebar}>
-              <Box sx={styles.sidebarMeta}>
-                <Typography sx={styles.sidebarLabel}>Companies</Typography>
-                <Typography sx={styles.totalYears}>10+ years</Typography>
-              </Box>
-
-              {WORK_PROJECTS_DATA.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.3 + index * 0.06, ease }}
-                >
-                  <JobListItem
-                    project={project}
-                    isActive={index === selectedIndex}
-                    onClick={() => setSelectedIndex(index)}
-                  />
-                </motion.div>
-              ))}
+          <Box sx={styles.sidebar}>
+            <Box sx={styles.sidebarMeta}>
+              <Typography sx={styles.sidebarLabel}>Companies</Typography>
+              <Typography sx={styles.totalYears}>10+ years</Typography>
             </Box>
-          </motion.div>
 
-          {/* Right: job detail */}
+            {WORK_PROJECTS_DATA.map((project, index) => (
+              <JobListItem
+                key={project.id}
+                project={project}
+                isActive={index === selectedIndex}
+                onClick={() => setSelectedIndex(index)}
+              />
+            ))}
+          </Box>
+
           {selectedProject && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4, ease }}
-            >
+            <Box sx={styles.detailWrap}>
               <JobDetail
                 project={selectedProject}
                 index={selectedIndex}
@@ -84,7 +64,7 @@ const ExperiencePage = () => {
                 onPrev={handlePrev}
                 onNext={handleNext}
               />
-            </motion.div>
+            </Box>
           )}
         </Box>
       </motion.div>
