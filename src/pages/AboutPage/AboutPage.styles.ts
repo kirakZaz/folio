@@ -3,14 +3,28 @@ import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 export const styles = {
   // ── Page — centered, one screen ─────────────────────────────────────────
   page: {
+    display: 'grid',
+    gridTemplateColumns: { xs: '1fr', lg: '1fr 420px' },
+    gap: { xs: 4, lg: 5 },
+    minHeight: 0,
+    alignItems: 'start',
+  },
+
+  leftCol: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     height: { md: 'calc(100vh - 100px)' },
     minHeight: 0,
-    maxWidth: 960,
-    mx: 'auto',
     gap: { xs: 5, md: 0 },
+  },
+
+  rightCol: {
+    alignSelf: { lg: 'end' },
+    backgroundColor: COLOR_TOKENS.backgroundPaper,
+    borderRadius: '12px',
+    border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+    p: 2.5,
   },
 
   // ── Hero: photo center-left + name + tagline ───────────────────────────

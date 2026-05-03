@@ -10,6 +10,7 @@ import meImg from '@/shared/assets/Me.png';
 import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
 
 import PortfolioLayout from '@/components/PortfolioLayout';
+import ProfilePanel from '@/pages/ExperiencePage/components/ProfilePanel/ProfilePanel';
 
 import { styles } from './AboutPage.styles';
 
@@ -93,6 +94,7 @@ const AboutPage = () => {
         <SectionHeader index="03" label="About" />
 
         <Box sx={styles.page} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+          <Box sx={styles.leftCol}>
           {/* ── Hero ───────────────────────────────────────────────── */}
           <Box sx={styles.hero}>
             {/* Photo with ring + parallax */}
@@ -247,6 +249,18 @@ const AboutPage = () => {
                   </motion.div>
                 ))}
               </Box>
+            </Box>
+          </motion.div>
+          </Box>
+
+          {/* ── Right: skills, programs, education ─────────────────── */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.6, ease }}
+          >
+            <Box sx={styles.rightCol}>
+              <ProfilePanel hideSummary />
             </Box>
           </motion.div>
         </Box>

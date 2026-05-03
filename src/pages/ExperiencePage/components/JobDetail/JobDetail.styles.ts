@@ -6,8 +6,11 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
     borderLeft: { md: `1px solid ${COLOR_TOKENS.borderSubtle}` },
+    backgroundColor: { lg: 'rgba(255,255,255,0.5)' },
+    borderRadius: { lg: '12px' },
     pl: { xs: 0, md: 3 },
     pr: { xs: 0, md: 2 },
+    py: { lg: 2.5 },
     minWidth: 0,
   },
   outlinedButton: {

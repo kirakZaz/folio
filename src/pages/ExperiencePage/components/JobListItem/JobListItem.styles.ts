@@ -13,11 +13,11 @@ export const styles = {
     cursor: 'pointer',
     flexShrink: 0, // prevent shrinking in horizontal scroll
     border: `1px solid ${isActive ? COLOR_TOKENS.accentPrimary + '40' : COLOR_TOKENS.borderSubtle}`,
-    backgroundColor: isActive ? COLOR_TOKENS.accentPrimary + '08' : 'transparent',
+    backgroundColor: isActive ? COLOR_TOKENS.accentPrimary + '0A' : COLOR_TOKENS.backgroundPaper,
     transition: 'background-color 200ms ease, border-color 200ms ease',
     '&:hover': {
       backgroundColor: isActive
-        ? COLOR_TOKENS.accentPrimary + '08'
+        ? COLOR_TOKENS.accentPrimary + '0A'
         : COLOR_TOKENS.backgroundElevated,
     },
   }),

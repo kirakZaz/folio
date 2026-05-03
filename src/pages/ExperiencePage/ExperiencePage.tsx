@@ -13,7 +13,6 @@ import PortfolioLayout from '@/components/PortfolioLayout';
 
 import JobDetail from './components/JobDetail/JobDetail';
 import JobListItem from './components/JobListItem/JobListItem';
-import ProfilePanel from './components/ProfilePanel/ProfilePanel';
 import { styles } from './ExperiencePage.styles';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
@@ -71,7 +70,7 @@ const ExperiencePage = () => {
             </Box>
           </motion.div>
 
-          {/* Middle: job detail */}
+          {/* Right: job detail */}
           {selectedProject && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -87,17 +86,6 @@ const ExperiencePage = () => {
               />
             </motion.div>
           )}
-
-          {/* Right: profile summary */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.5, ease }}
-          >
-            <Box sx={styles.general}>
-              <ProfilePanel />
-            </Box>
-          </motion.div>
         </Box>
       </motion.div>
     </PortfolioLayout>

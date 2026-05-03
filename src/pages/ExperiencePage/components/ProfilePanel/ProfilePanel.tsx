@@ -36,13 +36,19 @@ const renderSkillIcon = (name: string, iconUrl: string) => {
   );
 };
 
-const ProfilePanel = () => (
+interface ProfilePanelProps {
+  hideSummary?: boolean;
+}
+
+const ProfilePanel = ({ hideSummary = false }: ProfilePanelProps) => (
   <Box sx={styles.panel}>
     {/* Summary */}
-    <Box>
-      <Typography sx={styles.caption}>Summary</Typography>
-      <Typography sx={styles.summaryText}>{BIO_TEXT}</Typography>
-    </Box>
+    {!hideSummary && (
+      <Box>
+        <Typography sx={styles.caption}>Summary</Typography>
+        <Typography sx={styles.summaryText}>{BIO_TEXT}</Typography>
+      </Box>
+    )}
 
     {/* Skills */}
     <Box>
