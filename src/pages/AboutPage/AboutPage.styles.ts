@@ -7,7 +7,7 @@ export const styles = {
     gridTemplateColumns: { xs: '1fr', lg: '1fr 420px' },
     gap: { xs: 4, lg: 5 },
     minHeight: 0,
-    alignItems: 'start',
+    alignItems: { xs: 'start', lg: 'end' },
   },
 
   leftCol: {
