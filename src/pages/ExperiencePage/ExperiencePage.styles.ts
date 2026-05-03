@@ -9,6 +9,8 @@ export const styles = {
     minHeight: { md: '60vh' },
     alignItems: 'start',
     minWidth: 0,
+    maxWidth: '100%',
+    overflow: 'hidden',
   },
   // On mobile: horizontal scrollable row of company chips.
   // On desktop: sticky vertical list.
@@ -26,6 +28,7 @@ export const styles = {
     position: { md: 'relative', lg: 'sticky' },
     top: { lg: 40 },
     minWidth: 0,
+    maxWidth: '100%',
   },
 
   // Label + years — hidden on mobile (no space in horizontal row)

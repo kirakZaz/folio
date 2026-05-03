@@ -6,6 +6,8 @@ export const styles = {
     display: 'flex',
     flexDirection: { xs: 'column', md: 'row' },
     minHeight: '100vh',
+    maxWidth: '100vw',
+    overflowX: 'hidden',
   },
 
   // ── Mobile top bar (xs only) ───────────────────────────────────────────────
