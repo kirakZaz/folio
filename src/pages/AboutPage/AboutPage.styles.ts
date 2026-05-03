@@ -14,7 +14,7 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    height: { md: 'calc(100vh - 100px)' },
+    height: { lg: 'calc(100vh - 100px)' },
     minHeight: 0,
     gap: { xs: 5, md: 0 },
   },

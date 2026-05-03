@@ -1,5 +1,5 @@
 import { monoUppercase } from '@/theme/commonStyles';
-import { COLOR_TOKENS } from '@/theme/themeTokens';
+import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
   root: {
@@ -29,13 +29,61 @@ export const styles = {
     cursor: 'pointer',
   },
 
-  mobileNavScroll: {
+  burgerButton: {
+    color: COLOR_TOKENS.textPrimary,
+    p: 0.5,
+  },
+
+  // ── Mobile dropdown menu ───────────────────────────────────────────────────
+  mobileDropdown: {
+    display: { xs: 'flex', md: 'none' },
+    flexDirection: 'column',
+    gap: 0.5,
+    px: 2,
+    py: 2,
+    backgroundColor: `${COLOR_TOKENS.backgroundDefault}F5`,
+    backdropFilter: 'blur(16px)',
+    borderBottom: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+  },
+
+  mobileNavItem: (isActive: boolean) => ({
     display: 'flex',
-    overflowX: 'auto',
-    gap: 0.75,
-    scrollbarWidth: 'none',
-    msOverflowStyle: 'none',
-    '&::-webkit-scrollbar': { display: 'none' },
+    alignItems: 'center',
+    background: 'none',
+    border: 'none',
+    borderLeft: `2px solid ${isActive ? COLOR_TOKENS.accentPrimary : 'transparent'}`,
+    cursor: 'pointer',
+    py: 1.25,
+    px: 2,
+    borderRadius: '0 8px 8px 0',
+    transition: 'background-color 200ms ease',
+    '&:hover': {
+      backgroundColor: COLOR_TOKENS.backgroundElevated,
+    },
+  }),
+
+  mobileNavLabel: (isActive: boolean) => ({
+    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
+    fontSize: '0.82rem',
+    fontWeight: isActive ? 600 : 400,
+    color: isActive ? COLOR_TOKENS.accentPrimary : COLOR_TOKENS.textSecondary,
+    letterSpacing: '0.04em',
+  }),
+
+  mobileContactsRow: {
+    display: 'flex',
+    gap: 2,
+    justifyContent: 'center',
+    pt: 2,
+    mt: 1,
+    borderTop: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+  },
+
+  mobileContactIcon: {
+    width: 26,
+    height: 26,
+    display: 'block',
+    objectFit: 'contain',
   },
 
   // ── Desktop sidebar (md+) ──────────────────────────────────────────────────
