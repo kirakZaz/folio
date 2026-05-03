@@ -3,13 +3,13 @@ import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 import type { AssessmentStatus } from '@/shared/types/assessment.types';
 
 const STATUS_ACCENT: Record<AssessmentStatus, string> = {
-  available: COLOR_TOKENS.statusAvailable,
+  available: COLOR_TOKENS.accentPrimary,
   coming_soon: COLOR_TOKENS.textDisabled,
   completed: COLOR_TOKENS.statusAvailable,
 };
 
 const STATUS_BG: Record<AssessmentStatus, string> = {
-  available: 'rgba(34,197,94,0.06)',
+  available: 'rgba(234,82,33,0.06)',
   coming_soon: 'rgba(0,0,0,0.03)',
   completed: 'rgba(34,197,94,0.08)',
 };
