@@ -4,7 +4,7 @@ export const styles = {
   // ── Page — centered, one screen ─────────────────────────────────────────
   page: {
     display: 'grid',
-    gridTemplateColumns: { xs: '1fr', lg: '1fr 420px' },
+    gridTemplateColumns: { xs: '1fr', lg: '1fr 340px' },
     gap: { xs: 4, lg: 5 },
     minHeight: 0,
     alignItems: { xs: 'start', lg: 'end' },
