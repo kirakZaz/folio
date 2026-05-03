@@ -29,10 +29,9 @@ const ProfilePanel = () => (
             {category.skills.map((skill) => (
               <Tooltip key={skill.name} title={skill.name} arrow placement="top">
                 <Box
-                  component="img"
-                  src={skill.icon}
-                  alt={skill.name}
-                  sx={styles.skillIcon(SKILL_BRAND_COLORS[skill.name])}
+                  role="img"
+                  aria-label={skill.name}
+                  sx={styles.skillIcon(skill.icon, SKILL_BRAND_COLORS[skill.name])}
                 />
               </Tooltip>
             ))}
@@ -51,10 +50,9 @@ const ProfilePanel = () => (
             {category.skills.map((skill) => (
               <Tooltip key={skill.name} title={skill.name} arrow placement="top">
                 <Box
-                  component="img"
-                  src={skill.icon}
-                  alt={skill.name}
-                  sx={styles.skillIcon(SKILL_BRAND_COLORS[skill.name])}
+                  role="img"
+                  aria-label={skill.name}
+                  sx={styles.skillIcon(skill.icon, SKILL_BRAND_COLORS[skill.name])}
                 />
               </Tooltip>
             ))}

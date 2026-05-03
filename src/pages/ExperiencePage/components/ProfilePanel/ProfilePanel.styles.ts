@@ -49,18 +49,26 @@ export const styles = {
     alignItems: 'center',
   },
 
-  skillIcon: (brandColor?: string) => ({
+  skillIcon: (iconUrl: string, brandColor?: string) => ({
     width: 22,
     height: 22,
-    objectFit: 'contain',
     display: 'block',
-    opacity: 0.75,
-    transition: 'opacity 250ms ease, transform 250ms ease, filter 250ms ease',
     cursor: 'pointer',
+    backgroundColor: COLOR_TOKENS.textPrimary,
+    WebkitMaskImage: `url(${iconUrl})`,
+    maskImage: `url(${iconUrl})`,
+    WebkitMaskSize: 'contain',
+    maskSize: 'contain',
+    WebkitMaskRepeat: 'no-repeat',
+    maskRepeat: 'no-repeat',
+    WebkitMaskPosition: 'center',
+    maskPosition: 'center',
+    opacity: 0.75,
+    transition: 'opacity 250ms ease, transform 250ms ease, background-color 250ms ease',
     '&:hover': {
       opacity: 1,
       transform: 'scale(1.35)',
-      filter: `drop-shadow(0 0 6px ${brandColor ?? COLOR_TOKENS.accentPrimary}90)`,
+      backgroundColor: brandColor ?? COLOR_TOKENS.accentPrimary,
     },
   }),
 

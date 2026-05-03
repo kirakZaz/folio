@@ -132,10 +132,9 @@ const JobDetail = React.memo(function JobDetail({
                     return iconSrc ? (
                       <Tooltip key={tech} title={tech} arrow placement="top">
                         <Box
-                          component="img"
-                          src={iconSrc}
-                          alt={tech}
-                          sx={styles.techIcon(SKILL_BRAND_COLORS[tech])}
+                          role="img"
+                          aria-label={tech}
+                          sx={styles.techIcon(iconSrc, SKILL_BRAND_COLORS[tech])}
                         />
                       </Tooltip>
                     ) : (
