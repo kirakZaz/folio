@@ -37,7 +37,7 @@ export const COLOR_TOKENS = {
 export const TYPOGRAPHY_TOKENS = {
   fontFamilyPrimary: '"Inter", "Helvetica Neue", Arial, sans-serif',
   fontFamilyMono: '"JetBrains Mono", "Fira Code", monospace',
-  fontFamilyScript: '"Dancing Script", cursive',
+  fontFamilyScript: '"Apple Chancery", "Dancing Script", cursive',
 } as const;
 
 export const SHAPE_TOKENS = {
