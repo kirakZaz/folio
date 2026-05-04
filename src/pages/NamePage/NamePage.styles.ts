@@ -50,5 +50,18 @@ export const styles = {
     backgroundColor: COLOR_TOKENS.accentPrimary,
     borderRadius: '1px',
     animation: `cursorSlide ${duration}s cubic-bezier(0.22, 1, 0.36, 1) ${startDelay}s both, cursorBlink 0.6s step-end ${startDelay + duration}s infinite`,
+    pointerEvents: 'none',
   }),
+
+  replayButton: {
+    position: 'absolute',
+    bottom: { xs: 24, md: 40 },
+    color: COLOR_TOKENS.textDisabled,
+    border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+    transition: 'color 200ms ease, border-color 200ms ease',
+    '&:hover': {
+      color: COLOR_TOKENS.accentPrimary,
+      borderColor: COLOR_TOKENS.accentPrimary,
+    },
+  },
 };
