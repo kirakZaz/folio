@@ -47,6 +47,22 @@ const ZAK_TRANSFORMS = [
   'translate(252.539, 0) scale(0.0390625, -0.0390625)',
 ];
 
+const KIRA_CONNECTIONS = [
+  'M80.1,0 C88.8,-8 100.3,-19.2 109,-14.2',
+  'M109.7,0 C116.1,-8 124.5,-31.2 130.9,-26.2',
+  'M151.4,0 C162.1,-8 176.2,-24.4 186.9,-19.4',
+];
+
+const ZAK_CONNECTIONS = [
+  'M47.1,0 C55.6,-6 67,-19.5 75.6,-15.5',
+  'M88.2,0 C92.6,-6 98.5,-28.6 102.9,-24.6',
+  'M125.2,0 C132.1,-6 141.4,-15.4 148.3,-11.4',
+  'M148.9,0 C154,-6 160.7,-24.9 165.8,-20.9',
+  'M182.2,0 C186,-6 191.2,-3 195,1',
+  'M216.5,0 C223,-6 231.8,-11.7 238.3,-7.7',
+  'M252.5,0 C261.1,-6 272.4,-19.5 281,-15.5',
+];
+
 const DRAW_DURATION = 3;
 const FILL_DELAY = 2.5;
 
@@ -69,7 +85,7 @@ const NamePage = () => {
           {/* Kira */}
           <svg viewBox="0 -100 203 130" style={{ width: '55%', maxWidth: 650, height: 'auto' }}>
             {KIRA_PATHS.map((d, i) => (
-              <g key={i} transform={KIRA_TRANSFORMS[i]}>
+              <g key={`p${i}`} transform={KIRA_TRANSFORMS[i]}>
                 <path
                   d={d}
                   fill="#141414"
@@ -86,12 +102,27 @@ const NamePage = () => {
                 />
               </g>
             ))}
+            {KIRA_CONNECTIONS.map((d, i) => (
+              <path
+                key={`c${i}`}
+                d={d}
+                fill="none"
+                stroke="#141414"
+                strokeWidth={1.8}
+                strokeLinecap="round"
+                strokeDasharray={200}
+                strokeDashoffset={200}
+                style={{
+                  animation: `drawStroke 0.4s ease ${0.8 + i * 0.3}s forwards`,
+                }}
+              />
+            ))}
           </svg>
 
           {/* Zakirova */}
           <svg viewBox="0 -80 294 110" style={{ width: '65%', maxWidth: 780, height: 'auto' }}>
             {ZAK_PATHS.map((d, i) => (
-              <g key={i} transform={ZAK_TRANSFORMS[i]}>
+              <g key={`p${i}`} transform={ZAK_TRANSFORMS[i]}>
                 <path
                   d={d}
                   fill="#EA5221"
@@ -107,6 +138,21 @@ const NamePage = () => {
                   }}
                 />
               </g>
+            ))}
+            {ZAK_CONNECTIONS.map((d, i) => (
+              <path
+                key={`c${i}`}
+                d={d}
+                fill="none"
+                stroke="#EA5221"
+                strokeWidth={1.4}
+                strokeLinecap="round"
+                strokeDasharray={200}
+                strokeDashoffset={200}
+                style={{
+                  animation: `drawStroke 0.4s ease ${2.2 + i * 0.2}s forwards`,
+                }}
+              />
             ))}
           </svg>
         </Box>
