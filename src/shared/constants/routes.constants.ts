@@ -7,6 +7,7 @@ export const ROUTES = {
   ASSESSMENT:         '/assessment/:id',
   UNIVERSITY_PROJECT: '/university/:projectId',
   WORK_PROJECT:       '/work/:projectId',
+  NAME:               '/name',
 } as const;
 
 export type AppRoute = (typeof ROUTES)[keyof typeof ROUTES];
