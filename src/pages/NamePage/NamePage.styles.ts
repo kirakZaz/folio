@@ -1,17 +1,4 @@
-import { keyframes } from '@mui/system';
-
-import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
-
-const writeReveal = keyframes`
-  from { clip-path: inset(0 100% 0 0); }
-  to   { clip-path: inset(0 -5% 0 0); }
-`;
-
-const penSlide = (duration: number) => keyframes`
-  0%   { left: -2px; opacity: 1; }
-  90%  { left: 100%; opacity: 1; }
-  100% { left: 100%; opacity: 0; }
-`;
+import { COLOR_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
   page: {
@@ -26,46 +13,19 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: { xs: -1, md: -2 },
-    userSelect: 'none',
+    width: '100%',
+    maxWidth: 800,
+    px: 2,
   },
 
-  lineWrap: {
-    position: 'relative',
-    display: 'inline-block',
+  svgLine1: {
+    width: { xs: '55%', sm: '45%', md: '40%' },
   },
 
-  line: {
-    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyScript,
-    fontWeight: 400,
-    lineHeight: 1.15,
-    textAlign: 'center',
-    whiteSpace: 'nowrap',
+  svgLine2: {
+    width: { xs: '75%', sm: '60%', md: '55%' },
+    mt: -1,
   },
-
-  line1: {
-    fontSize: { xs: '5rem', sm: '7.5rem', md: '10rem', lg: '13rem' },
-    color: COLOR_TOKENS.textPrimary,
-    animation: `${writeReveal} 1.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s both`,
-  },
-
-  line2: {
-    fontSize: { xs: '3.8rem', sm: '5.7rem', md: '7.6rem', lg: '10rem' },
-    color: COLOR_TOKENS.accentPrimary,
-    animation: `${writeReveal} 2.4s cubic-bezier(0.25, 0.1, 0.25, 1) 2.0s both`,
-  },
-
-  pen: (startDelay: number, duration: number) => ({
-    position: 'absolute',
-    top: '15%',
-    height: '70%',
-    width: '2px',
-    background: `linear-gradient(to bottom, transparent 0%, ${COLOR_TOKENS.accentPrimary} 30%, ${COLOR_TOKENS.accentPrimary} 70%, transparent 100%)`,
-    borderRadius: '1px',
-    pointerEvents: 'none',
-    opacity: 0,
-    animation: `${penSlide(duration)} ${duration}s cubic-bezier(0.25, 0.1, 0.25, 1) ${startDelay}s both`,
-  }),
 
   replayButton: {
     position: 'absolute',
