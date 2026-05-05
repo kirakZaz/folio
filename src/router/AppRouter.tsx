@@ -17,8 +17,6 @@ const ArtPage = lazy(() => import('@/pages/ArtPage'));
 const AssessmentPage = lazy(() => import('@/pages/AssessmentPage'));
 const UniversityProjectPage = lazy(() => import('@/pages/UniversityProjectPage'));
 const WorkProjectPage = lazy(() => import('@/pages/WorkProjectPage/WorkProjectPage'));
-const NamePage = lazy(() => import('@/pages/NamePage/NamePage'));
-
 const PageLoader = () => (
   <Box sx={styles.pageLoaderWrapper}>
     <CircularProgress size={28} sx={styles.pageLoaderSpinner} />
@@ -38,7 +36,6 @@ const AppRouter = () => (
       <Route path={ROUTES.ASSESSMENT} element={<AssessmentPage />} />
       <Route path={ROUTES.UNIVERSITY_PROJECT} element={<UniversityProjectPage />} />
       <Route path={ROUTES.WORK_PROJECT} element={<WorkProjectPage />} />
-      <Route path={ROUTES.NAME} element={<NamePage />} />
     </Routes>
   </Suspense>
 );

@@ -22,7 +22,6 @@ const NAV_ITEMS = [
   { label: 'About me', route: ROUTES.ABOUT },
   { label: 'Degree', route: ROUTES.JOURNEY },
   { label: 'Art', route: ROUTES.ART },
-  { label: 'Name', route: ROUTES.NAME },
 ];
 
 const MENU_VARIANTS = {
