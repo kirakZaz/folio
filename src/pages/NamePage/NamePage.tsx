@@ -7,131 +7,125 @@ import PortfolioLayout from '@/components/PortfolioLayout';
 
 import { styles } from './NamePage.styles';
 
-// Hand-traced centerline paths — single continuous stroke per word
-// ViewBox: 0 0 340 140 for Kira, 0 0 560 140 for Zakirova
-// Baseline ≈ 105, x-height ≈ 50, ascender ≈ 10
+// Apple Chancery-style centerline paths — traced from target reference
+// Each word is a single continuous stroke (+ separate dot for i)
 
+// "Kira" — italic calligraphic K, connected i, r, a
+// viewBox: 0 0 300 100
 const KIRA_MAIN =
-  // K: start at baseline, up to top
-  'M 22,108 C 20,80 18,45 20,12 ' +
-  // K: back down to middle
-  'C 22,32 24,48 22,60 ' +
-  // K: upper arm out
-  'C 34,38 52,15 65,18 ' +
+  // K: stem up (italic lean)
+  'M 15,82 C 17,58 19,32 24,10 ' +
+  // K: back down to mid
+  'C 25,28 23,42 22,52 ' +
+  // K: upper arm — elegant curve out right
+  'C 30,34 45,16 58,14 ' +
   // K: return to middle
-  'C 52,28 34,50 27,60 ' +
-  // K: lower leg out + connector to i
-  'C 40,78 58,98 75,105 ' +
-  // i: upstroke
-  'C 80,98 84,72 82,48 ' +
-  // i: downstroke + exit
-  'C 80,65 78,88 82,108 ' +
-  // connector to r
-  'C 88,98 94,72 96,50 ' +
+  'C 48,22 32,44 26,52 ' +
+  // K: lower leg — sweeping out right to baseline
+  'C 35,68 50,80 65,84 ' +
+  // connection to i — upstroke
+  'C 70,80 74,62 72,46 ' +
+  // i: downstroke back to baseline
+  'C 70,60 69,76 72,86 ' +
+  // connection to r — upstroke
+  'C 78,76 82,58 85,44 ' +
   // r: top curve
-  'C 100,38 112,34 120,40 ' +
-  // r: down + connector
-  'C 118,52 114,78 118,105 ' +
-  // connector to a
-  'C 125,85 136,55 150,42 ' +
-  // a: loop right
-  'C 162,34 172,42 170,60 ' +
-  // a: loop back down
-  'C 168,78 155,95 145,98 ' +
-  // a: re-ascend and exit
-  'C 140,100 145,78 158,58 ' +
-  // a: final downstroke
-  'C 165,72 170,92 175,108';
+  'C 90,36 98,34 105,38 ' +
+  // r: down to baseline + exit
+  'C 102,50 100,70 104,84 ' +
+  // connection to a — upstroke into loop
+  'C 112,66 122,42 134,34 ' +
+  // a: loop right side
+  'C 144,28 152,38 150,52 ' +
+  // a: loop bottom — back left
+  'C 148,66 138,80 130,82 ' +
+  // a: re-ascend through loop
+  'C 124,84 130,64 142,48 ' +
+  // a: final exit stroke
+  'C 148,58 152,76 156,86';
 
-const KIRA_DOT = 'M 84,28 C 86,24 90,24 88,28 C 86,32 82,32 84,28';
+const KIRA_DOT = 'M 74,30 C 75,26 79,26 78,30 C 77,34 73,34 74,30';
 
+// "Zakirova" — italic calligraphic Z, connected a-k-i-r-o-v-a
+// viewBox: 0 0 430 105
 const ZAKIROVA_MAIN =
-  // Z: top loop
-  'M 18,38 C 8,22 35,8 62,15 ' +
-  // Z: diagonal down
-  'C 42,35 25,68 18,95 ' +
-  // Z: bottom + connector
-  'C 15,108 28,112 42,108 C 50,105 55,98 60,90 ' +
+  // Z: top flourish — leftward loop then right
+  'M 20,42 C 10,26 30,12 55,16 ' +
+  // Z: diagonal stroke down-left
+  'C 42,30 28,56 18,78 ' +
+  // Z: bottom curve + connector right
+  'C 14,90 22,94 38,90 C 46,87 52,80 58,72 ' +
   // a: upstroke into loop
-  'C 68,68 80,45 92,38 ' +
+  'C 65,54 76,38 86,32 ' +
   // a: loop right
-  'C 104,32 112,42 110,58 ' +
+  'C 96,26 104,36 102,50 ' +
   // a: loop bottom + exit
-  'C 108,75 96,92 88,95 C 84,96 88,75 100,55 ' +
-  // a: exit down
-  'C 106,68 110,90 114,108 ' +
-  // connector to k
-  'C 120,92 126,62 130,42 ' +
-  // k: up to ascender
-  'C 132,22 134,8 136,12 ' +
-  // k: back down
-  'C 138,28 136,55 134,72 ' +
-  // k: upper notch
-  'C 142,55 155,38 162,40 ' +
-  // k: back + lower leg
-  'C 152,48 140,62 138,72 C 148,82 160,100 170,105 ' +
-  // connector to i
-  'C 176,102 180,78 178,52 ' +
+  'C 100,64 90,78 84,80 C 80,82 84,62 96,46 ' +
+  // a: exit downstroke
+  'C 102,56 106,76 110,88 ' +
+  // connector to k — upstroke to ascender
+  'C 116,68 120,38 124,16 ' +
+  // k: ascender top
+  'C 126,8 128,12 126,24 ' +
+  // k: back down to mid
+  'C 124,40 122,56 120,65 ' +
+  // k: upper notch out
+  'C 128,52 140,36 148,38 ' +
+  // k: back to mid + lower leg
+  'C 140,46 128,60 126,68 C 134,78 146,88 156,90 ' +
+  // connector to i — upstroke
+  'C 162,84 166,64 164,46 ' +
   // i: downstroke + exit
-  'C 176,68 174,90 178,108 ' +
+  'C 162,60 160,78 164,90 ' +
   // connector to r
-  'C 184,96 190,70 194,52 ' +
+  'C 170,78 176,58 180,44 ' +
   // r: top curve
-  'C 198,40 210,36 218,42 ' +
-  // r: down + connector
-  'C 216,54 212,80 216,105 ' +
-  // connector to o
-  'C 224,85 234,55 248,42 ' +
-  // o: loop
-  'C 262,32 274,42 272,62 ' +
-  'C 270,82 256,100 244,102 ' +
-  // o: exit
-  'C 238,103 244,78 260,55 ' +
+  'C 185,34 194,32 202,36 ' +
+  // r: down + exit
+  'C 200,48 196,70 200,88 ' +
+  // connector to o — upstroke
+  'C 208,68 218,44 230,34 ' +
+  // o: loop right
+  'C 242,26 252,36 250,52 ' +
+  // o: loop bottom
+  'C 248,68 238,82 230,84 ' +
+  // o: exit upward
+  'C 224,86 230,64 244,48 ' +
   // connector to v
-  'C 268,68 272,88 278,108 ' +
-  // v: up right
-  'C 284,82 292,55 298,42 ' +
-  // v: down right
-  'C 302,55 308,82 314,108 ' +
-  // connector to a
-  'C 320,88 330,58 344,42 ' +
+  'C 250,58 254,78 260,90 ' +
+  // v: upstroke right
+  'C 266,72 274,48 280,36 ' +
+  // v: downstroke
+  'C 284,48 288,72 294,88 ' +
+  // connector to a — upstroke
+  'C 302,68 312,44 324,34 ' +
   // a: loop right
-  'C 356,34 366,42 364,60 ' +
+  'C 334,28 342,36 340,52 ' +
   // a: loop bottom
-  'C 362,78 350,95 340,98 ' +
+  'C 338,66 328,80 322,82 ' +
   // a: re-ascend + exit
-  'C 335,100 340,78 354,58 ' +
-  'C 360,70 364,90 368,108';
+  'C 318,84 322,64 336,48 ' +
+  'C 342,58 346,78 350,90';
 
-const ZAKIROVA_DOT = 'M 180,32 C 182,28 186,28 184,32 C 182,36 178,36 180,32';
+const ZAKIROVA_DOT = 'M 166,28 C 167,24 171,24 170,28 C 169,32 165,32 166,28';
 
 interface HandwrittenWordProps {
   mainPath: string;
-  dotPath?: string;
+  dotPath: string;
   viewBox: string;
   color: string;
-  strokeWidth: number;
   delay: number;
   duration: number;
-  dotDelay?: number;
+  dotDelay: number;
 }
 
-const HandwrittenWord = ({
-  mainPath,
-  dotPath,
-  viewBox,
-  color,
-  strokeWidth,
-  delay,
-  duration,
-  dotDelay,
-}: HandwrittenWordProps) => {
+const HandwrittenWord = ({ mainPath, dotPath, viewBox, color, delay, duration, dotDelay }: HandwrittenWordProps) => {
   const mainRef = React.useRef<SVGPathElement>(null);
-  const [mainLength, setMainLength] = React.useState(2000);
+  const [length, setLength] = React.useState(2000);
 
   React.useEffect(() => {
     if (mainRef.current) {
-      setMainLength(Math.ceil(mainRef.current.getTotalLength()));
+      setLength(Math.ceil(mainRef.current.getTotalLength()) + 10);
     }
   }, [mainPath]);
 
@@ -142,25 +136,19 @@ const HandwrittenWord = ({
         d={mainPath}
         fill="none"
         stroke={color}
-        strokeWidth={strokeWidth}
+        strokeWidth={2.2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeDasharray={mainLength}
-        strokeDashoffset={mainLength}
-        style={{
-          animation: `drawLine ${duration}s cubic-bezier(0.3, 0, 0.2, 1) ${delay}s forwards`,
-        }}
+        strokeDasharray={length}
+        strokeDashoffset={length}
+        style={{ animation: `drawLine ${duration}s cubic-bezier(0.3, 0, 0.15, 1) ${delay}s forwards` }}
       />
-      {dotPath && (
-        <path
-          d={dotPath}
-          fill={color}
-          opacity={0}
-          style={{
-            animation: `dotAppear 0.15s ease ${dotDelay ?? delay + duration * 0.5}s forwards`,
-          }}
-        />
-      )}
+      <path
+        d={dotPath}
+        fill={color}
+        opacity={0}
+        style={{ animation: `dotAppear 0.12s ease ${dotDelay}s forwards` }}
+      />
     </svg>
   );
 };
@@ -185,24 +173,22 @@ const NamePage = () => {
             <HandwrittenWord
               mainPath={KIRA_MAIN}
               dotPath={KIRA_DOT}
-              viewBox="0 0 190 125"
+              viewBox="0 0 170 100"
               color="#141414"
-              strokeWidth={2.5}
-              delay={0.3}
+              delay={0.5}
               duration={2.5}
-              dotDelay={1.8}
+              dotDelay={2}
             />
           </Box>
           <Box sx={styles.svgLine2}>
             <HandwrittenWord
               mainPath={ZAKIROVA_MAIN}
               dotPath={ZAKIROVA_DOT}
-              viewBox="0 0 385 125"
+              viewBox="0 0 365 105"
               color="#EA5221"
-              strokeWidth={2.2}
-              delay={3}
+              delay={3.2}
               duration={4}
-              dotDelay={4.8}
+              dotDelay={5.5}
             />
           </Box>
         </Box>
