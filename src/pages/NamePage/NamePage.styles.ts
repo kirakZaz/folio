@@ -14,17 +14,17 @@ export const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     width: '100%',
-    maxWidth: 800,
+    maxWidth: 700,
     px: 2,
   },
 
   svgLine1: {
-    width: { xs: '55%', sm: '45%', md: '40%' },
+    width: { xs: '50%', sm: '42%', md: '38%' },
   },
 
   svgLine2: {
-    width: { xs: '75%', sm: '60%', md: '55%' },
-    mt: -1,
+    width: { xs: '82%', sm: '68%', md: '62%' },
+    mt: { xs: -1, md: -2 },
   },
 
   replayButton: {
