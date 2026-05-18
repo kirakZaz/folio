@@ -28,6 +28,7 @@ const DegreePage = () => (
         index="02"
         label="Degree"
         count={`${COMPLETED_COUNT} completed`}
+        headingLevel="h1"
       />
 
       {/* Assessments */}

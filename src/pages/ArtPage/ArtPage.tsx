@@ -294,7 +294,7 @@ const ArtPage = () => {
         transition={DEFAULT_TRANSITION}
         style={{ width: '100%' }}
       >
-        <SectionHeader index="05" label="Art" count={items.length} />
+        <SectionHeader index="05" label="Art" count={items.length} headingLevel="h1" />
 
         {/* Tabs */}
         <Box sx={styles.tabsRow}>

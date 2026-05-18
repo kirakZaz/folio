@@ -36,7 +36,7 @@ const ExperiencePage = () => {
         animate="visible"
         transition={DEFAULT_TRANSITION}
       >
-        <SectionHeader index="01" label="Experience" count={`${WORK_PROJECTS_DATA.length} roles`} />
+        <SectionHeader index="01" label="Experience" count={`${WORK_PROJECTS_DATA.length} roles`} headingLevel="h1" />
 
         <Box sx={styles.layout}>
           <Box sx={styles.sidebar}>

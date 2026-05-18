@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import { useAppSelector } from '@/app/hooks.ts';
 import Degree from '@/pages/HomePage/components/Journey/Journey.tsx';
@@ -34,6 +34,13 @@ const HomePage = () => {
 
   return (
     <Layout fullWidthSlot={<HomePageNavBar />}>
+      <Typography
+        component="h1"
+        sx={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)', clipPath: 'inset(50%)' }}
+      >
+        Kira Zakirova — Frontend Engineer Portfolio
+      </Typography>
+
       {/* ── Blueprint Hero ────────────────────────────────────────────── */}
       <Box>
         <BlueprintHero />

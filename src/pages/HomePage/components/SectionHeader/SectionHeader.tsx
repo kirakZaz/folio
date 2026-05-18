@@ -6,9 +6,10 @@ interface SectionHeaderProps {
   index: string;
   label: string;
   count?: number | string;
+  headingLevel?: 'h1' | 'h2' | 'h3';
 }
 
-const SectionHeader = ({ label, count }: SectionHeaderProps) => (
+const SectionHeader = ({ label, count, headingLevel }: SectionHeaderProps) => (
   <Box
     sx={{
       display: 'flex',
@@ -18,6 +19,7 @@ const SectionHeader = ({ label, count }: SectionHeaderProps) => (
     }}
   >
     <Typography
+      {...(headingLevel ? { component: headingLevel } : {})}
       sx={{
         fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
         fontSize: { xs: '12px', md: '16px' },

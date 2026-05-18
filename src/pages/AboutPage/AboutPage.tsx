@@ -91,7 +91,7 @@ const AboutPage = () => {
         animate="visible"
         transition={DEFAULT_TRANSITION}
       >
-        <SectionHeader index="03" label="About" />
+        <SectionHeader index="03" label="About" headingLevel="h1" />
 
         <Box sx={styles.page} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
           <Box sx={styles.leftCol}>
