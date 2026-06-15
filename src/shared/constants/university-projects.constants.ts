@@ -221,6 +221,7 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
       'Designed and developed a personal portfolio website from scratch using React, TypeScript, Material UI, and Framer Motion. The portfolio documents the full creative degree journey through the Bachelor of Design programme — showcasing university projects, work experience, and professional identity. Each assessment built toward the final product: personal brand research, logo and visual identity design, and a polished responsive website with custom SVG animations, dark theme, and project case studies.',
     images: [],
     finalScore: 90,
+    presentationFile: '/images/projects/finalProjects/CDM303A_KiraZakirov_A3.pdf',
   },
   {
     id: 'pbl202',
