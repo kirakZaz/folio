@@ -191,7 +191,7 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
     presentationFile: '/images/projects/finalProjects/SEN301_KiraZakirov_A3.pdf',
   },
 
-  // ── Study Year 2 · Trimester 1, 2026 (In Progress) ────────────────────────
+  // ── Study Year 2 · Trimester 1, 2026 ──────────────────────────────────────
   {
     id: 'gst201',
     studyPeriod: 5,
@@ -200,10 +200,12 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
     trimester: 1,
     subjectType: 'core',
     subject: 'Game Studies',
-    status: 'in_progress',
-    description: '',
+    status: 'completed',
+    description:
+      'Built "Ship It" — a browser-based interactive artefact simulating an internal HR dashboard of a fictional AAA studio, "Lumen Interactive". The user plays a Senior Producer making seven management decisions in the six weeks before a flagship release, each enacting what Cote and Harris (2021) call the "cruel optimism of good crunch". The accompanying critical essay analyses how the game industry sustains exploitative labour practices not through open coercion but through positive discourse — the language of passion, family, and the "dream job". The artefact places the user on the management side to provoke a shift of perspective: the problem is structural, not individual.',
     images: [],
-    finalScore: '-',
+    finalScore: 92,
+    presentationFile: '/images/projects/finalProjects/GST201_KiraZakirov_A3_Essay.pdf',
   },
   {
     id: 'cdm303a',
@@ -213,10 +215,11 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
     trimester: 1,
     subjectType: 'elective',
     subject: 'Portfolio',
-    status: 'in_progress',
-    description: '',
+    status: 'completed',
+    description:
+      'Designed and developed a personal portfolio website from scratch using React, TypeScript, Material UI, and Framer Motion. The portfolio documents the full creative degree journey through the Bachelor of Design programme — showcasing university projects, work experience, and professional identity. Each assessment built toward the final product: personal brand research, logo and visual identity design, and a polished responsive website with custom SVG animations, dark theme, and project case studies.',
     images: [],
-    finalScore: '-',
+    finalScore: 90,
   },
   {
     id: 'pbl202',
@@ -226,10 +229,12 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
     trimester: 1,
     subjectType: 'core',
     subject: 'Problem Based Learning Studio',
-    status: 'in_progress',
-    description: '',
+    status: 'completed',
+    description:
+      'Cross-disciplinary team project (Game Design, Interior Design, Fashion Marketing) applying systems thinking and the Double Diamond methodology to household clutter accumulation in Melbourne. Developed "Unclutter" — a community-first platform connecting neighbours through sharing and giving, built on belonging rather than transactions. Research included semi-structured interviews (n=6), system and stakeholder mapping, and six scrappy prototypes tested iteratively. Kira\'s role: research synthesis, report writing, and strategic direction. The project reframed clutter from an individual problem to a symptom of community disconnection and missing redistribution infrastructure.',
     images: [],
-    finalScore: '-',
+    finalScore: 77,
+    presentationFile: '/images/projects/finalProjects/PBL202_KiraZakirov_A3_Report.pdf',
   },
 
   // ── Study Year 2 · Trimester 2, 2026 (Planned) ────────────────────────────
