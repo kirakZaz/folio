@@ -205,6 +205,7 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
       'Built "Ship It" — a browser-based interactive artefact simulating an internal HR dashboard of a fictional AAA studio, "Lumen Interactive". The user plays a Senior Producer making seven management decisions in the six weeks before a flagship release, each enacting what Cote and Harris (2021) call the "cruel optimism of good crunch". The accompanying critical essay analyses how the game industry sustains exploitative labour practices not through open coercion but through positive discourse — the language of passion, family, and the "dream job". The artefact places the user on the management side to provoke a shift of perspective: the problem is structural, not individual.',
     images: [],
     finalScore: 92,
+    link: 'https://interactive-artifact-psi.vercel.app/',
     presentationFile: '/images/projects/finalProjects/GST201_KiraZakirov_A3_Essay.pdf',
   },
   {
