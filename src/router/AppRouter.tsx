@@ -14,6 +14,7 @@ const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const ExperiencePage = lazy(() => import('@/pages/ExperiencePage'));
 const DegreePage = lazy(() => import('@/pages/JourneyPage'));
 const ArtPage = lazy(() => import('@/pages/ArtPage'));
+const ResumePage = lazy(() => import('@/pages/ResumePage'));
 const AssessmentPage = lazy(() => import('@/pages/AssessmentPage'));
 const UniversityProjectPage = lazy(() => import('@/pages/UniversityProjectPage'));
 const WorkProjectPage = lazy(() => import('@/pages/WorkProjectPage/WorkProjectPage'));
@@ -33,6 +34,7 @@ const AppRouter = () => (
       <Route path={ROUTES.EXPERIENCE} element={<ExperiencePage />} />
       <Route path={ROUTES.JOURNEY} element={<DegreePage />} />
       <Route path={ROUTES.ART} element={<ArtPage />} />
+      <Route path={ROUTES.RESUME} element={<ResumePage />} />
       <Route path={ROUTES.ASSESSMENT} element={<AssessmentPage />} />
       <Route path={ROUTES.UNIVERSITY_PROJECT} element={<UniversityProjectPage />} />
       <Route path={ROUTES.WORK_PROJECT} element={<WorkProjectPage />} />

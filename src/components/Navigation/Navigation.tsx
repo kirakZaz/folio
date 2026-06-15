@@ -11,6 +11,7 @@ import type { NavigationProps } from './Navigation.types.ts';
 const NAV_ITEMS = [
   { label: 'Welcome', route: ROUTES.HOME },
   { label: 'Experience', route: ROUTES.EXPERIENCE },
+  { label: 'Resume', route: ROUTES.RESUME },
   { label: 'About me', route: ROUTES.ABOUT },
   { label: 'Degree', route: ROUTES.JOURNEY },
   { label: 'Art', route: ROUTES.ART },

@@ -4,6 +4,7 @@ export const ROUTES = {
   EXPERIENCE:         '/experience',
   JOURNEY:            '/degree',
   ART:                '/art',
+  RESUME:             '/resume',
   ASSESSMENT:         '/assessment/:id',
   UNIVERSITY_PROJECT: '/university/:projectId',
   WORK_PROJECT:       '/work/:projectId',
