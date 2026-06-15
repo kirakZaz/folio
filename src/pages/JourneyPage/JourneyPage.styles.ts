@@ -11,9 +11,7 @@ export const styles = {
     mb: 2.5,
   },
 
-  coursesSection: {
-    // no extra styles needed
-  },
+  coursesSection: {},
 
   coursesHeader: {
     display: 'flex',
@@ -29,14 +27,25 @@ export const styles = {
     letterSpacing: '0.1em',
   },
 
-  periodGroup: {
-    mb: 5,
+  yearGroup: {
+    mb: 6,
   },
 
-  periodLabel: {
+  yearLabel: {
+    fontSize: '1.1rem',
+    fontWeight: 600,
+    color: COLOR_TOKENS.textPrimary,
+    mb: 2,
+  },
+
+  trimesterGroup: {
+    mb: 3,
+  },
+
+  trimesterLabel: {
     fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-    fontSize: '0.7rem',
-    color: COLOR_TOKENS.textSecondary,
+    fontSize: '0.65rem',
+    color: COLOR_TOKENS.textDisabled,
     letterSpacing: '0.08em',
     textTransform: 'uppercase',
     mb: 1.5,

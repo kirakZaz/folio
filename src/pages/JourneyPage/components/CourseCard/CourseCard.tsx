@@ -35,7 +35,7 @@ const CourseCard = React.memo(function CourseCard({ project }: CourseCardProps) 
       <Box>
         <Box sx={styles.topRow}>
           <Typography sx={styles.periodLabel}>
-            Y{project.studyYear} · T{project.trimester} · {project.year}
+            T{project.studyPeriod} · Y{project.studyYear}
           </Typography>
           <Chip
             label={STATUS_LABEL[project.status]}

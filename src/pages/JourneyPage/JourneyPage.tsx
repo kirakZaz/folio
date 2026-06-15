@@ -15,16 +15,27 @@ import { styles } from './JourneyPage.styles';
 
 const COMPLETED_COUNT = UNIVERSITY_PROJECTS_DATA.filter((p) => p.status === 'completed').length;
 
-interface PeriodGroup {
+/* ── grouping helpers ──────────────────────────────────────────────────────── */
+
+interface TrimesterGroup {
   label: string;
   projects: UniversityProject[];
 }
 
-const buildPeriodLabel = (project: UniversityProject): string =>
-  `Year ${project.studyYear} · Trimester ${project.trimester}, ${project.year}`;
+interface YearGroup {
+  yearLabel: string;
+  trimesters: TrimesterGroup[];
+}
 
-const groupByPeriodDescending = (projects: UniversityProject[]): PeriodGroup[] => {
-  const active: Map<number, { label: string; projects: UniversityProject[] }> = new Map();
+const studyTrimester = (period: number): number => ((period - 1) % 3) + 1;
+
+const buildTrimesterLabel = (project: UniversityProject): string => {
+  const tri = studyTrimester(project.studyPeriod);
+  return `Trimester ${tri} — T${project.trimester} HE, ${project.year}`;
+};
+
+const buildGroups = (projects: UniversityProject[]): { years: YearGroup[]; planned: UniversityProject[] } => {
+  const yearMap = new Map<number, Map<number, TrimesterGroup>>();
   const planned: UniversityProject[] = [];
 
   for (const project of projects) {
@@ -33,26 +44,38 @@ const groupByPeriodDescending = (projects: UniversityProject[]): PeriodGroup[] =
       continue;
     }
 
-    const existing = active.get(project.studyPeriod);
+    let triMap = yearMap.get(project.studyYear);
+    if (!triMap) {
+      triMap = new Map();
+      yearMap.set(project.studyYear, triMap);
+    }
+
+    const existing = triMap.get(project.studyPeriod);
     if (existing) {
       existing.projects.push(project);
     } else {
-      active.set(project.studyPeriod, { label: buildPeriodLabel(project), projects: [project] });
+      triMap.set(project.studyPeriod, {
+        label: buildTrimesterLabel(project),
+        projects: [project],
+      });
     }
   }
 
-  const groups: PeriodGroup[] = Array.from(active.entries())
+  const years: YearGroup[] = Array.from(yearMap.entries())
     .sort(([a], [b]) => b - a)
-    .map(([, group]) => group);
+    .map(([year, triMap]) => ({
+      yearLabel: `Year ${year}`,
+      trimesters: Array.from(triMap.entries())
+        .sort(([a], [b]) => b - a)
+        .map(([, group]) => group),
+    }));
 
-  if (planned.length > 0) {
-    groups.push({ label: 'Planned', projects: planned });
-  }
-
-  return groups;
+  return { years, planned };
 };
 
-const PERIOD_GROUPS = groupByPeriodDescending(UNIVERSITY_PROJECTS_DATA);
+const { years: YEAR_GROUPS, planned: PLANNED_PROJECTS } = buildGroups(UNIVERSITY_PROJECTS_DATA);
+
+/* ── component ─────────────────────────────────────────────────────────────── */
 
 const DegreePage = () => (
   <PortfolioLayout>
@@ -77,9 +100,40 @@ const DegreePage = () => (
           </Typography>
         </Box>
 
-        {PERIOD_GROUPS.map((group) => (
-          <Box key={group.label} sx={styles.periodGroup}>
-            <Typography sx={styles.periodLabel}>{group.label}</Typography>
+        {YEAR_GROUPS.map((yearGroup) => (
+          <Box key={yearGroup.yearLabel} sx={styles.yearGroup}>
+            <Typography sx={styles.yearLabel}>{yearGroup.yearLabel}</Typography>
+
+            {yearGroup.trimesters.map((triGroup) => (
+              <Box key={triGroup.label} sx={styles.trimesterGroup}>
+                <Typography sx={styles.trimesterLabel}>{triGroup.label}</Typography>
+
+                <motion.div
+                  variants={STAGGER_CONTAINER_VARIANTS}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={VIEWPORT_CONFIG}
+                >
+                  <Box sx={styles.coursesGrid}>
+                    {triGroup.projects.map((project, index) => (
+                      <motion.div
+                        key={project.id}
+                        variants={FADE_UP_VARIANTS}
+                        transition={{ ...DEFAULT_TRANSITION, delay: index * 0.04 }}
+                      >
+                        <CourseCard project={project} />
+                      </motion.div>
+                    ))}
+                  </Box>
+                </motion.div>
+              </Box>
+            ))}
+          </Box>
+        ))}
+
+        {PLANNED_PROJECTS.length > 0 && (
+          <Box sx={styles.yearGroup}>
+            <Typography sx={styles.yearLabel}>Planned</Typography>
 
             <motion.div
               variants={STAGGER_CONTAINER_VARIANTS}
@@ -88,7 +142,7 @@ const DegreePage = () => (
               viewport={VIEWPORT_CONFIG}
             >
               <Box sx={styles.coursesGrid}>
-                {group.projects.map((project, index) => (
+                {PLANNED_PROJECTS.map((project, index) => (
                   <motion.div
                     key={project.id}
                     variants={FADE_UP_VARIANTS}
@@ -100,7 +154,7 @@ const DegreePage = () => (
               </Box>
             </motion.div>
           </Box>
-        ))}
+        )}
       </Box>
     </motion.div>
   </PortfolioLayout>
