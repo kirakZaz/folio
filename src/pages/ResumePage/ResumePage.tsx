@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import { Box, Button } from '@mui/material';
+import { Box } from '@mui/material';
 
 import SectionHeader from '@/pages/HomePage/components/SectionHeader/SectionHeader.tsx';
 
@@ -21,20 +20,7 @@ const ResumePage = () => (
       animate="visible"
       transition={DEFAULT_TRANSITION}
     >
-      <Box sx={styles.headerRow}>
-        <SectionHeader index="05" label="Resume" headingLevel="h1" />
-        <Button
-          variant="contained"
-          startIcon={<FileDownloadIcon />}
-          component="a"
-          href={CV_PATH}
-          download
-          size="small"
-          sx={styles.downloadButton}
-        >
-          Download PDF
-        </Button>
-      </Box>
+      <SectionHeader index="05" label="Resume" headingLevel="h1" />
 
       <Box
         component="iframe"
