@@ -1,10 +1,6 @@
 import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
-  assessmentsSection: {
-    mb: 8,
-  },
-
   sectionCaption: {
     fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
     fontSize: '0.65rem',
@@ -15,22 +11,6 @@ export const styles = {
     mb: 2.5,
   },
 
-  assessmentsGrid: {
-    mb: 3,
-  },
-
-  degreeDescription: {
-    fontSize: '0.875rem',
-    color: COLOR_TOKENS.textSecondary,
-    lineHeight: 1.7,
-    maxWidth: 560,
-  },
-
-  divider: {
-    mb: 6,
-    borderColor: COLOR_TOKENS.borderSubtle,
-  },
-
   coursesSection: {
     // no extra styles needed
   },
@@ -39,7 +19,7 @@ export const styles = {
     display: 'flex',
     alignItems: 'baseline',
     gap: 1.5,
-    mb: 2.5,
+    mb: 3,
   },
 
   coursesCount: {
@@ -47,6 +27,19 @@ export const styles = {
     fontSize: '0.6rem',
     color: COLOR_TOKENS.textDisabled,
     letterSpacing: '0.1em',
+  },
+
+  periodGroup: {
+    mb: 5,
+  },
+
+  periodLabel: {
+    fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
+    fontSize: '0.7rem',
+    color: COLOR_TOKENS.textSecondary,
+    letterSpacing: '0.08em',
+    textTransform: 'uppercase',
+    mb: 1.5,
   },
 
   coursesGrid: {
