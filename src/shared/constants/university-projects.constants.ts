@@ -238,13 +238,13 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
     presentationFile: '/images/projects/finalProjects/PBL202_KiraZakirov_A3_Report.pdf',
   },
 
-  // ── Study Year 2 · Trimester 2, 2026 (In Progress) ────────────────────────
+  // ── Study Year 2 · Trimester 3, 2026 (In Progress) ────────────────────────
   {
     id: 'rgp204',
     studyPeriod: 6,
     studyYear: 2,
     year: '2026',
-    trimester: 2,
+    trimester: 3,
     subjectType: 'core',
     subject: 'Rapid Game Prototype',
     status: 'in_progress',
@@ -253,11 +253,11 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
     finalScore: '-',
   },
   {
-    id: 'dgdvl300',
+    id: 'dgdvl100',
     studyPeriod: 6,
     studyYear: 2,
     year: '2026',
-    trimester: 2,
+    trimester: 3,
     subjectType: 'elective',
     subject: 'Visual Language of Design',
     status: 'in_progress',
@@ -270,7 +270,7 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
     studyPeriod: 6,
     studyYear: 2,
     year: '2026',
-    trimester: 2,
+    trimester: 3,
     subjectType: 'core',
     subject: 'Work Integrated Learning',
     status: 'in_progress',
