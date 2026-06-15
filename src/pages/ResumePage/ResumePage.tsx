@@ -36,14 +36,12 @@ const ResumePage = () => (
         </Button>
       </Box>
 
-      <Box sx={styles.pdfWrapper}>
-        <Box
-          component="iframe"
-          src={CV_PATH}
-          title="Kira Zakirova — Resume"
-          sx={styles.pdfIframe}
-        />
-      </Box>
+      <Box
+        component="iframe"
+        src={CV_PATH}
+        title="Kira Zakirova — Resume"
+        sx={styles.pdfIframe}
+      />
     </motion.div>
   </PortfolioLayout>
 );

@@ -16,17 +16,9 @@ export const styles = {
     flexShrink: 0,
   },
 
-  pdfWrapper: {
-    width: '100%',
-    aspectRatio: '1 / 1.414',
-    borderRadius: 2,
-    border: `1px solid ${COLOR_TOKENS.borderDefault}`,
-    overflow: 'hidden',
-  },
-
   pdfIframe: {
     width: '100%',
-    height: '100%',
+    aspectRatio: '1 / 1.414',
     border: 'none',
     display: 'block',
   },
