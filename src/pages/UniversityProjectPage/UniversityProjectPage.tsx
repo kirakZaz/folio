@@ -11,6 +11,7 @@ import { UNIVERSITY_PROJECTS_DATA } from '@/shared/constants/university-projects
 
 import BackButton from '@/components/BackButton/BackButton.tsx';
 import Layout from '@/components/Layout';
+import SeoHead from '@/components/SeoHead/SeoHead';
 
 import { styles } from './UniversityProjectPage.styles';
 
@@ -37,6 +38,11 @@ const UniversityProjectPage = () => {
 
   return (
     <Layout maxWidth="xl" showNavBar>
+      <SeoHead
+        title={`${project.subject} — University Project | Kira Zakirova`}
+        description={project.description || `${project.subject} — a university course project from Kira Zakirova's software engineering degree at Torrens University.`}
+        path={`/university/${project.id}`}
+      />
       <motion.div
         initial="hidden"
         animate="visible"

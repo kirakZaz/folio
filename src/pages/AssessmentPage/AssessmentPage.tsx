@@ -11,6 +11,7 @@ import { ASSESSMENT_PAGE_DATA, ASSESSMENTS_DATA } from '@/shared/constants/asses
 
 import BackButton from '@/components/BackButton/BackButton.tsx';
 import Layout from '@/components/Layout';
+import SeoHead from '@/components/SeoHead/SeoHead';
 
 import { styles } from './AssessmentPage.styles';
 
@@ -26,6 +27,11 @@ const AssessmentPage = () => {
 
   return (
     <Layout maxWidth="lg" showNavBar>
+      <SeoHead
+        title={`${meta.subtitle} — Assessment | Kira Zakirova`}
+        description={meta.description || `Assessment ${meta.subtitle} from ${meta.dueModule}. Part of Kira Zakirova's academic portfolio at Torrens University.`}
+        path={`/assessment/${assessmentId}`}
+      />
       <motion.div
         initial="hidden"
         animate="visible"
@@ -61,7 +67,8 @@ const AssessmentPage = () => {
               <Box
                 component="img"
                 src={pageData.screenshot}
-                alt={meta.subtitle}
+                alt={`Screenshot of ${meta.subtitle} assessment`}
+                loading="lazy"
                 sx={styles.screenshotImg}
               />
             </Grid>

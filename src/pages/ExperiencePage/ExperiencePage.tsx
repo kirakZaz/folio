@@ -10,6 +10,7 @@ import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animati
 import { WORK_PROJECTS_DATA } from '@/shared/constants/work-projects.constants';
 
 import PortfolioLayout from '@/components/PortfolioLayout';
+import SeoHead from '@/components/SeoHead/SeoHead';
 
 import JobDetail from './components/JobDetail/JobDetail';
 import JobListItem from './components/JobListItem/JobListItem';
@@ -30,6 +31,11 @@ const ExperiencePage = () => {
 
   return (
     <PortfolioLayout>
+      <SeoHead
+        title="Work Experience — Kira Zakirova | Senior Frontend Engineer"
+        description="10+ years of frontend development experience across 8 companies. Senior frontend engineer specialising in React, TypeScript, and frontend architecture design systems."
+        path="/experience"
+      />
       <motion.div
         variants={FADE_UP_VARIANTS}
         initial="hidden"
@@ -41,7 +47,7 @@ const ExperiencePage = () => {
         <Box sx={styles.layout}>
           <Box sx={styles.sidebar}>
             <Box sx={styles.sidebarMeta}>
-              <Typography sx={styles.sidebarLabel}>Companies</Typography>
+              <Typography component="h2" sx={styles.sidebarLabel}>Companies</Typography>
               <Typography sx={styles.totalYears}>10+ years</Typography>
             </Box>
 

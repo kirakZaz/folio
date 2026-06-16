@@ -23,6 +23,7 @@ import { WORK_PROJECTS_DATA } from '@/shared/constants/work-projects.constants';
 
 import BackButton from '@/components/BackButton/BackButton.tsx';
 import Layout from '@/components/Layout';
+import SeoHead from '@/components/SeoHead/SeoHead';
 
 import { styles } from './WorkProjectPage.styles';
 
@@ -46,6 +47,11 @@ const WorkProjectPage = () => {
 
   return (
     <Layout maxWidth="lg" showNavBar>
+      <SeoHead
+        title={`${project.title} — ${project.role} | Kira Zakirova`}
+        description={project.description || `${project.role} at ${project.company}. A work project from Kira Zakirova's frontend developer portfolio.`}
+        path={`/work/${project.id}`}
+      />
       <motion.div
         initial="hidden"
         animate="visible"

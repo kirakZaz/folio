@@ -1,4 +1,5 @@
 import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { Provider as ReduxProvider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -44,15 +45,17 @@ interface AppProvidersProps {
 
 const AppProviders = ({ children }: AppProvidersProps) => {
   return (
-    <ReduxProvider store={store}>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider theme={appTheme}>
-          <CssBaseline />
-          {globalStyles}
-          <BrowserRouter>{children}</BrowserRouter>
-        </ThemeProvider>
-      </QueryClientProvider>
-    </ReduxProvider>
+    <HelmetProvider>
+      <ReduxProvider store={store}>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider theme={appTheme}>
+            <CssBaseline />
+            {globalStyles}
+            <BrowserRouter>{children}</BrowserRouter>
+          </ThemeProvider>
+        </QueryClientProvider>
+      </ReduxProvider>
+    </HelmetProvider>
   );
 };
 

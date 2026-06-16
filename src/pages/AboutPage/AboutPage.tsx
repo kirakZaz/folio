@@ -10,6 +10,7 @@ import meImg from '@/shared/assets/Me.png';
 import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
 
 import PortfolioLayout from '@/components/PortfolioLayout';
+import SeoHead from '@/components/SeoHead/SeoHead';
 import ProfilePanel from '@/pages/ExperiencePage/components/ProfilePanel/ProfilePanel';
 
 import { styles } from './AboutPage.styles';
@@ -85,6 +86,11 @@ const AboutPage = () => {
 
   return (
     <PortfolioLayout>
+      <SeoHead
+        title="About Kira Zakirova — Senior Frontend Engineer & Software Developer"
+        description="Learn about Kira Zakirova — a lead software engineer with 10+ years building frontend at 8 companies. Skilled in React, TypeScript, Node.js backend, and frontend architecture design systems."
+        path="/about"
+      />
       <motion.div
         variants={FADE_UP_VARIANTS}
         initial="hidden"
@@ -231,7 +237,7 @@ const AboutPage = () => {
             transition={{ duration: 0.5, delay: 1.2, ease }}
           >
             <Box sx={styles.bottom}>
-              <Typography sx={styles.bottomHeading}>What it&#39;s like to work with me</Typography>
+              <Typography component="h2" sx={styles.bottomHeading}>What it&#39;s like to work with me</Typography>
               <Box sx={styles.cardsGrid}>
                 {WHAT_YOU_GET.map((item, index) => (
                   <motion.div

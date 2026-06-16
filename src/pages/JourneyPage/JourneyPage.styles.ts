@@ -11,6 +11,14 @@ export const styles = {
     mb: 2.5,
   },
 
+  degreeDescription: {
+    maxWidth: 720,
+    mb: 5,
+    fontSize: '0.9rem',
+    lineHeight: 1.7,
+    color: COLOR_TOKENS.textSecondary,
+  },
+
   coursesSection: {},
 
   coursesHeader: {

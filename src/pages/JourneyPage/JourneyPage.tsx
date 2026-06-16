@@ -9,6 +9,7 @@ import { UNIVERSITY_PROJECTS_DATA } from '@/shared/constants/university-projects
 import type { UniversityProject } from '@/shared/constants/university-projects.constants';
 
 import PortfolioLayout from '@/components/PortfolioLayout';
+import SeoHead from '@/components/SeoHead/SeoHead';
 
 import CourseCard from './components/CourseCard/CourseCard';
 import { styles } from './JourneyPage.styles';
@@ -79,6 +80,11 @@ const { years: YEAR_GROUPS, planned: PLANNED_PROJECTS } = buildGroups(UNIVERSITY
 
 const DegreePage = () => (
   <PortfolioLayout>
+    <SeoHead
+      title="Degree — Kira Zakirova | Game Design and Development at Torrens University"
+      description="Bachelor of Game Design and Development coursework at Torrens University Australia. Browse completed and planned subjects in Kira Zakirova's academic journey."
+      path="/degree"
+    />
     <motion.div
       variants={FADE_UP_VARIANTS}
       initial="hidden"
@@ -92,9 +98,18 @@ const DegreePage = () => (
         headingLevel="h1"
       />
 
+      <Typography sx={styles.degreeDescription}>
+        I&#39;m currently pursuing a <strong>Bachelor of Game Design and Development</strong> at Torrens
+        University Australia. The programme blends creative design thinking with hands-on software
+        engineering — covering game mechanics, 3D modelling, level design, programming patterns, and
+        interactive storytelling. Each trimester builds on the previous one, moving from foundational
+        design principles through to advanced prototyping and team-based capstone projects. Below is
+        every subject I&#39;ve completed so far, along with those still ahead.
+      </Typography>
+
       <Box sx={styles.coursesSection}>
         <Box sx={styles.coursesHeader}>
-          <Typography sx={styles.sectionCaption}>All Courses</Typography>
+          <Typography component="h2" sx={styles.sectionCaption}>All Courses</Typography>
           <Typography sx={styles.coursesCount}>
             {UNIVERSITY_PROJECTS_DATA.length} subjects
           </Typography>

@@ -14,6 +14,7 @@ import { BAGS_DATA } from '@/shared/constants/bags.constants';
 import { DRAWINGS_DATA } from '@/shared/constants/drawings.constants';
 
 import PortfolioLayout from '@/components/PortfolioLayout';
+import SeoHead from '@/components/SeoHead/SeoHead';
 
 import { styles } from './ArtPage.styles';
 
@@ -45,7 +46,7 @@ const SlideFrame = React.memo(({ item }: SlideFrameProps) => {
       <Box
         component="img"
         src={item.imageUrl}
-        alt={item.label ?? ''}
+        alt={item.label || `Artwork by Kira Zakirova`}
         loading="lazy"
         onLoad={() => setLoaded(true)}
         sx={{ ...styles.image, opacity: loaded ? 1 : 0 }}
@@ -194,7 +195,7 @@ const Lightbox = React.memo(({ items, index, onClose, onPrev, onNext }: Lightbox
                 transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
               >
-                <Box component="img" src={currentItem.imageUrl} alt={currentItem.label ?? ''} sx={styles.lightboxImage} />
+                <Box component="img" src={currentItem.imageUrl} alt={currentItem.label || 'Artwork by Kira Zakirova'} sx={styles.lightboxImage} />
 
                 {currentItem.label && (
                   <Typography sx={styles.lightboxLabel}>{currentItem.label}</Typography>
@@ -287,6 +288,11 @@ const ArtPage = () => {
 
   return (
     <PortfolioLayout>
+      <SeoHead
+        title="Art & Creative Work — Kira Zakirova | Drawings & Handmade Bags"
+        description="Explore Kira Zakirova's creative side — original drawings and handmade leather bags. A gallery of personal art projects from a senior frontend engineer."
+        path="/art"
+      />
       <motion.div
         variants={FADE_UP_VARIANTS}
         initial="hidden"
