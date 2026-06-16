@@ -309,12 +309,21 @@ const ArtPage = () => {
       >
         <SectionHeader index="05" label="Art" count={items.length} headingLevel="h1" />
 
+        <Typography
+          component="h2"
+          sx={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)', clipPath: 'inset(50%)' }}
+        >
+          {currentTabData.label} Gallery
+        </Typography>
+
         {/* Tabs */}
-        <Box sx={styles.tabsRow}>
+        <Box sx={styles.tabsRow} role="tablist">
           {TABS.map((tab) => (
             <Box
               key={tab.id}
               component="button"
+              role="tab"
+              aria-selected={activeTab === tab.id}
               onClick={() => handleTabChange(tab.id)}
               sx={styles.tab(activeTab === tab.id)}
             >

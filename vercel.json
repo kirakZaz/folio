@@ -13,7 +13,8 @@
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; frame-src 'self' https://docs.google.com;" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "Link", "value": "<https://folio-kiraz.vercel.app/sitemap.xml>; rel=\"sitemap\", <https://folio-kiraz.vercel.app/llms.txt>; rel=\"alternate\"; type=\"text/plain\"" }
       ]
     },
     {
@@ -25,7 +26,8 @@
     {
       "source": "/llms-full.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" }
+        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
+        { "key": "Link", "value": "<https://folio-kiraz.vercel.app/llms-full.txt>; rel=\"canonical\"" }
       ]
     }
   ]

@@ -35,12 +35,22 @@ const TeaserPage = () => {
         path="/"
         jsonLd={PERSON_JSONLD}
       />
-      <Typography
-        component="h1"
+      <Box
+        component="header"
         sx={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)', clipPath: 'inset(50%)' }}
       >
-        Kira Zakirova — Frontend Developer Portfolio
-      </Typography>
+        <Typography component="h1">
+          Kira Zakirova — Frontend Developer Portfolio
+        </Typography>
+        <Typography component="h2">
+          Senior Front End Engineer &amp; React TypeScript Developer
+        </Typography>
+        <Typography component="p">
+          Frontend expert with 10+ years of experience in frontend architecture and design systems.
+          Explore projects built with React, TypeScript, Node.js, and modern web technologies
+          across 8 companies. Currently based in Melbourne, Australia.
+        </Typography>
+      </Box>
       <BlueprintHero />
 
       <Box sx={styles.ctaWrapper}>

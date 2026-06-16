@@ -56,16 +56,15 @@ const ResumePage = () => (
             Professional Summary
           </Typography>
           <Typography sx={styles.summaryText}>
-            Senior front end developer and software engineer with over ten years of professional
-            experience building web applications for startups and established companies. Specialising
-            in React and TypeScript, with deep expertise in frontend architecture, design systems,
-            and connecting backend to frontend through REST APIs and Node.js services.
+            Senior front end engineer and react typescript developer with over ten years of
+            hands-on experience building web apps. A frontend expert who focuses on frontend
+            architecture, design systems, and connecting backend to frontend through REST APIs
+            and Node.js.
           </Typography>
           <Typography sx={styles.summaryText}>
-            Track record of leading frontend teams, owning entire codebases from greenfield, and
-            delivering production-grade products with comprehensive testing. Comfortable working
-            remotely and collaborating across time zones. Currently based in Melbourne, Australia,
-            studying Game Design and Development at Torrens University.
+            Proven track record of leading frontend teams and owning entire codebases from scratch.
+            Ships production-ready products with solid testing. Works remotely across time zones.
+            Based in Melbourne, studying Game Design and Development at Torrens University.
           </Typography>
 
           <Typography component="h2" sx={styles.sectionHeading}>

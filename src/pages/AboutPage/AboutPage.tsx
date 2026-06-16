@@ -218,12 +218,12 @@ const AboutPage = () => {
                   design and development — connecting the two.
                 </Typography>
                 <Typography sx={styles.bioText}>
-                  Over the past decade I&#39;ve worked as a front end developer and software engineer
-                  at eight companies — from early-stage startups to established platforms. My core stack
-                  is React and TypeScript, but I&#39;ve also spent a lot of time with Node.js backend
-                  services, Redux, Material UI, and tools like Playwright and Vitest. I enjoy building
-                  frontend architecture and design systems that scale without becoming a headache for
-                  the next developer.
+                  Over the past decade I&#39;ve worked as a front end engineer and software developer
+                  at eight companies — from early-stage startups to established platforms. As a react
+                  typescript developer, my core stack is React and TypeScript, but I&#39;ve also spent
+                  a lot of time with Node.js backend services, Redux, Material UI, and tools like
+                  Playwright and Vitest. I enjoy building frontend architecture and design systems that
+                  scale — it&#39;s what makes me a frontend expert who cares about long-term code health.
                 </Typography>
                 <Typography sx={styles.bioText}>
                   I also work a lot with AI and LLM tools — both in products and in my own workflow.

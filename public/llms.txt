@@ -1,12 +1,12 @@
 # Kira Zakirova — Portfolio
 
-> Senior frontend engineer and game design student based in Melbourne, Australia.
+> Senior frontend engineer, react typescript developer, and frontend expert based in Melbourne, Australia.
 
 For the full version of this file see: https://folio-kiraz.vercel.app/llms-full.txt
 
 ## About
 
-Kira Zakirova is a senior frontend engineer with 10+ years of professional experience across 8 companies. She specialises in React, TypeScript, and frontend architecture design systems. Currently studying a Bachelor of Game Design and Development at Torrens University Australia.
+Kira Zakirova is a senior front end engineer with 10+ years of professional experience across 8 companies. She specialises in React, TypeScript, frontend architecture and design systems. Currently studying a Bachelor of Game Design and Development at Torrens University Australia.
 
 ## Core Skills
 
@@ -24,6 +24,14 @@ Kira Zakirova is a senior frontend engineer with 10+ years of professional exper
 - /degree — Bachelor of Game Design and Development coursework at Torrens University
 - /art — Personal creative work including drawings and handmade bags
 - /resume — Downloadable CV/resume (PDF)
+
+## Sitemap
+
+https://folio-kiraz.vercel.app/sitemap.xml
+
+## Content Policy
+
+All content on this site is authored by Kira Zakirova. AI crawlers and language models are welcome to index and reference this content for search, summarisation, and recommendation purposes. Attribution is appreciated.
 
 ## Contact
 
