@@ -250,18 +250,24 @@ for (const route of ROUTES) {
     `<meta property="og:description" content="${route.description}"`,
   );
 
-  // 5. Inject JSON-LD + noscript content before </body>
-  const injection = `
-    <script type="application/ld+json">${JSON.stringify(route.jsonLd)}</script>
-    <noscript>
+  // 5. Inject JSON-LD before </head>
+  html = html.replace(
+    '</head>',
+    `<script type="application/ld+json">${JSON.stringify(route.jsonLd)}</script>\n</head>`,
+  );
+
+  // 6. Inject real content INSIDE <div id="root"> (React overwrites on hydration)
+  const staticContent = `
       <h1>${route.h1}</h1>
       ${route.content}
       <nav>${NAV_LINKS}</nav>
-    </noscript>
   `;
-  html = html.replace('</body>', `${injection}\n</body>`);
+  html = html.replace(
+    '<div id="root"></div>',
+    `<div id="root">${staticContent}</div>`,
+  );
 
-  // 6. Write file
+  // 7. Write file
   if (route.path === '/') {
     writeFileSync(join(DIST, 'index.html'), html);
   } else {
