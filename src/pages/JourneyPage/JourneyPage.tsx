@@ -81,9 +81,16 @@ const { years: YEAR_GROUPS, planned: PLANNED_PROJECTS } = buildGroups(UNIVERSITY
 const DegreePage = () => (
   <PortfolioLayout>
     <SeoHead
-      title="Degree — Kira Zakirova | Game Design and Development at Torrens University"
-      description="Bachelor of Game Design and Development coursework at Torrens University Australia. Browse completed and planned subjects in Kira Zakirova's academic journey."
+      title="Degree — Kira Zakirova | Game Design at Torrens Uni"
+      description="Game Design and Development degree at Torrens University. Browse completed and planned subjects in Kira Zakirova's academic journey."
       path="/degree"
+      jsonLd={{
+        '@context': 'https://schema.org',
+        '@type': 'Course',
+        name: 'Bachelor of Game Design and Development',
+        provider: { '@type': 'CollegeOrUniversity', name: 'Torrens University Australia', url: 'https://www.torrens.edu.au' },
+        description: 'Undergraduate degree covering game design, 3D modelling, programming, and interactive storytelling.',
+      }}
     />
     <motion.div
       variants={FADE_UP_VARIANTS}

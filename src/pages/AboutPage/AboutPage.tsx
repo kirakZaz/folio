@@ -87,9 +87,21 @@ const AboutPage = () => {
   return (
     <PortfolioLayout>
       <SeoHead
-        title="About Kira Zakirova — Senior Frontend Engineer & Software Developer"
-        description="Learn about Kira Zakirova — a lead software engineer with 10+ years building frontend at 8 companies. Skilled in React, TypeScript, Node.js backend, and frontend architecture design systems."
+        title="About Kira Zakirova — Senior Frontend Engineer"
+        description="Kira Zakirova — senior frontend engineer with 10+ years at 8 companies. React, TypeScript, Node.js, and design systems."
         path="/about"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: 'Kira Zakirova',
+          jobTitle: 'Senior Frontend Engineer',
+          description: 'Senior front end developer and web developer with 10+ years of experience building React and TypeScript applications.',
+          url: 'https://folio-kiraz.vercel.app/about',
+          knowsAbout: ['React', 'TypeScript', 'JavaScript', 'Node.js', 'Frontend Architecture', 'Design Systems', 'Redux', 'Material UI', 'AI', 'LLM'],
+          worksFor: { '@type': 'Organization', name: 'AXO Tech Inc' },
+          alumniOf: { '@type': 'CollegeOrUniversity', name: 'Torrens University Australia' },
+          address: { '@type': 'PostalAddress', addressLocality: 'Melbourne', addressCountry: 'AU' },
+        }}
       />
       <motion.div
         variants={FADE_UP_VARIANTS}
@@ -206,9 +218,18 @@ const AboutPage = () => {
                   design and development — connecting the two.
                 </Typography>
                 <Typography sx={styles.bioText}>
+                  Over the past decade I&#39;ve worked as a front end developer and software engineer
+                  at eight companies — from early-stage startups to established platforms. My core stack
+                  is React and TypeScript, but I&#39;ve also spent a lot of time with Node.js backend
+                  services, Redux, Material UI, and tools like Playwright and Vitest. I enjoy building
+                  frontend architecture and design systems that scale without becoming a headache for
+                  the next developer.
+                </Typography>
+                <Typography sx={styles.bioText}>
                   I also work a lot with AI and LLM tools — both in products and in my own workflow.
                   Right now I&#39;m based in Melbourne, studying game design and development at Torrens
-                  University.
+                  University. Outside of code, I draw and make leather bags by hand — creative projects
+                  where there&#39;s no undo button.
                 </Typography>
               </Box>
 

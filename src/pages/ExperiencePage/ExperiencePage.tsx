@@ -33,8 +33,21 @@ const ExperiencePage = () => {
     <PortfolioLayout>
       <SeoHead
         title="Work Experience — Kira Zakirova | Senior Frontend Engineer"
-        description="10+ years of frontend development experience across 8 companies. Senior frontend engineer specialising in React, TypeScript, and frontend architecture design systems."
+        description="10+ years of front end development across 8 companies. React, TypeScript, and frontend architecture design systems."
         path="/experience"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: 'Work Experience — Kira Zakirova',
+          description: 'Professional experience of senior frontend engineer Kira Zakirova across 8 companies.',
+          numberOfItems: WORK_PROJECTS_DATA.length,
+          itemListElement: WORK_PROJECTS_DATA.map((project, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: `${project.role} at ${project.company}`,
+            description: project.description,
+          })),
+        }}
       />
       <motion.div
         variants={FADE_UP_VARIANTS}

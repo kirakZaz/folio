@@ -289,9 +289,16 @@ const ArtPage = () => {
   return (
     <PortfolioLayout>
       <SeoHead
-        title="Art & Creative Work — Kira Zakirova | Drawings & Handmade Bags"
-        description="Explore Kira Zakirova's creative side — original drawings and handmade leather bags. A gallery of personal art projects from a senior frontend engineer."
+        title="Art — Kira Zakirova | Drawings & Handmade Bags"
+        description="Original drawings and handmade leather bags by Kira Zakirova. A gallery of personal art projects."
         path="/art"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'ImageGallery',
+          name: 'Art by Kira Zakirova',
+          description: 'Personal creative work — original pencil and ink drawings, and handmade leather bags.',
+          url: 'https://folio-kiraz.vercel.app/art',
+        }}
       />
       <motion.div
         variants={FADE_UP_VARIANTS}

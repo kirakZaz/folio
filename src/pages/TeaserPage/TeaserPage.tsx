@@ -30,8 +30,8 @@ const TeaserPage = () => {
   return (
     <Box sx={styles.root}>
       <SeoHead
-        title="Kira Zakirova — Frontend Developer Portfolio | React TypeScript Developer"
-        description="Kira Zakirova is a senior frontend engineer with 10+ years of experience. Explore her portfolio of React, TypeScript, and Node.js projects across 8 companies."
+        title="Kira Zakirova — Frontend Developer Portfolio"
+        description="Senior frontend engineer with 10+ years of experience. Explore React, TypeScript, and Node.js projects across 8 companies."
         path="/"
         jsonLd={PERSON_JSONLD}
       />

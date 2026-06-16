@@ -1,0 +1,71 @@
+# Kira Zakirova — Frontend Developer Portfolio
+
+> Senior frontend engineer and web developer based in Melbourne, Australia. 10+ years of professional experience. Currently studying Game Design and Development at Torrens University.
+
+## Professional Summary
+
+Kira Zakirova is a senior front end developer and software engineer with over ten years of experience building web applications for startups and established companies. She specialises in React, TypeScript, and frontend architecture design systems. She has worked at 8 companies across B2B SaaS, e-commerce, fintech, and enterprise security domains.
+
+She has a track record of leading frontend teams, owning entire codebases from greenfield, and delivering production-grade products with comprehensive testing infrastructure. Comfortable working remotely and collaborating across time zones.
+
+## Technical Skills
+
+- **Frontend:** React, TypeScript, JavaScript, Redux Toolkit, Material UI, Styled Components, Sass
+- **Backend:** Node.js, REST APIs, MongoDB, Express
+- **Testing:** Vitest, Playwright, MSW, Jest
+- **Tools:** Vite, Webpack, Git, CI/CD, Figma, AWS, AWS Cognito
+- **Other:** ReactFlow, Lexical, DnD Kit, OIDC, WebAuthn, React Native
+- **Creative:** Blender, Maya, Adobe Photoshop, Illustrator, After Effects
+
+## Work Experience
+
+### Lead Frontend Developer — AXO Tech Inc (2024–Present)
+B2B SaaS platform for cloud channel partners. Designed the full frontend architecture solo from day one. Built a visual workflow editor using ReactFlow and a rich text editor with Lexical. Set up the entire testing infrastructure.
+
+### Lead Frontend Developer — SharePass (2025–2026)
+Enterprise secure secret-sharing platform. Rebuilt the entire frontend from scratch as a solo developer. Implemented client-side encryption, MFA, and a custom design system in both light and dark modes.
+
+### Senior Frontend Developer — Beehive (2022–2024)
+Built React Native mobile app and complex dashboard interfaces for a startup platform.
+
+### Frontend Developer — WellDone (2021–2022)
+Developed dashboard and analytics interfaces.
+
+### Frontend Developer — JustEat (2019–2021)
+UI for a high-traffic food ordering platform processing thousands of daily orders.
+
+### Frontend Developer — RoundTrip (2017–2019)
+Travel and booking platform frontend development.
+
+### Frontend Developer — XMPie (2015–2017)
+Cross-media marketing automation platform.
+
+### Frontend Developer — E-Shop Ltd (2014–2015)
+E-commerce platform development.
+
+## Education
+
+**Bachelor of Game Design and Development**
+Torrens University Australia — In Progress
+
+The programme covers game mechanics, 3D modelling, level design, programming patterns, and interactive storytelling.
+
+## Creative Work
+
+Outside of software engineering, Kira creates original pencil and ink drawings and handmade leather bags.
+
+## Contact
+
+- Portfolio: https://folio-kiraz.vercel.app
+- LinkedIn: linkedin.com/in/kira-zakirova
+- GitHub: github.com/kira-zakirova
+- Location: Melbourne, Australia
+
+## Pages
+
+- [Home](https://folio-kiraz.vercel.app/) — Landing page and portfolio entry
+- [Experience](https://folio-kiraz.vercel.app/experience) — Detailed work history with project case studies
+- [About](https://folio-kiraz.vercel.app/about) — Bio, skills, education, and work style
+- [Degree](https://folio-kiraz.vercel.app/degree) — University coursework at Torrens University
+- [Art](https://folio-kiraz.vercel.app/art) — Gallery of drawings and handmade bags
+- [Resume](https://folio-kiraz.vercel.app/resume) — Downloadable CV/resume (PDF)
