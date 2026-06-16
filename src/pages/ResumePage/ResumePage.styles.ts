@@ -9,31 +9,29 @@ export const styles = {
   },
 
   leftColumn: {
-    flex: 1,
+    flex: '0 0 28%',
     minWidth: 0,
+    maxWidth: { xs: '100%', md: '28%' },
   },
 
   rightColumn: {
     flex: 1,
     minWidth: 0,
-    position: { md: 'sticky' as const },
-    top: { md: 24 },
-    alignSelf: { md: 'flex-start' },
   },
 
   summaryText: {
-    fontSize: '0.9rem',
-    lineHeight: 1.7,
+    fontSize: '0.82rem',
+    lineHeight: 1.65,
     color: COLOR_TOKENS.textSecondary,
-    mb: 1.5,
+    mb: 1,
   },
 
   sectionHeading: {
-    fontSize: '0.85rem',
+    fontSize: '0.8rem',
     fontWeight: 600,
     color: COLOR_TOKENS.textPrimary,
-    mt: 3,
-    mb: 1.5,
+    mt: 2.5,
+    mb: 1,
     '&:first-of-type': {
       mt: 0,
     },
@@ -48,22 +46,22 @@ export const styles = {
 
   skillChip: {
     fontFamily: TYPOGRAPHY_TOKENS.fontFamilyMono,
-    fontSize: '0.7rem',
+    fontSize: '0.65rem',
     color: COLOR_TOKENS.textSecondary,
     border: `1px solid ${COLOR_TOKENS.borderDefault}`,
     borderRadius: '4px',
-    px: 1.5,
-    py: 0.5,
+    px: 1,
+    py: 0.3,
   },
 
   highlightsList: {
-    pl: 2.5,
+    pl: 2,
     mb: 0,
     '& li': {
-      fontSize: '0.85rem',
-      lineHeight: 1.7,
+      fontSize: '0.8rem',
+      lineHeight: 1.6,
       color: COLOR_TOKENS.textSecondary,
-      mb: 0.5,
+      mb: 0.3,
     },
   },
 
@@ -77,7 +75,7 @@ export const styles = {
 
   pdfIframe: {
     width: '100%',
-    aspectRatio: '1 / 1.414',
+    height: { xs: '70vh', md: '80vh' },
     border: 'none',
     display: 'block',
   },
