@@ -1,10 +1,11 @@
 import { Suspense, lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 import { Box, CircularProgress } from '@mui/material';
 
 import { ROUTES } from '@/shared/constants/routes.constants';
 
+import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop/ScrollToTop.tsx';
 
 import { styles } from './AppRouter.styles';
@@ -24,22 +25,29 @@ const PageLoader = () => (
   </Box>
 );
 
-const AppRouter = () => (
-  <Suspense fallback={<PageLoader />}>
-    <ScrollToTop />
+const AppRouter = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === ROUTES.HOME;
 
-    <Routes>
-      <Route path={ROUTES.HOME} element={<TeaserPage />} />
-      <Route path={ROUTES.ABOUT} element={<AboutPage />} />
-      <Route path={ROUTES.EXPERIENCE} element={<ExperiencePage />} />
-      <Route path={ROUTES.JOURNEY} element={<DegreePage />} />
-      <Route path={ROUTES.ART} element={<ArtPage />} />
-      <Route path={ROUTES.RESUME} element={<ResumePage />} />
-      <Route path={ROUTES.ASSESSMENT} element={<AssessmentPage />} />
-      <Route path={ROUTES.UNIVERSITY_PROJECT} element={<UniversityProjectPage />} />
-      <Route path={ROUTES.WORK_PROJECT} element={<WorkProjectPage />} />
-    </Routes>
-  </Suspense>
-);
+  return (
+    <Suspense fallback={<PageLoader />}>
+      <ScrollToTop />
+
+      <Routes>
+        <Route path={ROUTES.HOME} element={<TeaserPage />} />
+        <Route path={ROUTES.ABOUT} element={<AboutPage />} />
+        <Route path={ROUTES.EXPERIENCE} element={<ExperiencePage />} />
+        <Route path={ROUTES.JOURNEY} element={<DegreePage />} />
+        <Route path={ROUTES.ART} element={<ArtPage />} />
+        <Route path={ROUTES.RESUME} element={<ResumePage />} />
+        <Route path={ROUTES.ASSESSMENT} element={<AssessmentPage />} />
+        <Route path={ROUTES.UNIVERSITY_PROJECT} element={<UniversityProjectPage />} />
+        <Route path={ROUTES.WORK_PROJECT} element={<WorkProjectPage />} />
+      </Routes>
+
+      <Footer hidden={isHomePage} />
+    </Suspense>
+  );
+};
 
 export default AppRouter;

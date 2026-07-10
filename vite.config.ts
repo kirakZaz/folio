@@ -42,7 +42,7 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5177,
+    port: 5188,
     host: true,
     strictPort: false,
     watch: {

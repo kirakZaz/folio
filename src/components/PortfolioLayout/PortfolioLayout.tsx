@@ -10,20 +10,13 @@ import { Box, IconButton, Snackbar, Tooltip, Typography } from '@mui/material';
 import { ROUTES } from '@/shared';
 
 import { CONTACT_LINKS } from '@/shared/constants/contact.constants';
+import { NAV_ITEMS_INNER } from '@/shared/constants/navigation.constants';
 
 import Logo from '@/components/Logo/Logo.tsx';
 import Navigation from '@/components/Navigation/Navigation';
 
 import { styles } from './PortfolioLayout.styles';
 import type { PortfolioLayoutProps } from './PortfolioLayout.types';
-
-const NAV_ITEMS = [
-  { label: 'Experience', route: ROUTES.EXPERIENCE },
-  { label: 'About me', route: ROUTES.ABOUT },
-  { label: 'Degree', route: ROUTES.JOURNEY },
-  { label: 'Art', route: ROUTES.ART },
-  { label: 'Resume', route: ROUTES.RESUME },
-];
 
 const MENU_VARIANTS = {
   hidden: { opacity: 0, y: -10 },
@@ -81,7 +74,7 @@ const PortfolioLayout = ({ children }: PortfolioLayoutProps) => {
             style={{ position: 'fixed', top: 49, left: 0, right: 0, zIndex: 99 }}
           >
             <Box sx={styles.mobileDropdown}>
-              {NAV_ITEMS.map((item) => {
+              {NAV_ITEMS_INNER.map((item) => {
                 const isActive = location.pathname === item.route;
                 return (
                   <Box
