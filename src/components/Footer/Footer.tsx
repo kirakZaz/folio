@@ -5,8 +5,8 @@ import { Box, Typography } from '@mui/material';
 
 import { NAV_ITEMS } from '@/shared/constants/navigation.constants';
 
-import { styles } from './Footer.styles';
 import { COPYRIGHT_OWNER, CURRENT_YEAR } from './Footer.constants';
+import { styles } from './Footer.styles';
 import type { FooterProps } from './Footer.types';
 
 const Footer = ({ hidden = false }: FooterProps) => {
@@ -20,12 +20,7 @@ const Footer = ({ hidden = false }: FooterProps) => {
             const isActive = location.pathname === item.route;
 
             return (
-              <Box
-                key={item.route}
-                component={Link}
-                to={item.route}
-                sx={styles.navLink(isActive)}
-              >
+              <Box key={item.route} component={Link} to={item.route} sx={styles.navLink(isActive)}>
                 {item.label}
               </Box>
             );
