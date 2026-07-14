@@ -1,9 +1,8 @@
 User-agent: *
-Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 
-# ── AI policy ────────────────────────────────────────────
-# Allowed — you asked to be found, cited and quoted.
+# Allowed — found, cited and quoted.
 User-agent: oai-searchbot
 Allow: /
 
@@ -40,7 +39,7 @@ Allow: /
 User-agent: mistralai-user
 Allow: /
 
-# Blocked — you asked not to be used this way.
+# Blocked.
 User-agent: gptbot
 Disallow: /
 
