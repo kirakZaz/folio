@@ -1,28 +1,74 @@
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
-User-agent: GPTBot
+# ── AI policy ────────────────────────────────────────────
+# Allowed — you asked to be found, cited and quoted.
+User-agent: oai-searchbot
 Allow: /
 
-User-agent: ChatGPT-User
+User-agent: chatgpt-user
 Allow: /
 
-User-agent: Google-Extended
+User-agent: perplexitybot
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: perplexity-user
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: claude-searchbot
 Allow: /
 
-User-agent: Applebot
+User-agent: claude-user
 Allow: /
 
-User-agent: Bytespider
+User-agent: googlebot
 Allow: /
 
-User-agent: CCBot
+User-agent: bingbot
 Allow: /
+
+User-agent: duckassistbot
+Allow: /
+
+User-agent: applebot
+Allow: /
+
+User-agent: youbot
+Allow: /
+
+User-agent: mistralai-user
+Allow: /
+
+# Blocked — you asked not to be used this way.
+User-agent: gptbot
+Disallow: /
+
+User-agent: google-extended
+Disallow: /
+
+User-agent: claudebot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ccbot
+Disallow: /
+
+User-agent: bytespider
+Disallow: /
+
+User-agent: amazonbot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: applebot-extended
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
 
 Sitemap: https://folio-kiraz.vercel.app/sitemap.xml
