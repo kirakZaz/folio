@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 
@@ -8,6 +8,8 @@ import { Box, Button, Card, CardContent, Grid, Link, Stack, Typography } from '@
 
 import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
 import { ASSESSMENT_PAGE_DATA, ASSESSMENTS_DATA } from '@/shared/constants/assessments.constants';
+
+import { ROUTES } from '@/shared/constants/routes.constants';
 
 import BackButton from '@/components/BackButton/BackButton.tsx';
 import Layout from '@/components/Layout';
@@ -23,7 +25,10 @@ const AssessmentPage = () => {
   const pageData = ASSESSMENT_PAGE_DATA[assessmentId];
   const isComingSoon = meta?.status === 'coming_soon';
 
-  if (!meta) return null;
+  // Unknown or malformed assessment id — fall back to the welcome page
+  if (!meta || (!isComingSoon && !pageData)) {
+    return <Navigate to={ROUTES.HOME} replace />;
+  }
 
   return (
     <Layout maxWidth="lg" showNavBar>

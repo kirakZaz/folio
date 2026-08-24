@@ -20,7 +20,7 @@ const ROUTES = [
     title: 'Kira Zakirova — Frontend Developer Portfolio',
     h1: 'Frontend Developer Portfolio — Kira Zakirova',
     description:
-      'Kira Zakirova is a senior frontend engineer and react typescript developer with 10+ years of experience across 8 companies. Browse projects, resume, and more.',
+      'Kira Zakirova — founder of Koru and senior full-stack engineer with 10+ years of experience. Builds products end to end: frontend, backend, and AI. Explore projects, experience, and more.',
     content: `
       <h2>Senior Front End Engineer and React TypeScript Developer</h2>
       <p>
@@ -30,9 +30,10 @@ const ROUTES = [
         eight companies across B2B SaaS, e-commerce, fintech, and enterprise security.
       </p>
       <p>
-        As a front end engineer, Kira focuses on clean code, scalable architecture, and thoughtful
-        UX. She currently works as a Lead Frontend Developer at AXO Tech and studies Game Design
-        and Development at Torrens University Australia in Melbourne.
+        Kira builds products end to end — frontend, backend, and AI. She is the founder of Koru, an
+        AI-powered search-visibility platform, and a senior front end engineer who cares about clean
+        code, scalable architecture, and thoughtful UX. She also studies Game Design and Development
+        at Torrens University Australia in Melbourne.
       </p>
       <h2>Explore</h2>
       <ul>
@@ -49,11 +50,11 @@ const ROUTES = [
       mainEntity: {
         '@type': 'Person',
         name: 'Kira Zakirova',
-        jobTitle: 'Senior Frontend Engineer',
+        jobTitle: 'Founder & Senior Frontend Engineer',
         url: SITE,
-        description: 'Senior frontend engineer and react typescript developer with 10+ years of experience.',
-        knowsAbout: ['React', 'TypeScript', 'JavaScript', 'Node.js', 'Frontend Architecture', 'Design Systems'],
-        worksFor: { '@type': 'Organization', name: 'AXO Tech Inc' },
+        description: 'Founder of Koru and senior full-stack engineer with 10+ years of experience, building products end to end — frontend, backend, and AI.',
+        knowsAbout: ['AI', 'LLM', 'AI Search Visibility', 'SEO', 'React', 'TypeScript', 'JavaScript', 'Node.js', 'Full-Stack Development', 'Frontend Architecture', 'Design Systems'],
+        worksFor: { '@type': 'Organization', name: 'Koru' },
         alumniOf: { '@type': 'CollegeOrUniversity', name: 'Torrens University Australia' },
         address: { '@type': 'PostalAddress', addressLocality: 'Melbourne', addressCountry: 'AU' },
       },
@@ -73,7 +74,8 @@ const ROUTES = [
         include frontend architecture design systems, component libraries, and testing infrastructure.
       </p>
       <ul>
-        <li><strong>Lead Frontend Developer — AXO Tech Inc</strong> (2024–Present). B2B SaaS platform for cloud channel partners. Built the entire frontend architecture solo. React, TypeScript, Redux, ReactFlow, Lexical, Playwright, Vitest.</li>
+        <li><strong>Co-Founder & CEO — Koru</strong> (2026–Present). Founder of KORU, a search-visibility platform that unifies classic SEO (site audits, keyword research, rank tracking including Google AI Mode) with AI-engine citation tracking across ChatGPT, Gemini, Claude, Grok, and Perplexity.</li>
+        <li><strong>Lead Frontend Developer — AXO Tech Inc</strong> (2024–2026). B2B SaaS platform for cloud channel partners. Built the entire frontend architecture solo. React, TypeScript, Redux, ReactFlow, Lexical, Playwright, Vitest.</li>
         <li><strong>Lead Frontend Developer — SharePass</strong> (2025–2026). Enterprise secure secret-sharing platform. Rebuilt the frontend from scratch with client-side encryption, MFA, and a custom design system.</li>
         <li><strong>Senior Frontend Developer — Beehive</strong> (2022–2024). React Native mobile app and complex dashboard interfaces for a startup platform.</li>
         <li><strong>Frontend Developer — WellDone</strong> (2021–2022). Dashboard and analytics interfaces.</li>
@@ -88,17 +90,50 @@ const ROUTES = [
       '@type': 'ItemList',
       name: 'Work Experience — Kira Zakirova',
       description: 'Professional experience of senior frontend engineer Kira Zakirova.',
-      numberOfItems: 8,
+      numberOfItems: 9,
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Lead Frontend Developer at AXO Tech Inc' },
-        { '@type': 'ListItem', position: 2, name: 'Lead Frontend Developer at SharePass' },
-        { '@type': 'ListItem', position: 3, name: 'Senior Frontend Developer at Beehive' },
-        { '@type': 'ListItem', position: 4, name: 'Frontend Developer at WellDone' },
-        { '@type': 'ListItem', position: 5, name: 'Frontend Developer at JustEat' },
-        { '@type': 'ListItem', position: 6, name: 'Frontend Developer at RoundTrip' },
-        { '@type': 'ListItem', position: 7, name: 'Frontend Developer at XMPie' },
-        { '@type': 'ListItem', position: 8, name: 'Frontend Developer at E-Shop Ltd' },
+        { '@type': 'ListItem', position: 1, name: 'Co-Founder & CEO at Koru' },
+        { '@type': 'ListItem', position: 2, name: 'Lead Frontend Developer at AXO Tech Inc' },
+        { '@type': 'ListItem', position: 3, name: 'Lead Frontend Developer at SharePass' },
+        { '@type': 'ListItem', position: 4, name: 'Senior Frontend Developer at Beehive' },
+        { '@type': 'ListItem', position: 5, name: 'Frontend Developer at WellDone' },
+        { '@type': 'ListItem', position: 6, name: 'Frontend Developer at JustEat' },
+        { '@type': 'ListItem', position: 7, name: 'Frontend Developer at RoundTrip' },
+        { '@type': 'ListItem', position: 8, name: 'Frontend Developer at XMPie' },
+        { '@type': 'ListItem', position: 9, name: 'Frontend Developer at E-Shop Ltd' },
       ],
+    },
+  },
+  {
+    path: '/projects',
+    title: 'Projects — Kira Zakirova | Websites & Web Apps',
+    h1: 'Projects — Websites and Web Apps',
+    description:
+      'Live websites and web apps built by Kira Zakirova — React and TypeScript game showcase sites and interactive artefacts, playable in the browser.',
+    content: `
+      <h2>Sites I've built</h2>
+      <p>
+        A selection of websites and web apps Kira Zakirova designed and developed from scratch —
+        each one is live, and most are playable directly in the browser.
+      </p>
+      <ul>
+        <li><strong>KAS</strong> — a showcase site for a gothic 3D platformer, with the Unity WebGL build embedded. Built with React, TypeScript, Vite, and Material UI. <a href="https://kas-project.vercel.app">Visit site</a>.</li>
+        <li><strong>Roach</strong> — the official website for a 2D pixel-art action platformer set in a post-apocalyptic underground world. <a href="https://roach-website.vercel.app">Visit site</a>.</li>
+        <li><strong>Ship It</strong> — an interactive academic artefact simulating the "good crunch" of games-industry labour, played as a studio Senior Producer. <a href="https://interactive-artifact-psi.vercel.app/">Visit site</a>.</li>
+        <li><strong>Unclutter</strong> — a community platform where neighbours give, share, and circulate unwanted items instead of binning them. Built with React, TypeScript, Vite, Material UI, Redux Toolkit, and React Query. <a href="https://unclutter-rho.vercel.app/">Visit site</a>.</li>
+        <li><strong>CSM Stocktaking</strong> — an internal stocktaking web app built for CSM Security Solutions during an industry placement, with barcode scanning, staff audit trails, and a live progress dashboard. Built with Next.js, React, Material UI, Prisma, and Supabase.</li>
+      </ul>
+      <p>
+        See also Kira's <a href="/experience">work experience</a>, <a href="/about">about page</a>,
+        and <a href="/degree">degree</a>.
+      </p>
+    `,
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Projects — Kira Zakirova',
+      description: 'Live websites and web apps designed and developed by Kira Zakirova.',
+      url: `${SITE}/projects`,
     },
   },
   {
@@ -279,6 +314,7 @@ const NAV_LINKS = `
   <nav aria-label="Main navigation">
     <a href="/">Home</a> ·
     <a href="/experience">Experience</a> ·
+    <a href="/projects">Projects</a> ·
     <a href="/about">About</a> ·
     <a href="/degree">Degree</a> ·
     <a href="/art">Art</a> ·

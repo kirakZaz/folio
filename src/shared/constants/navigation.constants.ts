@@ -8,6 +8,7 @@ export interface NavItem {
 export const NAV_ITEMS: readonly NavItem[] = [
   { label: 'Welcome', route: ROUTES.HOME },
   { label: 'Experience', route: ROUTES.EXPERIENCE },
+  { label: 'Projects', route: ROUTES.PROJECTS },
   { label: 'About me', route: ROUTES.ABOUT },
   { label: 'Degree', route: ROUTES.JOURNEY },
   { label: 'Art', route: ROUTES.ART },

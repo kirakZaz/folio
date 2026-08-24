@@ -5,12 +5,12 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="zZKLWI3i7eQXZiqDDZfRidHVWSatzI4uJsZumjiLwOc" />
-    <meta name="description" content="Senior frontend engineer with 10+ years of experience. Explore React, TypeScript, and Node.js projects across 8 companies." />
+    <meta name="description" content="Kira Zakirova — founder of Koru and senior full-stack engineer with 10+ years of experience. Builds products end to end: frontend, backend, and AI." />
     <link rel="canonical" href="https://folio-kiraz.vercel.app/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://folio-kiraz.vercel.app/" />
     <meta property="og:title" content="Kira Zakirova — Frontend Developer Portfolio" />
-    <meta property="og:description" content="Senior frontend engineer with 10+ years of experience. Explore React, TypeScript, and Node.js projects across 8 companies." />
+    <meta property="og:description" content="Kira Zakirova — founder of Koru and senior full-stack engineer with 10+ years of experience. Builds products end to end: frontend, backend, and AI." />
     <meta property="og:image" content="https://folio-kiraz.vercel.app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="alternate" hreflang="en" href="https://folio-kiraz.vercel.app/" />
@@ -22,8 +22,37 @@
       rel="stylesheet"
     />
     <title>Kira Zakirova — Frontend Developer Portfolio</title>
+    <style>
+      /* Boot overlay — shows a spinner while the app JavaScript loads,
+         covering the pre-rendered SEO content (which stays in the DOM for crawlers). */
+      #app-boot {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f6f7f4;
+      }
+      #app-boot .app-boot__spinner {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 3px solid rgba(234, 82, 33, 0.18);
+        border-top-color: #ea5221;
+        animation: app-boot-spin 0.7s linear infinite;
+      }
+      @keyframes app-boot-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
+    <div id="app-boot" role="status" aria-label="Loading">
+      <div class="app-boot__spinner"></div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

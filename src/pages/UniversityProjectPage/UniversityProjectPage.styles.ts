@@ -65,10 +65,22 @@ export const styles = {
     display: 'block',
   },
 
+  gallery: {
+    display: 'grid',
+    gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
+    gap: 2,
+  },
+
   galleryImg: {
     borderRadius: 2,
     width: '100%',
+    height: { xs: 320, md: 420 },
+    objectFit: 'contain',
     display: 'block',
+    boxSizing: 'border-box',
+    p: { xs: 2, md: 3 },
+    border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
+    backgroundColor: COLOR_TOKENS.backgroundPaper,
   },
 
   emptyState: {

@@ -3,7 +3,8 @@ import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
   footer: (hidden: boolean) => ({
-    visibility: hidden ? ('hidden' as const) : ('visible' as const),
+    display: hidden ? ('none' as const) : ('block' as const),
+    flexShrink: 0,
     width: '100%',
     borderTop: `1px solid ${COLOR_TOKENS.borderSubtle}`,
     backgroundColor: COLOR_TOKENS.backgroundDefault,

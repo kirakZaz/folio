@@ -1,26 +1,24 @@
 import { COLOR_TOKENS, TYPOGRAPHY_TOKENS } from '@/theme/themeTokens';
 
 export const styles = {
-  // ── Page — centered, one screen ─────────────────────────────────────────
+  // ── Page — natural vertical flow, two columns on desktop ────────────────
   page: {
     display: 'grid',
-    gridTemplateColumns: { xs: '1fr', lg: '1fr 340px' },
-    gap: { xs: 4, lg: 5 },
-    minHeight: 0,
-    alignItems: { xs: 'start', lg: 'end' },
+    gridTemplateColumns: { xs: '1fr', lg: '1fr 320px' },
+    gap: { xs: 5, lg: 5 },
+    alignItems: 'start',
+    mt: { xs: 3, md: 4 },
   },
 
   leftCol: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
-    height: { lg: 'calc(100vh - 100px)' },
-    minHeight: 0,
-    gap: { xs: 5, md: 0 },
+    gap: { xs: 5, md: 7 },
+    minWidth: 0,
   },
 
   rightCol: {
-    alignSelf: { lg: 'end' },
+    alignSelf: 'start',
     backgroundColor: COLOR_TOKENS.backgroundPaper,
     borderRadius: '12px',
     border: `1px solid ${COLOR_TOKENS.borderSubtle}`,
@@ -149,8 +147,8 @@ export const styles = {
   middle: {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
-    gap: { xs: 2, md: 5 },
-    py: { xs: 0, md: 1 },
+    gap: { xs: 3, md: 5 },
+    py: { xs: 3, md: 4 },
     borderTop: `1px solid ${COLOR_TOKENS.borderSubtle}`,
     borderBottom: `1px solid ${COLOR_TOKENS.borderSubtle}`,
   },

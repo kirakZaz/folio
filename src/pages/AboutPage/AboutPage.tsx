@@ -94,11 +94,11 @@ const AboutPage = () => {
           '@context': 'https://schema.org',
           '@type': 'Person',
           name: 'Kira Zakirova',
-          jobTitle: 'Senior Frontend Engineer',
-          description: 'Senior front end developer and web developer with 10+ years of experience building React and TypeScript applications.',
+          jobTitle: 'Founder & Senior Frontend Engineer',
+          description: 'Founder of Koru and senior full-stack engineer with 10+ years of experience. Builds products end to end — frontend, backend, and AI — with React, TypeScript, and Node.js.',
           url: 'https://folio-kiraz.vercel.app/about',
-          knowsAbout: ['React', 'TypeScript', 'JavaScript', 'Node.js', 'Frontend Architecture', 'Design Systems', 'Redux', 'Material UI', 'AI', 'LLM'],
-          worksFor: { '@type': 'Organization', name: 'AXO Tech Inc' },
+          knowsAbout: ['AI', 'LLM', 'AI Search Visibility', 'SEO', 'React', 'TypeScript', 'JavaScript', 'Node.js', 'Full-Stack Development', 'Frontend Architecture', 'Design Systems', 'Redux', 'Material UI'],
+          worksFor: { '@type': 'Organization', name: 'Koru' },
           alumniOf: { '@type': 'CollegeOrUniversity', name: 'Torrens University Australia' },
           address: { '@type': 'PostalAddress', addressLocality: 'Melbourne', addressCountry: 'AU' },
         }}
@@ -226,7 +226,13 @@ const AboutPage = () => {
                   scale — it&#39;s what makes me a frontend expert who cares about long-term code health.
                 </Typography>
                 <Typography sx={styles.bioText}>
-                  I also work a lot with AI and LLM tools — both in products and in my own workflow.
+                  AI is now core to how I build — both inside products and in my own workflow. Recently
+                  I founded Koru, an AI-powered search-visibility platform, where I do the whole thing
+                  end to end: frontend, backend, product, and the AI itself. I&#39;ve always worked
+                  across the full stack, so I can take an idea from a blank repo to a shipped product on
+                  my own.
+                </Typography>
+                <Typography sx={styles.bioText}>
                   Right now I&#39;m based in Melbourne, studying game design and development at Torrens
                   University. Outside of code, I draw and make leather bags by hand — creative projects
                   where there&#39;s no undo button.

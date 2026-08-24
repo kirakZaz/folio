@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 
@@ -21,6 +21,8 @@ import {
 import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
 import { WORK_PROJECTS_DATA } from '@/shared/constants/work-projects.constants';
 
+import { ROUTES } from '@/shared/constants/routes.constants';
+
 import BackButton from '@/components/BackButton/BackButton.tsx';
 import Layout from '@/components/Layout';
 import SeoHead from '@/components/SeoHead/SeoHead';
@@ -37,12 +39,7 @@ const WorkProjectPage = () => {
       : `${project?.yearStart} – ${project?.yearEnd}`;
 
   if (!project) {
-    return (
-      <Layout showNavBar>
-        <BackButton />
-        <Typography variant="h3">Project not found.</Typography>
-      </Layout>
-    );
+    return <Navigate to={ROUTES.HOME} replace />;
   }
 
   return (

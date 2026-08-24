@@ -1,13 +1,15 @@
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 
 import DownloadIcon from '@mui/icons-material/Download';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import { Box, Button, Chip, ImageList, ImageListItem, Stack, Typography } from '@mui/material';
+import { Box, Button, Chip, Stack, Typography } from '@mui/material';
 
 import { DEFAULT_TRANSITION, FADE_UP_VARIANTS } from '@/shared/constants/animation.constants';
 import { UNIVERSITY_PROJECTS_DATA } from '@/shared/constants/university-projects.constants';
+
+import { ROUTES } from '@/shared/constants/routes.constants';
 
 import BackButton from '@/components/BackButton/BackButton.tsx';
 import Layout from '@/components/Layout';
@@ -22,12 +24,7 @@ const UniversityProjectPage = () => {
   const project = UNIVERSITY_PROJECTS_DATA.find((item) => item.id === projectId);
 
   if (!project) {
-    return (
-      <Layout showNavBar>
-        <BackButton />
-        <Typography variant="h3">Project not found.</Typography>
-      </Layout>
-    );
+    return <Navigate to={ROUTES.HOME} replace />;
   }
 
   const scoreDisplay =
@@ -131,19 +128,18 @@ const UniversityProjectPage = () => {
         )}
 
         {project.images.length > 0 ? (
-          <ImageList variant="masonry" cols={3} gap={16}>
+          <Box sx={styles.gallery}>
             {project.images.map((imageUrl, imageIndex) => (
-              <ImageListItem key={imageIndex}>
-                <Box
-                  component="img"
-                  src={imageUrl}
-                  alt={`${project.subject} image ${imageIndex + 1}`}
-                  loading="lazy"
-                  sx={styles.galleryImg}
-                />
-              </ImageListItem>
+              <Box
+                key={imageIndex}
+                component="img"
+                src={imageUrl}
+                alt={`${project.subject} image ${imageIndex + 1}`}
+                loading="lazy"
+                sx={styles.galleryImg}
+              />
             ))}
-          </ImageList>
+          </Box>
         ) : (
           !hasPdfPresentation &&
           !hasPptxPresentation && (

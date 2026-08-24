@@ -239,7 +239,7 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
     presentationFile: '/images/projects/finalProjects/PBL202_KiraZakirov_A3_Report.pdf',
   },
 
-  // ── Study Year 2 · Trimester 2, 2026 (In Progress) ────────────────────────
+  // ── Study Year 2 · Trimester 2, 2026 ──────────────────────────────────────
   {
     id: 'rgp204',
     studyPeriod: 6,
@@ -248,10 +248,17 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
     trimester: 2,
     subjectType: 'core',
     subject: 'Rapid Game Prototype',
-    status: 'in_progress',
-    description: '',
-    images: [],
+    status: 'completed',
+    description:
+      'Three-member team project (Team KAS) — developed "KAS", a gothic 3D platformer built in Unity 6 where players control Kas, a winged bard navigating a dark, mechanised fairy-tale world of lamp-post platforms, blade traps, and turrets. The project ran across three rapid-prototyping sprints: a first playable prototype with three core mechanics (double jump, glide, and invincibility i-frames), then crafting, inventory, and rune-puzzle systems, and finally a polished vertical slice combining the strongest parts of both into a cave finale. Kira\'s role was Lead Developer & Integrator — all C# gameplay programming (glide, double jump, i-frame shields, HP feathers, turrets, jump buffering, coyote time), integrating every teammate\'s model, texture, sound, and animation into Unity, plus VFX, UI, the final WebGL build, and setting up and running the team\'s Jira board. She also designed and built a separate React + TypeScript showcase website with the Unity WebGL build embedded, deployed on Vercel and published on itch.io. Released publicly and playable in-browser.',
+    images: [
+      '/images/projects/rgp204_kas_1.png',
+      '/images/projects/rgp204_kas_2.png',
+      '/images/projects/rgp204_kas_3.png',
+    ],
     finalScore: '-',
+    link: 'https://kas-project.vercel.app',
+    presentationFile: '/images/projects/finalProjects/RGP204_KiraZakirov_A3_Postmortem.pdf',
   },
   {
     id: 'dgdvl100',
@@ -261,9 +268,15 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
     trimester: 2,
     subjectType: 'elective',
     subject: 'Visual Language of Design',
-    status: 'in_progress',
-    description: '',
-    images: [],
+    status: 'completed',
+    description:
+      'Across three linked assessments, Kira developed a cohesive body of work under the concept "Unfold — A Celebration of Design through Time", framed as a travelling pop-up exhibition on the history of design. For Elements of Design she produced two handmade postcards exploring opposing "faces of time" — a "Moment" piece using line and emphasis (frayed twine torn at the rule-of-thirds) and a "Movement" piece using shape and motion (a lemon peeled into one continuous spiral), photographed on coloured paper rather than edited digitally. For Periods of Design she studied typographers Herb Lubalin and Alan Fletcher and translated their principles into original tote-bag designs built entirely from the word UNFOLD. For Design Interpretation she designed a paired poster series comparing Kyiv and Melbourne as two far-apart but kindred tram-and-river cities — using flat silhouettes, redrawn transit maps in real route colours, and city emblems to demonstrate emphasis and balance. All finals were hand-drawn and rebuilt as original vector art in a restrained one-to-three-colour palette, using Illustrator, Photoshop, and InDesign — no tracing, stock, or AI.',
+    images: [
+      '/images/projects/dgdvl100_kyiv_1.png',
+      '/images/projects/dgdvl100_melbourne_1.png',
+      '/images/projects/dgdvl100_kyiv_2.png',
+      '/images/projects/dgdvl100_melbourne_2.png',
+    ],
     finalScore: '-',
   },
   {
@@ -274,9 +287,14 @@ export const UNIVERSITY_PROJECTS_DATA: UniversityProject[] = [
     trimester: 2,
     subjectType: 'core',
     subject: 'Work Integrated Learning',
-    status: 'in_progress',
-    description: '',
-    images: [],
+    status: 'completed',
+    description:
+      'Industry placement as a remote software developer at CSM Security Solutions — a national trade-only electronic security distributor based in Marleston, South Australia. Working with CSM\'s National Marketing Manager, Kira took full ownership of a real business product: an internal stocktaking web application to replace the static Excel spreadsheet exported from NetSuite that warehouse teams relied on, which lacked multi-user access, an audit trail, and real-time tracking. She ran the project end to end — scoping it with the client and producing a formal Technical Response analysing the ~1,829-product source data, then choosing her own stack and building the app: product search by text or barcode scan, physical count entry with staff and timestamp audit trail, discrete stocktake sessions, a live progress dashboard with variance views, session history, Excel export, and an admin panel for managing products, users, and NetSuite imports. Built with Next.js, React, Material UI, Prisma, and Supabase (PostgreSQL and Auth), deployed on Vercel. She completed the required ~90 placement hours across three supervisor-signed timesheets, applying client-facing scoping, full-stack development, and self-directed decision-making under ambiguity.',
+    images: [
+      '/images/projects/wil302_app_home.png',
+      '/images/projects/wil302_app_search.png',
+      '/images/projects/wil302_app_admin.png',
+    ],
     finalScore: '-',
   },
 

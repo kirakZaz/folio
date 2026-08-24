@@ -26,12 +26,37 @@ export interface WorkProject {
 
 export const WORK_PROJECTS_DATA: WorkProject[] = [
   {
+    id: 'work-koru',
+    title: 'KORU',
+    company: 'Koru · Self-employed',
+    role: 'Co-Founder & CEO',
+    yearStart: '04/2026',
+    yearEnd: 'present',
+    coverImage: '/images/companies/koru.png',
+    description:
+      'KORU is a search-visibility platform that shows how you appear in both search worlds at once — how Google ranks you, and how AI engines (ChatGPT, Gemini, Claude, Grok, Perplexity) cite you. Most tools pick a side; KORU does both — classic SEO depth (site audits, intent-based keyword research, rank tracking including Google AI Mode, backlinks and competitor gap) plus AI visibility: which engines actually cite your pages on live web search, whom they cite instead of you, and why. Every finding turns into a task, so it stays actionable rather than being one more dashboard to drown in.',
+    techStack: [
+      'Python', 'FastAPI', 'SQLAlchemy', 'PostgreSQL',
+      'React', 'TypeScript', 'Redux Toolkit', 'RTK Query', 'MUI', 'Vite',
+      'Terraform', 'Google Cloud', 'Kubernetes', 'Docker', 'Helm',
+      'OpenAI', 'Anthropic', 'Gemini', 'Grok', 'Perplexity',
+      'Stripe', 'Playwright', 'Vitest', 'pytest',
+    ],
+    achievements: [
+      'Building KORU end to end — the product, the technology behind it, and the go-to-market positioning',
+      'Unified classic SEO (site audits, intent keyword research, rank tracking incl. Google AI Mode, backlinks, competitor gap) with AI-engine citation tracking in a single platform',
+      'Running live AI-citation checks on real sites — measuring which AI engines cite a page, whom they cite instead, and why',
+      'Talking directly to the freelancers and small agencies KORU is built for to shape the product',
+    ],
+    screenshots: [],
+  },
+  {
     id: 'work-axo',
     title: 'AXO Tech Platform',
     company: 'AXO Tech Inc',
     role: 'Lead Frontend Developer',
     yearStart: '07/2024',
-    yearEnd: 'present',
+    yearEnd: '04/2026',
     description:
       'B2B SaaS platform that helps cloud channel partners turn siloed client data into revenue growth. Connects vendor portals, CRMs, and spreadsheets into a unified engine with automated playbooks and deal intelligence.',
     coverImage: '/images/companies/axo.png',
